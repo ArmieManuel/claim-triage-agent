@@ -27,4 +27,7 @@ Read [PLAN.md](PLAN.md) before working. Work phase by phase and tick a box only 
 .venv\Scripts\python -m ruff check .
 .venv\Scripts\python -m ruff format --check .
 .venv\Scripts\pre-commit run --all-files
+.venv\Scripts\python -m generator.build_golden   (regenerate data/golden, then commit it)
 ```
+
+Routing thresholds live in `config/routing.yaml`; the rule order is in `docs/routing_policy.md`.

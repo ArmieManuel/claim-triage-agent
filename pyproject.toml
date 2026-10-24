@@ -32,7 +32,7 @@ dev = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/triage"]
+packages = ["src/triage", "data/generator"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -45,10 +45,12 @@ markers = [
 [tool.ruff]
 line-length = 100
 target-version = "py313"
-src = ["src", "tests"]
+src = ["src", "data", "tests"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
+# ruff format enforces line length for code; long template sentences may run over.
+ignore = ["E501"]
 
 [tool.ruff.format]
 quote-style = "double"

@@ -1,0 +1,53 @@
+{
+  "case_id": "case_046",
+  "split": "holdout",
+  "hard": false,
+  "tags": [],
+  "layout": "form",
+  "pdf_file": "case_046.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2025-13164",
+      "policy_number": "NBM-2520-2679",
+      "date_of_loss": "2025-11-27",
+      "claimant_role": "policyholder",
+      "amount_claimed": 19631.11,
+      "loss_description": "A driver ran a red light at a junction and struck the front of my Toyota Yaris. The bonnet, front bumper and radiator need replacing. Details were exchanged with the other driver at the scene.",
+      "location": "Camerontown",
+      "policy_start_date": "2024-01-03",
+      "police_report_number": "WY/29504/25"
+    },
+    "category": "motor_collision",
+    "acceptable_categories": [
+      "motor_collision"
+    ],
+    "route": "standard_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Shannon Powell"
+    },
+    {
+      "kind": "address",
+      "value": "113 Curtis Roads, Marcbury, SK3 3BS"
+    },
+    {
+      "kind": "phone",
+      "value": "(0117) 496 0687"
+    },
+    {
+      "kind": "email",
+      "value": "wtaylor@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 14 64 99 T"
+    },
+    {
+      "kind": "vehicle_registration",
+      "value": "BV27 MPU"
+    }
+  ]
+}

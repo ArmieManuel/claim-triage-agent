@@ -1,0 +1,53 @@
+{
+  "case_id": "case_006",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "email",
+  "pdf_file": "case_006.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-62332",
+      "policy_number": "POL-58305640",
+      "date_of_loss": "2026-08-13",
+      "claimant_role": "policyholder",
+      "amount_claimed": 7873.0,
+      "loss_description": "I parked my Nissan Qashqai at the station car park in the morning and it was gone in the evening. Personal belongings, including a child seat, were inside the car. I still have both sets of keys apart from the stolen one.",
+      "location": "East Joan",
+      "policy_start_date": "2024-11-24",
+      "police_report_number": "GM/87311/26"
+    },
+    "category": "motor_theft",
+    "acceptable_categories": [
+      "motor_theft"
+    ],
+    "route": "standard_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Jemma Harris"
+    },
+    {
+      "kind": "address",
+      "value": "44 Hodgson Park, Lake Iain, RG5 7LQ"
+    },
+    {
+      "kind": "phone",
+      "value": "+4429 2018 0549"
+    },
+    {
+      "kind": "email",
+      "value": "anna32@example.com"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 09 88 79 T"
+    },
+    {
+      "kind": "vehicle_registration",
+      "value": "OV71 QVV"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "case_id": "case_010",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "email",
+  "pdf_file": "case_010.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-48785",
+      "policy_number": "NBM-5745-7025",
+      "date_of_loss": "2026-06-09",
+      "claimant_role": "policyholder",
+      "amount_claimed": 21312.0,
+      "loss_description": "The water tank in the loft leaked and soaked the bedroom ceiling below. The wall needs drying out and replastering, and a sofa was soaked. A drying company has been booked and has provided an estimate.",
+      "location": "Smithborough",
+      "policy_start_date": "2023-04-28",
+      "police_report_number": null
+    },
+    "category": "property_water",
+    "acceptable_categories": [
+      "property_water"
+    ],
+    "route": "standard_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Ellie Young"
+    },
+    {
+      "kind": "address",
+      "value": "Flat 7, Allen Camp, Lake Johnhaven, W06 9UR"
+    },
+    {
+      "kind": "phone",
+      "value": "0306 9990544"
+    },
+    {
+      "kind": "email",
+      "value": "allensamuel@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 12 64 62 T"
+    }
+  ]
+}

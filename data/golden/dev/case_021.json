@@ -1,0 +1,53 @@
+{
+  "case_id": "case_021",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "letter",
+  "pdf_file": "case_021.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-51351",
+      "policy_number": "POL-89765182",
+      "date_of_loss": "2026-07-14",
+      "claimant_role": "representative",
+      "amount_claimed": 774.28,
+      "loss_description": "A candle left on a windowsill set fire to the curtains in the living room. Soot damage affects the whole ground floor and the window frame is burnt. Nobody was hurt and the fire was put out with an extinguisher.",
+      "location": "Hillland",
+      "policy_start_date": "2023-03-17",
+      "police_report_number": null
+    },
+    "category": "property_fire",
+    "acceptable_categories": [
+      "property_fire"
+    ],
+    "route": "auto_process",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Aaron Hartley"
+    },
+    {
+      "kind": "name",
+      "value": "Cheryl Saunders"
+    },
+    {
+      "kind": "address",
+      "value": "Studio 65, Carter Cliffs, Colinside, E8G 2QE"
+    },
+    {
+      "kind": "phone",
+      "value": "+44(0)909 8790664"
+    },
+    {
+      "kind": "email",
+      "value": "xsaunders@example.org"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 31 63 18 T"
+    }
+  ]
+}

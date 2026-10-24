@@ -1,0 +1,53 @@
+{
+  "case_id": "case_044",
+  "split": "holdout",
+  "hard": false,
+  "tags": [],
+  "layout": "letter",
+  "pdf_file": "case_044.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-31120",
+      "policy_number": "POL-57819623",
+      "date_of_loss": "2026-03-20",
+      "claimant_role": "third_party",
+      "amount_claimed": 27607.82,
+      "loss_description": "Your policyholder's dog ran out of their garden and bit me on the leg. I suffered a fractured wrist and needed time off work. Witnesses saw the incident and have given their details.",
+      "location": "Hardingchester",
+      "policy_start_date": "2021-09-16",
+      "police_report_number": null
+    },
+    "category": "liability",
+    "acceptable_categories": [
+      "liability"
+    ],
+    "route": "senior_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Marie Smith"
+    },
+    {
+      "kind": "name",
+      "value": "Mr Nicholas Singh"
+    },
+    {
+      "kind": "address",
+      "value": "9 Stewart Crescent, South Jonathanville, N2 8QD"
+    },
+    {
+      "kind": "phone",
+      "value": "0121 4960462"
+    },
+    {
+      "kind": "email",
+      "value": "donnaduffy@example.com"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 898684 T"
+    }
+  ]
+}

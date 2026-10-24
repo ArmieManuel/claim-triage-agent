@@ -1,0 +1,53 @@
+{
+  "case_id": "case_031",
+  "split": "holdout",
+  "hard": false,
+  "tags": [],
+  "layout": "letter",
+  "pdf_file": "case_031.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2025-38554",
+      "policy_number": "NBM-5054-5523",
+      "date_of_loss": "2025-12-29",
+      "claimant_role": "policyholder",
+      "amount_claimed": 5509.98,
+      "loss_description": "In heavy rain my Skoda Octavia skidded on a bend and hit a stone wall. Both nearside doors are dented and the wing mirror is broken. Photos of the damage were taken at the scene and are available.",
+      "location": "Stevensland",
+      "policy_start_date": "2024-03-29",
+      "police_report_number": "MP/21062/25"
+    },
+    "category": "motor_collision",
+    "acceptable_categories": [
+      "motor_collision"
+    ],
+    "route": "standard_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Mary Wheeler"
+    },
+    {
+      "kind": "address",
+      "value": "Flat 39, Foster Valley, Hallborough, NN8X 2UQ"
+    },
+    {
+      "kind": "phone",
+      "value": "01184960962"
+    },
+    {
+      "kind": "email",
+      "value": "alexanderrees@example.org"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 59 52 76 T"
+    },
+    {
+      "kind": "vehicle_registration",
+      "value": "FZ05ZHQ"
+    }
+  ]
+}

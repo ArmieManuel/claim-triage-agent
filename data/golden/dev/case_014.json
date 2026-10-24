@@ -1,0 +1,55 @@
+{
+  "case_id": "case_014",
+  "split": "dev",
+  "hard": true,
+  "tags": [
+    "missing_field"
+  ],
+  "layout": "letter",
+  "pdf_file": "case_014.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-45583",
+      "policy_number": "NBM-3572-3219",
+      "date_of_loss": "2026-07-17",
+      "claimant_role": "policyholder",
+      "amount_claimed": null,
+      "loss_description": "In heavy rain my Ford Focus skidded on a bend and hit a stone wall. The rear bumper, boot lid and one light cluster are damaged. Details were exchanged with the other driver at the scene. I do not have a final figure for the repairs yet and will send quotes when I have them.",
+      "location": "Barrettshire",
+      "policy_start_date": "2023-03-22",
+      "police_report_number": null
+    },
+    "category": "motor_collision",
+    "acceptable_categories": [
+      "motor_collision"
+    ],
+    "route": "human_review",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Jeremy Brown"
+    },
+    {
+      "kind": "address",
+      "value": "0 Young Brook, East Albertmouth, G54 6YB"
+    },
+    {
+      "kind": "phone",
+      "value": "+44808 157 0900"
+    },
+    {
+      "kind": "email",
+      "value": "richardsongareth@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ546299T"
+    },
+    {
+      "kind": "vehicle_registration",
+      "value": "JW10 SLG"
+    }
+  ]
+}

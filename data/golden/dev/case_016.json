@@ -1,0 +1,53 @@
+{
+  "case_id": "case_016",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "email",
+  "pdf_file": "case_016.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-91026",
+      "policy_number": "POL-35501797",
+      "date_of_loss": "2026-08-13",
+      "claimant_role": "policyholder",
+      "amount_claimed": 18444.84,
+      "loss_description": "A driver ran a red light at a junction and struck the front of my Toyota Yaris. The rear bumper, boot lid and one light cluster are damaged. Details were exchanged with the other driver at the scene.",
+      "location": "Hydebury",
+      "policy_start_date": "2021-10-09",
+      "police_report_number": null
+    },
+    "category": "motor_collision",
+    "acceptable_categories": [
+      "motor_collision"
+    ],
+    "route": "standard_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Tom Lowe-Morgan"
+    },
+    {
+      "kind": "address",
+      "value": "5 Gareth Hills, Ianstad, TR4 5PX"
+    },
+    {
+      "kind": "phone",
+      "value": "+44(0)20 74960862"
+    },
+    {
+      "kind": "email",
+      "value": "carolinewilliams@example.org"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 752426 T"
+    },
+    {
+      "kind": "vehicle_registration",
+      "value": "PI18AUN"
+    }
+  ]
+}

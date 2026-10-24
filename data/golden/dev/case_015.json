@@ -1,0 +1,53 @@
+{
+  "case_id": "case_015",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "email",
+  "pdf_file": "case_015.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2025-42400",
+      "policy_number": "POL-20528031",
+      "date_of_loss": "2025-09-05",
+      "claimant_role": "policyholder",
+      "amount_claimed": 1680.36,
+      "loss_description": "A driver ran a red light at a junction and struck the front of my BMW 1 Series. The rear bumper, boot lid and one light cluster are damaged. The car was recovered to a local garage, which has quoted for the repair.",
+      "location": "Lake Ryan",
+      "policy_start_date": "2021-01-27",
+      "police_report_number": null
+    },
+    "category": "motor_collision",
+    "acceptable_categories": [
+      "motor_collision"
+    ],
+    "route": "auto_process",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Mr Elliott Holmes"
+    },
+    {
+      "kind": "address",
+      "value": "6 Edwards Hollow, Justinfurt, CA0 3FW"
+    },
+    {
+      "kind": "phone",
+      "value": "0289018782"
+    },
+    {
+      "kind": "email",
+      "value": "barbaralynch@example.org"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 830126 T"
+    },
+    {
+      "kind": "vehicle_registration",
+      "value": "MR08LTC"
+    }
+  ]
+}

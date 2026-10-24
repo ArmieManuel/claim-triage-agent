@@ -1,0 +1,49 @@
+{
+  "case_id": "case_043",
+  "split": "holdout",
+  "hard": false,
+  "tags": [],
+  "layout": "email",
+  "pdf_file": "case_043.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2025-98424",
+      "policy_number": "POL-38467036",
+      "date_of_loss": "2025-07-16",
+      "claimant_role": "policyholder",
+      "amount_claimed": 787.12,
+      "loss_description": "A power cut lasting two days spoiled the contents of our freezer. All frozen food had to be thrown away. Photos are available on request.",
+      "location": "East Karlside",
+      "policy_start_date": "2024-01-24",
+      "police_report_number": null
+    },
+    "category": "other",
+    "acceptable_categories": [
+      "other"
+    ],
+    "route": "auto_process",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Hannah Kaur-Lee"
+    },
+    {
+      "kind": "address",
+      "value": "9 Briggs Parkways, Pooleton, EH5 9NY"
+    },
+    {
+      "kind": "phone",
+      "value": "(0116) 496 0828"
+    },
+    {
+      "kind": "email",
+      "value": "louismorgan@example.com"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 95 22 02 T"
+    }
+  ]
+}

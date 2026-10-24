@@ -1,0 +1,49 @@
+{
+  "case_id": "case_022",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "form",
+  "pdf_file": "case_022.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2025-65037",
+      "policy_number": "POL-42893328",
+      "date_of_loss": "2025-07-10",
+      "claimant_role": "policyholder",
+      "amount_claimed": 968.0,
+      "loss_description": "A power cut lasting two days spoiled the contents of our freezer. The screen and the hinge are broken and the laptop does not turn on. A local contractor has given a quote.",
+      "location": "West Alexandermouth",
+      "policy_start_date": "2023-02-25",
+      "police_report_number": null
+    },
+    "category": "other",
+    "acceptable_categories": [
+      "other"
+    ],
+    "route": "auto_process",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Dr Lesley Cook"
+    },
+    {
+      "kind": "address",
+      "value": "156 Denis Place, Bellshire, L29 4RG"
+    },
+    {
+      "kind": "phone",
+      "value": "(0116)4960271"
+    },
+    {
+      "kind": "email",
+      "value": "carl58@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 183451 T"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "case_id": "case_039",
+  "split": "holdout",
+  "hard": true,
+  "tags": [
+    "unusual_date"
+  ],
+  "layout": "email",
+  "pdf_file": "case_039.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-38314",
+      "policy_number": "POL-42583958",
+      "date_of_loss": "2026-05-14",
+      "claimant_role": "policyholder",
+      "amount_claimed": 618.2,
+      "loss_description": "A pipe under the bathroom floor burst and water came through the kitchen ceiling. The ceiling plaster has collapsed in one corner and the flooring is ruined. A drying company has been booked and has provided an estimate.",
+      "location": "Harrismouth",
+      "policy_start_date": "2023-07-24",
+      "police_report_number": null
+    },
+    "category": "property_water",
+    "acceptable_categories": [
+      "property_water"
+    ],
+    "route": "auto_process",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Katherine Jackson"
+    },
+    {
+      "kind": "address",
+      "value": "350 Michelle Mission, Bakertown, JE35 4YX"
+    },
+    {
+      "kind": "phone",
+      "value": "+44(0)113 4960183"
+    },
+    {
+      "kind": "email",
+      "value": "marcus85@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 176393 T"
+    }
+  ]
+}

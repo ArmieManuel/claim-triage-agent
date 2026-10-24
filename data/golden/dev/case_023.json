@@ -1,0 +1,49 @@
+{
+  "case_id": "case_023",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "letter",
+  "pdf_file": "case_023.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-96210",
+      "policy_number": "POL-90999404",
+      "date_of_loss": "2026-05-03",
+      "claimant_role": "policyholder",
+      "amount_claimed": 1504.2,
+      "loss_description": "Heavy rain overflowed a blocked gutter and water ran down the inside of the back wall. Skirting boards, a carpet and the lower kitchen units are water damaged. I turned off the water at the stopcock and moved what I could.",
+      "location": "Lesleyshire",
+      "policy_start_date": "2022-11-30",
+      "police_report_number": null
+    },
+    "category": "property_water",
+    "acceptable_categories": [
+      "property_water"
+    ],
+    "route": "auto_process",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Reece Ward"
+    },
+    {
+      "kind": "address",
+      "value": "69 Duncan Port, West Louise, E92 4YL"
+    },
+    {
+      "kind": "phone",
+      "value": "+44151 496 0842"
+    },
+    {
+      "kind": "email",
+      "value": "clarkesarah@example.org"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ216552T"
+    }
+  ]
+}

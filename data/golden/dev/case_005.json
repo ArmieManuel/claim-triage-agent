@@ -1,0 +1,53 @@
+{
+  "case_id": "case_005",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "letter",
+  "pdf_file": "case_005.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-84302",
+      "policy_number": "NBM-6927-4891",
+      "date_of_loss": "2026-03-25",
+      "claimant_role": "representative",
+      "amount_claimed": 17276.1,
+      "loss_description": "An electrical fault in the garage consumer unit started a fire. The kitchen units and ceiling are smoke damaged and need replacing. The fire service attended and put the fire out.",
+      "location": "Malcolmmouth",
+      "policy_start_date": "2026-03-13",
+      "police_report_number": null
+    },
+    "category": "property_fire",
+    "acceptable_categories": [
+      "property_fire"
+    ],
+    "route": "fraud_review",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Mrs Naomi Sullivan"
+    },
+    {
+      "kind": "name",
+      "value": "Ms Janice Williams"
+    },
+    {
+      "kind": "address",
+      "value": "238 Johnson Unions, Lake Marcuston, L19 7TR"
+    },
+    {
+      "kind": "phone",
+      "value": "+441214960227"
+    },
+    {
+      "kind": "email",
+      "value": "jonathan82@example.org"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 83 04 16 T"
+    }
+  ]
+}

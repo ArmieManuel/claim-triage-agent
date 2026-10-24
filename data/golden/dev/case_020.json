@@ -1,0 +1,49 @@
+{
+  "case_id": "case_020",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "email",
+  "pdf_file": "case_020.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2025-61131",
+      "policy_number": "NBM-9929-9357",
+      "date_of_loss": "2025-08-26",
+      "claimant_role": "policyholder",
+      "amount_claimed": 18787.71,
+      "loss_description": "The water tank in the loft leaked and soaked the bedroom ceiling below. The wall needs drying out and replastering, and a sofa was soaked. I turned off the water at the stopcock and moved what I could.",
+      "location": "New Sandra",
+      "policy_start_date": "2021-12-14",
+      "police_report_number": null
+    },
+    "category": "property_water",
+    "acceptable_categories": [
+      "property_water"
+    ],
+    "route": "standard_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Roger Jones"
+    },
+    {
+      "kind": "address",
+      "value": "Studio 8, Cole Rest, West Edward, BH5 5AL"
+    },
+    {
+      "kind": "phone",
+      "value": "+44(0)117 4960856"
+    },
+    {
+      "kind": "email",
+      "value": "nwebb@example.org"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 23 94 67 T"
+    }
+  ]
+}

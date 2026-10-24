@@ -1,0 +1,49 @@
+{
+  "case_id": "case_037",
+  "split": "holdout",
+  "hard": false,
+  "tags": [],
+  "layout": "letter",
+  "pdf_file": "case_037.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-32497",
+      "policy_number": "POL-18611248",
+      "date_of_loss": "2026-08-07",
+      "claimant_role": "policyholder",
+      "amount_claimed": 39689.2,
+      "loss_description": "A pipe under the bathroom floor burst and water came through the kitchen ceiling. Skirting boards, a carpet and the lower kitchen units are water damaged. A plumber stopped the leak the same day and has invoiced for the call out.",
+      "location": "New Terence",
+      "policy_start_date": "2026-07-29",
+      "police_report_number": null
+    },
+    "category": "property_water",
+    "acceptable_categories": [
+      "property_water"
+    ],
+    "route": "fraud_review",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Lorraine Russell"
+    },
+    {
+      "kind": "address",
+      "value": "3 Emily Dale, New Katherine, B46 8JX"
+    },
+    {
+      "kind": "phone",
+      "value": "(029) 2018095"
+    },
+    {
+      "kind": "email",
+      "value": "blakejade@example.org"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ008128T"
+    }
+  ]
+}

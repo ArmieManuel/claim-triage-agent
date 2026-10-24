@@ -1,0 +1,49 @@
+{
+  "case_id": "case_012",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "email",
+  "pdf_file": "case_012.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-51095",
+      "policy_number": "HL/416357/UE",
+      "date_of_loss": "2026-07-14",
+      "claimant_role": "policyholder",
+      "amount_claimed": 1667.0,
+      "loss_description": "The water tank in the loft leaked and soaked the bedroom ceiling below. Skirting boards, a carpet and the lower kitchen units are water damaged. A drying company has been booked and has provided an estimate.",
+      "location": "Lake Jaynefort",
+      "policy_start_date": "2025-08-08",
+      "police_report_number": null
+    },
+    "category": "property_water",
+    "acceptable_categories": [
+      "property_water"
+    ],
+    "route": "auto_process",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Josephine Davidson-Hamilton"
+    },
+    {
+      "kind": "address",
+      "value": "56 Fletcher Greens, North Ashleighshire, SE7 5FH"
+    },
+    {
+      "kind": "phone",
+      "value": "(0161) 496 0954"
+    },
+    {
+      "kind": "email",
+      "value": "utaylor@example.com"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ989584T"
+    }
+  ]
+}

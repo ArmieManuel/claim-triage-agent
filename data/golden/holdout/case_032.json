@@ -1,0 +1,49 @@
+{
+  "case_id": "case_032",
+  "split": "holdout",
+  "hard": false,
+  "tags": [],
+  "layout": "letter",
+  "pdf_file": "case_032.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2025-76355",
+      "policy_number": "POL-31875373",
+      "date_of_loss": "2025-07-17",
+      "claimant_role": "policyholder",
+      "amount_claimed": 112268.35,
+      "loss_description": "A pipe under the bathroom floor burst and water came through the kitchen ceiling. Skirting boards, a carpet and the lower kitchen units are water damaged. A drying company has been booked and has provided an estimate.",
+      "location": "North Leanneborough",
+      "policy_start_date": "2024-09-15",
+      "police_report_number": null
+    },
+    "category": "property_water",
+    "acceptable_categories": [
+      "property_water"
+    ],
+    "route": "senior_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Dr Nathan Davies"
+    },
+    {
+      "kind": "address",
+      "value": "04 Richardson Crossroad, Port Louise, M50 2BR"
+    },
+    {
+      "kind": "phone",
+      "value": "+44(0)113 4960519"
+    },
+    {
+      "kind": "email",
+      "value": "janefox@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ749466T"
+    }
+  ]
+}

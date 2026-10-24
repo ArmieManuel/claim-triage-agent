@@ -1,0 +1,53 @@
+{
+  "case_id": "case_004",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "letter",
+  "pdf_file": "case_004.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-38885",
+      "policy_number": "HL/107597/XN",
+      "date_of_loss": "2026-07-05",
+      "claimant_role": "third_party",
+      "amount_claimed": 18109.07,
+      "loss_description": "A customer slipped on a wet floor in the shop owned by your policyholder. I suffered a fractured wrist and needed time off work. I hold your policyholder responsible and am claiming against their liability cover.",
+      "location": "Hugheshaven",
+      "policy_start_date": "2021-02-22",
+      "police_report_number": null
+    },
+    "category": "liability",
+    "acceptable_categories": [
+      "liability"
+    ],
+    "route": "senior_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Shannon Graham"
+    },
+    {
+      "kind": "name",
+      "value": "Chloe Blake"
+    },
+    {
+      "kind": "address",
+      "value": "5 Liam Isle, Jaystad, L9 9ND"
+    },
+    {
+      "kind": "phone",
+      "value": "0131 4960498"
+    },
+    {
+      "kind": "email",
+      "value": "fhill@example.org"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 38 20 62 T"
+    }
+  ]
+}

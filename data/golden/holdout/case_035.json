@@ -1,0 +1,49 @@
+{
+  "case_id": "case_035",
+  "split": "holdout",
+  "hard": false,
+  "tags": [],
+  "layout": "letter",
+  "pdf_file": "case_035.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-68300",
+      "policy_number": "NBM-9478-7655",
+      "date_of_loss": "2026-01-03",
+      "claimant_role": "policyholder",
+      "amount_claimed": 2359.8,
+      "loss_description": "Heavy rain overflowed a blocked gutter and water ran down the inside of the back wall. The ceiling plaster has collapsed in one corner and the flooring is ruined. A plumber stopped the leak the same day and has invoiced for the call out.",
+      "location": "Owenburgh",
+      "policy_start_date": "2023-05-27",
+      "police_report_number": null
+    },
+    "category": "property_water",
+    "acceptable_categories": [
+      "property_water"
+    ],
+    "route": "auto_process",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Brandon Rowe-Hicks"
+    },
+    {
+      "kind": "address",
+      "value": "22 Williams Manors, Lake Patricia, HP78 5GQ"
+    },
+    {
+      "kind": "phone",
+      "value": "+44(0)191 496 0278"
+    },
+    {
+      "kind": "email",
+      "value": "lynda86@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 094743 T"
+    }
+  ]
+}

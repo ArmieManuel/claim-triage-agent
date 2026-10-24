@@ -1,0 +1,49 @@
+{
+  "case_id": "case_008",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "form",
+  "pdf_file": "case_008.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-52600",
+      "policy_number": "POL-22281762",
+      "date_of_loss": "2026-06-02",
+      "claimant_role": "policyholder",
+      "amount_claimed": 4741.0,
+      "loss_description": "Heavy rain overflowed a blocked gutter and water ran down the inside of the back wall. The ceiling plaster has collapsed in one corner and the flooring is ruined. A drying company has been booked and has provided an estimate.",
+      "location": "Jenkinsside",
+      "policy_start_date": "2023-06-17",
+      "police_report_number": null
+    },
+    "category": "property_water",
+    "acceptable_categories": [
+      "property_water"
+    ],
+    "route": "standard_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Dennis Jones"
+    },
+    {
+      "kind": "address",
+      "value": "Flat 1, Harris Mission, East Staceyfort, DY49 2RS"
+    },
+    {
+      "kind": "phone",
+      "value": "(0117) 4960073"
+    },
+    {
+      "kind": "email",
+      "value": "tonycole@example.org"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 918055 T"
+    }
+  ]
+}

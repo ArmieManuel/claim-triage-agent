@@ -1,0 +1,51 @@
+{
+  "case_id": "case_018",
+  "split": "dev",
+  "hard": true,
+  "tags": [
+    "multiple_claims"
+  ],
+  "layout": "email",
+  "pdf_file": "case_018.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-59963",
+      "policy_number": "HL/414825/SN",
+      "date_of_loss": "2026-09-03",
+      "claimant_role": "policyholder",
+      "amount_claimed": 8678.0,
+      "loss_description": "The water tank in the loft leaked and soaked the bedroom ceiling below. Skirting boards, a carpet and the lower kitchen units are water damaged. A plumber stopped the leak the same day and has invoiced for the call out.",
+      "location": "Clarkton",
+      "policy_start_date": "2023-01-11",
+      "police_report_number": null
+    },
+    "category": "property_water",
+    "acceptable_categories": [
+      "property_water"
+    ],
+    "route": "human_review",
+    "multiple_claims": true
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Dr Janice Williams"
+    },
+    {
+      "kind": "address",
+      "value": "Studio 92, Williams Land, Baxterside, E70 2GU"
+    },
+    {
+      "kind": "phone",
+      "value": "+44(0)292018962"
+    },
+    {
+      "kind": "email",
+      "value": "mandyallen@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ531135T"
+    }
+  ]
+}

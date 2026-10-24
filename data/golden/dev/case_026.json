@@ -1,0 +1,55 @@
+{
+  "case_id": "case_026",
+  "split": "dev",
+  "hard": true,
+  "tags": [
+    "unusual_date"
+  ],
+  "layout": "letter",
+  "pdf_file": "case_026.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-35921",
+      "policy_number": "POL-49768508",
+      "date_of_loss": "2026-06-17",
+      "claimant_role": "policyholder",
+      "amount_claimed": 10969.64,
+      "loss_description": "While I was queueing at a roundabout, another car drove into the back of my Vauxhall Corsa. The front wheel and suspension arm are bent and the car cannot be driven. Photos of the damage were taken at the scene and are available.",
+      "location": "Kimberleyville",
+      "policy_start_date": "2022-05-28",
+      "police_report_number": "MP/86094/26"
+    },
+    "category": "motor_collision",
+    "acceptable_categories": [
+      "motor_collision"
+    ],
+    "route": "standard_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Lynn Edwards"
+    },
+    {
+      "kind": "address",
+      "value": "0 Webb Port, Graymouth, WN23 0ZY"
+    },
+    {
+      "kind": "phone",
+      "value": "(0116)4960622"
+    },
+    {
+      "kind": "email",
+      "value": "pricejoel@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 994401 T"
+    },
+    {
+      "kind": "vehicle_registration",
+      "value": "LP41QZY"
+    }
+  ]
+}

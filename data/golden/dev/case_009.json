@@ -1,0 +1,53 @@
+{
+  "case_id": "case_009",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "letter",
+  "pdf_file": "case_009.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-59369",
+      "policy_number": "HL/770802/MJ",
+      "date_of_loss": "2026-06-23",
+      "claimant_role": "policyholder",
+      "amount_claimed": 27638.78,
+      "loss_description": "A driver ran a red light at a junction and struck the front of my Ford Focus. The front wheel and suspension arm are bent and the car cannot be driven. Photos of the damage were taken at the scene and are available.",
+      "location": "Guyville",
+      "policy_start_date": "2026-06-10",
+      "police_report_number": "MP/24348/26"
+    },
+    "category": "motor_collision",
+    "acceptable_categories": [
+      "motor_collision"
+    ],
+    "route": "fraud_review",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Joanna King"
+    },
+    {
+      "kind": "address",
+      "value": "Studio 6, Hyde Harbor, West Abigailhaven, SK7 0UT"
+    },
+    {
+      "kind": "phone",
+      "value": "0191 498 0636"
+    },
+    {
+      "kind": "email",
+      "value": "dcooper@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ654307T"
+    },
+    {
+      "kind": "vehicle_registration",
+      "value": "NI80 HHT"
+    }
+  ]
+}

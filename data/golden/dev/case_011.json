@@ -1,0 +1,53 @@
+{
+  "case_id": "case_011",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "letter",
+  "pdf_file": "case_011.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-54956",
+      "policy_number": "HL/898548/TH",
+      "date_of_loss": "2026-06-29",
+      "claimant_role": "policyholder",
+      "amount_claimed": 10915.28,
+      "loss_description": "My Skoda Octavia was stolen overnight from the street outside my home. Personal belongings, including a child seat, were inside the car. I still have both sets of keys apart from the stolen one.",
+      "location": "Greenchester",
+      "policy_start_date": "2021-01-10",
+      "police_report_number": null
+    },
+    "category": "motor_theft",
+    "acceptable_categories": [
+      "motor_theft"
+    ],
+    "route": "fraud_review",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Mohammed Anderson"
+    },
+    {
+      "kind": "address",
+      "value": "Studio 37, Hollie Hills, Wilsonmouth, GL8 0RX"
+    },
+    {
+      "kind": "phone",
+      "value": "(0306)9990953"
+    },
+    {
+      "kind": "email",
+      "value": "williamsben@example.com"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 85 53 69 T"
+    },
+    {
+      "kind": "vehicle_registration",
+      "value": "BJ85 PIX"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "case_id": "case_041",
+  "split": "holdout",
+  "hard": false,
+  "tags": [],
+  "layout": "email",
+  "pdf_file": "case_041.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-79684",
+      "policy_number": "HL/928489/UL",
+      "date_of_loss": "2026-08-02",
+      "claimant_role": "policyholder",
+      "amount_claimed": 17560.0,
+      "loss_description": "A pan of oil caught fire on the hob and the flames spread to the extractor hood. The garage roof and the contents stored inside were destroyed. The fire service attended and put the fire out.",
+      "location": "Jasmineview",
+      "policy_start_date": "2022-06-01",
+      "police_report_number": null
+    },
+    "category": "property_fire",
+    "acceptable_categories": [
+      "property_fire"
+    ],
+    "route": "standard_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Brenda Sharpe"
+    },
+    {
+      "kind": "address",
+      "value": "4 Bethany Tunnel, Flynnberg, HD71 2GX"
+    },
+    {
+      "kind": "phone",
+      "value": "+44116 496 0877"
+    },
+    {
+      "kind": "email",
+      "value": "cooperdonna@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ957592T"
+    }
+  ]
+}

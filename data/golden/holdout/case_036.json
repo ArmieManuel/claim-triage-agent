@@ -1,0 +1,53 @@
+{
+  "case_id": "case_036",
+  "split": "holdout",
+  "hard": false,
+  "tags": [],
+  "layout": "email",
+  "pdf_file": "case_036.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2025-83197",
+      "policy_number": "HL/901158/BF",
+      "date_of_loss": "2025-07-12",
+      "claimant_role": "third_party",
+      "amount_claimed": 30294.82,
+      "loss_description": "Water from your policyholder's flat leaked into my flat below and damaged my belongings. I needed hospital treatment and have ongoing physiotherapy. Witnesses saw the incident and have given their details.",
+      "location": "South Shannonside",
+      "policy_start_date": "2025-06-27",
+      "police_report_number": null
+    },
+    "category": "liability",
+    "acceptable_categories": [
+      "liability"
+    ],
+    "route": "fraud_review",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Antony Morris-Rahman"
+    },
+    {
+      "kind": "name",
+      "value": "Dr Ricky Lawrence"
+    },
+    {
+      "kind": "address",
+      "value": "196 Fox Shoal, Watersberg, IV40 0DY"
+    },
+    {
+      "kind": "phone",
+      "value": "+44(0)191 4960674"
+    },
+    {
+      "kind": "email",
+      "value": "ellie32@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ786994T"
+    }
+  ]
+}

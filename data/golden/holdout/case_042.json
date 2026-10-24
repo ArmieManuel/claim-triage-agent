@@ -1,0 +1,49 @@
+{
+  "case_id": "case_042",
+  "split": "holdout",
+  "hard": false,
+  "tags": [],
+  "layout": "form",
+  "pdf_file": "case_042.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2025-88028",
+      "policy_number": "NBM-7620-5569",
+      "date_of_loss": "2025-10-13",
+      "claimant_role": "policyholder",
+      "amount_claimed": 10641.54,
+      "loss_description": "My laptop was knocked off a table and the screen cracked. All frozen food had to be thrown away. Photos are available on request.",
+      "location": "Maryfurt",
+      "policy_start_date": "2022-11-11",
+      "police_report_number": null
+    },
+    "category": "other",
+    "acceptable_categories": [
+      "other"
+    ],
+    "route": "standard_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Joshua Patel-Ali"
+    },
+    {
+      "kind": "address",
+      "value": "Studio 72K, Sylvia Roads, South Justinview, L26 2DU"
+    },
+    {
+      "kind": "phone",
+      "value": "0121 4960521"
+    },
+    {
+      "kind": "email",
+      "value": "tomharrison@example.org"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ369040T"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "case_id": "case_002",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "letter",
+  "pdf_file": "case_002.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2025-87637",
+      "policy_number": "POL-26172602",
+      "date_of_loss": "2025-08-16",
+      "claimant_role": "representative",
+      "amount_claimed": 37451.54,
+      "loss_description": "An electrical fault in the garage consumer unit started a fire. The kitchen units and ceiling are smoke damaged and need replacing. We are staying with family until the smell of smoke is cleared.",
+      "location": "New Carly",
+      "policy_start_date": "2022-01-14",
+      "police_report_number": null
+    },
+    "category": "property_fire",
+    "acceptable_categories": [
+      "property_fire"
+    ],
+    "route": "senior_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Leonard Martin"
+    },
+    {
+      "kind": "name",
+      "value": "Katherine Turnbull"
+    },
+    {
+      "kind": "address",
+      "value": "Studio 11, Mitchell Avenue, Robinside, E8K 1NJ"
+    },
+    {
+      "kind": "phone",
+      "value": "0141 496 0563"
+    },
+    {
+      "kind": "email",
+      "value": "wdavies@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 533365 T"
+    }
+  ]
+}

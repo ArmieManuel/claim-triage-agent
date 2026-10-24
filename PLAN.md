@@ -108,10 +108,10 @@ Check each box only when the acceptance criteria are met and tests pass.
 - Acceptance: `pytest` runs (even with one trivial test), `ruff` and the formatter pass.
 
 ### Phase 1: Synthetic data and golden dataset (2 to 3 days)
-- [ ] Generator that produces claim PDFs from templates with fake data (use a fake-data library). Vary layout, wording and field order.
-- [ ] Include hard cases: missing fields, ambiguous category, two claims in one text, unusual date formats, very long descriptions.
-- [ ] For each PDF, write the expected JSON (fields, category, routing) as ground truth.
-- [ ] Produce 50 golden cases (about 10 hard ones), split into `dev` (for prompt tuning) and `holdout` (never tuned against).
+- [x] Generator that produces claim PDFs from templates with fake data (use a fake-data library). Vary layout, wording and field order.
+- [x] Include hard cases: missing fields, ambiguous category, two claims in one text, unusual date formats, very long descriptions.
+- [x] For each PDF, write the expected JSON (fields, category, routing) as ground truth.
+- [x] Produce 50 golden cases (about 10 hard ones), split into `dev` (for prompt tuning) and `holdout` (never tuned against).
 - Acceptance: tests confirm every PDF has a matching expected JSON that validates against the schema.
 
 ### Phase 2: Core nodes with TDD (3 to 4 days)

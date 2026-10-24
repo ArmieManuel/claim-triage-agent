@@ -1,0 +1,56 @@
+{
+  "case_id": "case_034",
+  "split": "holdout",
+  "hard": true,
+  "tags": [
+    "ambiguous_category"
+  ],
+  "layout": "form",
+  "pdf_file": "case_034.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2025-20019",
+      "policy_number": "POL-48717189",
+      "date_of_loss": "2025-11-10",
+      "claimant_role": "policyholder",
+      "amount_claimed": 10523.49,
+      "loss_description": "My BMW 1 Series was taken from my driveway overnight. The police found it the next morning two miles away, where it had been driven into a lamp post. The front of the car is badly damaged and the steering lock was forced.",
+      "location": "Rosemaryview",
+      "policy_start_date": "2022-01-23",
+      "police_report_number": "MP/43561/25"
+    },
+    "category": "motor_theft",
+    "acceptable_categories": [
+      "motor_theft",
+      "motor_collision"
+    ],
+    "route": "human_review",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Dr Glenn Johnson"
+    },
+    {
+      "kind": "address",
+      "value": "4 Mellor Stravenue, Port Edward, BL9 5JN"
+    },
+    {
+      "kind": "phone",
+      "value": "01164960927"
+    },
+    {
+      "kind": "email",
+      "value": "uwilliams@example.com"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 95 26 33 T"
+    },
+    {
+      "kind": "vehicle_registration",
+      "value": "HQ04EFR"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "case_id": "case_019",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "email",
+  "pdf_file": "case_019.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2025-72507",
+      "policy_number": "HL/206541/YT",
+      "date_of_loss": "2025-11-14",
+      "claimant_role": "policyholder",
+      "amount_claimed": 6871.69,
+      "loss_description": "My Kia Sportage was stolen overnight from the street outside my home. The car has not been found and the tracking service shows no signal. CCTV from a neighbour may show the vehicle being taken.",
+      "location": "Simontown",
+      "policy_start_date": "2020-07-30",
+      "police_report_number": "WY/10700/25"
+    },
+    "category": "motor_theft",
+    "acceptable_categories": [
+      "motor_theft"
+    ],
+    "route": "standard_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Dawn Morgan"
+    },
+    {
+      "kind": "address",
+      "value": "Studio 81P, Barnett Trafficway, New Douglas, HU7W 9GW"
+    },
+    {
+      "kind": "phone",
+      "value": "+44289018135"
+    },
+    {
+      "kind": "email",
+      "value": "qgreen@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ384973T"
+    },
+    {
+      "kind": "vehicle_registration",
+      "value": "IP77 QUU"
+    }
+  ]
+}

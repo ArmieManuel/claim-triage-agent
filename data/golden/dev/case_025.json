@@ -1,0 +1,53 @@
+{
+  "case_id": "case_025",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "email",
+  "pdf_file": "case_025.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2025-56999",
+      "policy_number": "NBM-8725-4082",
+      "date_of_loss": "2025-08-16",
+      "claimant_role": "third_party",
+      "amount_claimed": 55371.78,
+      "loss_description": "A customer slipped on a wet floor in the shop owned by your policyholder. I needed hospital treatment and have ongoing physiotherapy. A solicitor is advising me and medical reports are available.",
+      "location": "New Conor",
+      "policy_start_date": "2021-10-21",
+      "police_report_number": null
+    },
+    "category": "liability",
+    "acceptable_categories": [
+      "liability"
+    ],
+    "route": "senior_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Charlene Bibi"
+    },
+    {
+      "kind": "name",
+      "value": "Damian Kay"
+    },
+    {
+      "kind": "address",
+      "value": "Studio 0, Jessica Corners, Rebeccahaven, NR7N 2LY"
+    },
+    {
+      "kind": "phone",
+      "value": "+44(0)1614960377"
+    },
+    {
+      "kind": "email",
+      "value": "robert13@example.com"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ785112T"
+    }
+  ]
+}

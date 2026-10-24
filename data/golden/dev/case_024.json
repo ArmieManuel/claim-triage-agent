@@ -1,0 +1,49 @@
+{
+  "case_id": "case_024",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "email",
+  "pdf_file": "case_024.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2025-44975",
+      "policy_number": "POL-10173752",
+      "date_of_loss": "2025-09-25",
+      "claimant_role": "policyholder",
+      "amount_claimed": 839.79,
+      "loss_description": "Strong winds during a storm blew down the garden fence. All frozen food had to be thrown away. A local contractor has given a quote.",
+      "location": "East Robert",
+      "policy_start_date": "2024-05-07",
+      "police_report_number": null
+    },
+    "category": "other",
+    "acceptable_categories": [
+      "other"
+    ],
+    "route": "auto_process",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Stephanie Lyons"
+    },
+    {
+      "kind": "address",
+      "value": "Flat 04, Andrea Canyon, West Stewartbury, NG5N 3WD"
+    },
+    {
+      "kind": "phone",
+      "value": "0289018753"
+    },
+    {
+      "kind": "email",
+      "value": "baileycharles@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 41 00 91 T"
+    }
+  ]
+}

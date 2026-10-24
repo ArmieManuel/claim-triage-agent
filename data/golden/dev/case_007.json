@@ -1,0 +1,51 @@
+{
+  "case_id": "case_007",
+  "split": "dev",
+  "hard": true,
+  "tags": [
+    "missing_field"
+  ],
+  "layout": "form",
+  "pdf_file": "case_007.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2025-48870",
+      "policy_number": null,
+      "date_of_loss": "2025-06-11",
+      "claimant_role": "policyholder",
+      "amount_claimed": 7240.8,
+      "loss_description": "The water tank in the loft leaked and soaked the bedroom ceiling below. The ceiling plaster has collapsed in one corner and the flooring is ruined. I turned off the water at the stopcock and moved what I could.",
+      "location": "Lake Victorstad",
+      "policy_start_date": "2020-09-27",
+      "police_report_number": null
+    },
+    "category": "property_water",
+    "acceptable_categories": [
+      "property_water"
+    ],
+    "route": "human_review",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Keith Douglas"
+    },
+    {
+      "kind": "address",
+      "value": "Flat 05p, Smith Lodge, Lake Aaronhaven, PO6 6DW"
+    },
+    {
+      "kind": "phone",
+      "value": "+44(0)29 2018713"
+    },
+    {
+      "kind": "email",
+      "value": "graham24@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 50 52 94 T"
+    }
+  ]
+}

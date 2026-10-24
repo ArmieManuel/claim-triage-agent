@@ -1,0 +1,53 @@
+{
+  "case_id": "case_017",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "email",
+  "pdf_file": "case_017.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-70526",
+      "policy_number": "NBM-4074-3331",
+      "date_of_loss": "2026-05-04",
+      "claimant_role": "policyholder",
+      "amount_claimed": 82198.52,
+      "loss_description": "I was reversing out of a parking space when a van pulled out and hit the side of my Ford Focus. The bonnet, front bumper and radiator need replacing. Photos of the damage were taken at the scene and are available.",
+      "location": "West Reeceborough",
+      "policy_start_date": "2022-07-24",
+      "police_report_number": "WY/53711/26"
+    },
+    "category": "motor_collision",
+    "acceptable_categories": [
+      "motor_collision"
+    ],
+    "route": "senior_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Declan Saunders"
+    },
+    {
+      "kind": "address",
+      "value": "208 Howard Ports, Port Iainhaven, KT95 0XS"
+    },
+    {
+      "kind": "phone",
+      "value": "(028)9018252"
+    },
+    {
+      "kind": "email",
+      "value": "ystevens@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ807778T"
+    },
+    {
+      "kind": "vehicle_registration",
+      "value": "HG85 WCZ"
+    }
+  ]
+}

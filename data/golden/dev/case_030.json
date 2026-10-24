@@ -1,0 +1,56 @@
+{
+  "case_id": "case_030",
+  "split": "dev",
+  "hard": true,
+  "tags": [
+    "ambiguous_category"
+  ],
+  "layout": "letter",
+  "pdf_file": "case_030.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2025-79151",
+      "policy_number": "NBM-6597-4001",
+      "date_of_loss": "2025-12-12",
+      "claimant_role": "representative",
+      "amount_claimed": 12435.0,
+      "loss_description": "A pipe burst inside the kitchen wall overnight. The water ran down into the fuse board, which shorted and started an electrical fire. The fire damaged the kitchen ceiling and units, and the water ruined the flooring and the wall behind the cooker.",
+      "location": "Fostershire",
+      "policy_start_date": "2022-01-13",
+      "police_report_number": null
+    },
+    "category": "property_water",
+    "acceptable_categories": [
+      "property_water",
+      "property_fire"
+    ],
+    "route": "human_review",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Francis Hargreaves"
+    },
+    {
+      "kind": "name",
+      "value": "Paul Todd"
+    },
+    {
+      "kind": "address",
+      "value": "Flat 67, Christine Mountains, Robinsonville, N0G 0QE"
+    },
+    {
+      "kind": "phone",
+      "value": "03069990721"
+    },
+    {
+      "kind": "email",
+      "value": "brandon04@example.org"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ852152T"
+    }
+  ]
+}

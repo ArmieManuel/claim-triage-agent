@@ -1,0 +1,53 @@
+{
+  "case_id": "case_027",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "form",
+  "pdf_file": "case_027.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-78699",
+      "policy_number": "NBM-9436-2462",
+      "date_of_loss": "2026-08-30",
+      "claimant_role": "policyholder",
+      "amount_claimed": 73017.26,
+      "loss_description": "I parked my Vauxhall Corsa at the station car park in the morning and it was gone in the evening. The car has not been recovered. I reported the theft to the police the same day.",
+      "location": "South Leahhaven",
+      "policy_start_date": "2025-06-22",
+      "police_report_number": "TV/94527/26"
+    },
+    "category": "motor_theft",
+    "acceptable_categories": [
+      "motor_theft"
+    ],
+    "route": "senior_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Joseph Barry"
+    },
+    {
+      "kind": "address",
+      "value": "22 Walker Garden, Lake Ryanchester, S3D 9RY"
+    },
+    {
+      "kind": "phone",
+      "value": "0114 4960676"
+    },
+    {
+      "kind": "email",
+      "value": "joannaevans@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 24 76 93 T"
+    },
+    {
+      "kind": "vehicle_registration",
+      "value": "KS02 IBB"
+    }
+  ]
+}

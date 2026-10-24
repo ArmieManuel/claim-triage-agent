@@ -1,0 +1,49 @@
+{
+  "case_id": "case_003",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "form",
+  "pdf_file": "case_003.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-35036",
+      "policy_number": "POL-93310015",
+      "date_of_loss": "2026-01-22",
+      "claimant_role": "policyholder",
+      "amount_claimed": 20784.0,
+      "loss_description": "A pan of oil caught fire on the hob and the flames spread to the extractor hood. The kitchen units and ceiling are smoke damaged and need replacing. We are staying with family until the smell of smoke is cleared.",
+      "location": "Robertshaven",
+      "policy_start_date": "2021-01-16",
+      "police_report_number": null
+    },
+    "category": "property_fire",
+    "acceptable_categories": [
+      "property_fire"
+    ],
+    "route": "standard_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Deborah Murray"
+    },
+    {
+      "kind": "address",
+      "value": "3 Evans Forest, West Cherylview, DN42 4YU"
+    },
+    {
+      "kind": "phone",
+      "value": "(0115) 496 0449"
+    },
+    {
+      "kind": "email",
+      "value": "joshuaevans@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 459893 T"
+    }
+  ]
+}

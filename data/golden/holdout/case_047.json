@@ -1,0 +1,53 @@
+{
+  "case_id": "case_047",
+  "split": "holdout",
+  "hard": false,
+  "tags": [],
+  "layout": "form",
+  "pdf_file": "case_047.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-69758",
+      "policy_number": "NBM-1349-8751",
+      "date_of_loss": "2026-03-03",
+      "claimant_role": "policyholder",
+      "amount_claimed": 21009.43,
+      "loss_description": "My Ford Focus was stolen overnight from the street outside my home. The car has not been found and the tracking service shows no signal. I still have both sets of keys apart from the stolen one.",
+      "location": "Robsonport",
+      "policy_start_date": "2021-06-22",
+      "police_report_number": "TV/50172/26"
+    },
+    "category": "motor_theft",
+    "acceptable_categories": [
+      "motor_theft"
+    ],
+    "route": "standard_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Dr Julian Curtis"
+    },
+    {
+      "kind": "address",
+      "value": "Flat 3, McLean Ville, Brownborough, L3F 4JY"
+    },
+    {
+      "kind": "phone",
+      "value": "+44(0)306 999 0010"
+    },
+    {
+      "kind": "email",
+      "value": "aclark@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ345311T"
+    },
+    {
+      "kind": "vehicle_registration",
+      "value": "JV96MSX"
+    }
+  ]
+}

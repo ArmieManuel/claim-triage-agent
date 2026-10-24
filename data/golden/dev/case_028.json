@@ -1,0 +1,53 @@
+{
+  "case_id": "case_028",
+  "split": "dev",
+  "hard": false,
+  "tags": [],
+  "layout": "email",
+  "pdf_file": "case_028.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2025-59427",
+      "policy_number": "HL/129354/LN",
+      "date_of_loss": "2025-07-26",
+      "claimant_role": "third_party",
+      "amount_claimed": 20755.57,
+      "loss_description": "A roof tile fell from your policyholder's house and struck my parked car. My property was damaged and I have repair quotes. A solicitor is advising me and medical reports are available.",
+      "location": "Lake Andrewbury",
+      "policy_start_date": "2021-05-27",
+      "police_report_number": null
+    },
+    "category": "liability",
+    "acceptable_categories": [
+      "liability"
+    ],
+    "route": "senior_handler",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Caroline Patel-Rose"
+    },
+    {
+      "kind": "name",
+      "value": "Mrs Kate White"
+    },
+    {
+      "kind": "address",
+      "value": "873 Roberts Drive, Smartstad, SR4 4XP"
+    },
+    {
+      "kind": "phone",
+      "value": "0117 4960401"
+    },
+    {
+      "kind": "email",
+      "value": "carl93@example.net"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ001407T"
+    }
+  ]
+}

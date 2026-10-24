@@ -1,0 +1,53 @@
+{
+  "case_id": "case_040",
+  "split": "holdout",
+  "hard": false,
+  "tags": [],
+  "layout": "letter",
+  "pdf_file": "case_040.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2026-51573",
+      "policy_number": "NBM-7933-9128",
+      "date_of_loss": "2026-07-05",
+      "claimant_role": "policyholder",
+      "amount_claimed": 9706.1,
+      "loss_description": "I parked my BMW 1 Series at the station car park in the morning and it was gone in the evening. The car has not been recovered. I still have both sets of keys apart from the stolen one.",
+      "location": "Port Lukemouth",
+      "policy_start_date": "2026-06-30",
+      "police_report_number": "WY/70292/26"
+    },
+    "category": "motor_theft",
+    "acceptable_categories": [
+      "motor_theft"
+    ],
+    "route": "fraud_review",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Rosemary Forster"
+    },
+    {
+      "kind": "address",
+      "value": "Studio 67J, Holt Drives, Bellfurt, N2 8ND"
+    },
+    {
+      "kind": "phone",
+      "value": "+44(0)117 4960212"
+    },
+    {
+      "kind": "email",
+      "value": "churst@example.org"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 57 13 97 T"
+    },
+    {
+      "kind": "vehicle_registration",
+      "value": "EN16 HXO"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "case_id": "case_033",
+  "split": "holdout",
+  "hard": true,
+  "tags": [
+    "missing_field"
+  ],
+  "layout": "email",
+  "pdf_file": "case_033.pdf",
+  "expected": {
+    "fields": {
+      "claim_number": "CLM-2025-35166",
+      "policy_number": "POL-28199031",
+      "date_of_loss": null,
+      "claimant_role": "policyholder",
+      "amount_claimed": 3603.86,
+      "loss_description": "I am not sure exactly when this happened as we were away, but I noticed it when we got back. Strong winds during a storm blew down the garden fence. Six fence panels and two posts need replacing. I have the receipts for the items involved.",
+      "location": "Mahmoodbury",
+      "policy_start_date": "2023-01-08",
+      "police_report_number": null
+    },
+    "category": "other",
+    "acceptable_categories": [
+      "other"
+    ],
+    "route": "human_review",
+    "multiple_claims": false
+  },
+  "pii": [
+    {
+      "kind": "name",
+      "value": "Amy Porter"
+    },
+    {
+      "kind": "address",
+      "value": "5 Philip Isle, Stokesshire, OX89 7XD"
+    },
+    {
+      "kind": "phone",
+      "value": "+44(0)28 9018255"
+    },
+    {
+      "kind": "email",
+      "value": "wendyhancock@example.org"
+    },
+    {
+      "kind": "ni_number",
+      "value": "ZZ 082943 T"
+    }
+  ]
+}
