@@ -4,18 +4,19 @@
   "hard": false,
   "tags": [],
   "layout": "email",
+  "country": "DE",
   "pdf_file": "case_019.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2025-72507",
-      "policy_number": "HL/206541/YT",
+      "claim_number": "CLM-2025-44144",
+      "policy_number": "AL/626713/RY",
       "date_of_loss": "2025-11-14",
       "claimant_role": "policyholder",
-      "amount_claimed": 6871.69,
-      "loss_description": "My Kia Sportage was stolen overnight from the street outside my home. The car has not been found and the tracking service shows no signal. CCTV from a neighbour may show the vehicle being taken.",
-      "location": "Simontown",
+      "amount_claimed": 2714.0,
+      "loss_description": "My Renault Clio was stolen overnight from the street outside my home. Personal belongings, including a child seat, were inside the car. CCTV from a neighbour may show the vehicle being taken.",
+      "location": "Hamburg",
       "policy_start_date": "2020-07-30",
-      "police_report_number": "WY/10700/25"
+      "police_report_number": "DE/15335/25"
     },
     "category": "motor_theft",
     "acceptable_categories": [
@@ -27,27 +28,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Dawn Morgan"
+      "value": "Vesna Benthin"
     },
     {
       "kind": "address",
-      "value": "Studio 81P, Barnett Trafficway, New Douglas, HU7W 9GW"
+      "value": "Heßstraße 68-11, 83945 Regensburg"
     },
     {
       "kind": "phone",
-      "value": "+44289018135"
+      "value": "09281357146"
     },
     {
       "kind": "email",
-      "value": "qgreen@example.net"
+      "value": "inarogge@example.com"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ384973T"
+      "kind": "national_id",
+      "value": "16839457959"
     },
     {
       "kind": "vehicle_registration",
-      "value": "IP77 QUU"
+      "value": "SB-H-488"
     }
   ]
 }

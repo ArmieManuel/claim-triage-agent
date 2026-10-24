@@ -5,19 +5,38 @@ from datetime import date
 
 from triage.schemas import Category
 
-INSURERS = ("Harbour Lane Insurance", "Northbridge Mutual", "Kestrel General")
+INSURERS = ("Alpenland Insurance", "Adria Mutual", "Danubia General")
 CARS = (
-    "Ford Focus",
-    "Vauxhall Corsa",
     "Volkswagen Golf",
-    "Toyota Yaris",
-    "Nissan Qashqai",
-    "Kia Sportage",
-    "BMW 1 Series",
+    "Fiat Panda",
+    "Opel Corsa",
+    "BMW 3 Series",
     "Skoda Octavia",
+    "Renault Clio",
+    "Audi A4",
+    "Toyota Yaris",
 )
 
-NORMAL_DATE_STYLES = ("dmy_slash", "long", "iso", "month_first")
+# Claimants come from euro countries; documents stay in English (PLAN.md scope).
+FAKER_LOCALES = {"DE": "de_DE", "IT": "it_IT", "AT": "de_AT"}
+# country -> (form labels, name used in a sentence)
+NATIONAL_IDS = {
+    "DE": (("Tax ID (Steuer-ID)", "Steuer-ID", "Tax identification no."), "German tax ID"),
+    "IT": (("Codice fiscale", "Tax code", "Fiscal code"), "codice fiscale"),
+    "AT": (
+        ("Social insurance no. (SV-Nr.)", "SV number", "Social security no."),
+        "Austrian social insurance number",
+    ),
+}
+# Location of loss. A fixed list, because Faker's it_IT city() is not stable across processes.
+CITIES = {
+    "DE": ("Munich", "Hamburg", "Cologne", "Leipzig", "Stuttgart", "Dresden", "Bremen", "Freiburg"),
+    "IT": ("Bologna", "Turin", "Verona", "Florence", "Bari", "Padua", "Genoa", "Trieste"),
+    "AT": ("Graz", "Linz", "Salzburg", "Innsbruck", "Klagenfurt", "Villach", "Wels", "Bregenz"),
+}
+CURRENCY_WORDS = {"EUR": ("€", "EUR", "euros"), "GBP": ("£", "GBP", "pounds")}
+
+NORMAL_DATE_STYLES = ("dmy_slash", "dmy_dot", "long", "iso", "month_first")
 
 
 def ordinal(day: int) -> str:
@@ -47,6 +66,8 @@ def format_date(d: date, style: str) -> str:
     month = MONTHS[d.month - 1]
     if style == "dmy_slash":
         return f"{d.day:02d}/{d.month:02d}/{d.year}"
+    if style == "dmy_dot":
+        return f"{d.day:02d}.{d.month:02d}.{d.year}"
     if style == "long":
         return f"{d.day} {month} {d.year}"
     if style == "iso":
@@ -60,11 +81,11 @@ def format_date(d: date, style: str) -> str:
     raise ValueError(f"unknown date style {style}")
 
 
-def format_amount(amount: float, rng: random.Random) -> str:
-    whole = amount == int(amount)
-    styles = ["£{:,.2f}", "GBP {:.2f}", "{:,.2f} pounds"]
-    if whole:
-        styles.append("£{:,.0f}")
+def format_amount(amount: float, rng: random.Random, currency: str) -> str:
+    symbol, code, word = CURRENCY_WORDS[currency]
+    styles = [symbol + "{:,.2f}", code + " {:.2f}", "{:,.2f} " + word]
+    if amount == int(amount):
+        styles.append(symbol + "{:,.0f}")
     return rng.choice(styles).format(amount)
 
 
@@ -81,7 +102,6 @@ LABELS = {
     "address": ("Address", "Correspondence address", "Home address"),
     "phone": ("Telephone", "Phone", "Contact number"),
     "email": ("Email", "Email address", "E-mail"),
-    "ni_number": ("National Insurance no.", "NI number", "NINO"),
     "vehicle_registration": ("Vehicle registration", "Reg. number", "Vehicle reg"),
 }
 

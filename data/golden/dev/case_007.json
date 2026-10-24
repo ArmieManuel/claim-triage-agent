@@ -6,6 +6,7 @@
     "missing_field"
   ],
   "layout": "form",
+  "country": "DE",
   "pdf_file": "case_007.pdf",
   "expected": {
     "fields": {
@@ -13,9 +14,9 @@
       "policy_number": null,
       "date_of_loss": "2025-06-11",
       "claimant_role": "policyholder",
-      "amount_claimed": 7240.8,
-      "loss_description": "The water tank in the loft leaked and soaked the bedroom ceiling below. The ceiling plaster has collapsed in one corner and the flooring is ruined. I turned off the water at the stopcock and moved what I could.",
-      "location": "Lake Victorstad",
+      "amount_claimed": 5714.0,
+      "loss_description": "A pipe under the bathroom floor burst and water came through the kitchen ceiling. The wall needs drying out and replastering, and a sofa was soaked. I turned off the water at the stopcock and moved what I could.",
+      "location": "Leipzig",
       "policy_start_date": "2020-09-27",
       "police_report_number": null
     },
@@ -29,23 +30,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Keith Douglas"
+      "value": "Pawel Junk"
     },
     {
       "kind": "address",
-      "value": "Flat 05p, Smith Lodge, Lake Aaronhaven, PO6 6DW"
+      "value": "Sigurd-Wulf-Allee 5/5, 53973 Bad Liebenwerda"
     },
     {
       "kind": "phone",
-      "value": "+44(0)29 2018713"
+      "value": "(02849) 61618"
     },
     {
       "kind": "email",
-      "value": "graham24@example.net"
+      "value": "hstoll@example.org"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 50 52 94 T"
+      "kind": "national_id",
+      "value": "49602849616"
     }
   ]
 }

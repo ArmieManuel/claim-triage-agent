@@ -6,18 +6,19 @@
     "ambiguous_category"
   ],
   "layout": "form",
+  "country": "DE",
   "pdf_file": "case_034.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2025-20019",
-      "policy_number": "POL-48717189",
+      "claim_number": "CLM-2025-43561",
+      "policy_number": "DG-1584-2252",
       "date_of_loss": "2025-11-10",
       "claimant_role": "policyholder",
-      "amount_claimed": 10523.49,
-      "loss_description": "My BMW 1 Series was taken from my driveway overnight. The police found it the next morning two miles away, where it had been driven into a lamp post. The front of the car is badly damaged and the steering lock was forced.",
-      "location": "Rosemaryview",
+      "amount_claimed": 9591.67,
+      "loss_description": "My Skoda Octavia was taken from my driveway overnight. The police found it the next morning two miles away, where it had been driven into a lamp post. The front of the car is badly damaged and the steering lock was forced.",
+      "location": "Leipzig",
       "policy_start_date": "2022-01-23",
-      "police_report_number": "MP/43561/25"
+      "police_report_number": "DE/89857/25"
     },
     "category": "motor_theft",
     "acceptable_categories": [
@@ -30,27 +31,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Dr Glenn Johnson"
+      "value": "Leopoldine Schlosser"
     },
     {
       "kind": "address",
-      "value": "4 Mellor Stravenue, Port Edward, BL9 5JN"
+      "value": "Cornelius-Hein-Allee 7/8, 24095 Torgau"
     },
     {
       "kind": "phone",
-      "value": "01164960927"
+      "value": "+49(0) 429276737"
     },
     {
       "kind": "email",
-      "value": "uwilliams@example.com"
+      "value": "auch-schlauchinmohammed@example.org"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 95 26 33 T"
+      "kind": "national_id",
+      "value": "79722409553"
     },
     {
       "kind": "vehicle_registration",
-      "value": "HQ04EFR"
+      "value": "MEI-RB-44"
     }
   ]
 }

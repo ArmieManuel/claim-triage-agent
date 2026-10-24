@@ -4,18 +4,19 @@
   "hard": false,
   "tags": [],
   "layout": "form",
+  "country": "DE",
   "pdf_file": "case_046.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2025-13164",
-      "policy_number": "NBM-2520-2679",
+      "claim_number": "CLM-2025-97615",
+      "policy_number": "DG-1395-9948",
       "date_of_loss": "2025-11-27",
       "claimant_role": "policyholder",
-      "amount_claimed": 19631.11,
-      "loss_description": "A driver ran a red light at a junction and struck the front of my Toyota Yaris. The bonnet, front bumper and radiator need replacing. Details were exchanged with the other driver at the scene.",
-      "location": "Camerontown",
+      "amount_claimed": 14127.0,
+      "loss_description": "While I was queueing at a roundabout, another car drove into the back of my Fiat Panda. The front wheel and suspension arm are bent and the car cannot be driven. Details were exchanged with the other driver at the scene.",
+      "location": "Hamburg",
       "policy_start_date": "2024-01-03",
-      "police_report_number": "WY/29504/25"
+      "police_report_number": "DE/13242/25"
     },
     "category": "motor_collision",
     "acceptable_categories": [
@@ -27,27 +28,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Shannon Powell"
+      "value": "Eileen Barth"
     },
     {
       "kind": "address",
-      "value": "113 Curtis Roads, Marcbury, SK3 3BS"
+      "value": "Dorothea-Staude-Allee 8, 13848 Finsterwalde"
     },
     {
       "kind": "phone",
-      "value": "(0117) 496 0687"
+      "value": "+49(0) 534306368"
     },
     {
       "kind": "email",
-      "value": "wtaylor@example.net"
+      "value": "wmeister@example.net"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 14 64 99 T"
+      "kind": "national_id",
+      "value": "48485335343"
     },
     {
       "kind": "vehicle_registration",
-      "value": "BV27 MPU"
+      "value": "DE-VM-55"
     }
   ]
 }

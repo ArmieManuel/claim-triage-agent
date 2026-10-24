@@ -1,6 +1,6 @@
 # Golden dataset
 
-50 synthetic claim PDFs, each with an expected JSON file (`GoldenCase` in `src/triage/schemas.py`). Every person, address, phone number, email, NI number, vehicle registration and insurer is fake. Each PDF carries a "SYNTHETIC TEST DOCUMENT" footer.
+50 synthetic claim PDFs, each with an expected JSON file (`GoldenCase` in `src/triage/schemas.py`). Claimants come from Germany, Italy and Austria (about a third each), amounts are in euros, and the documents are written in English. Every person, address, phone number, email, national ID (German tax ID, Italian codice fiscale, Austrian social insurance number), vehicle registration and insurer is fake. Each PDF carries a "SYNTHETIC TEST DOCUMENT" footer.
 
 | Split | Cases | Hard cases | Use |
 |---|---|---|---|
@@ -14,12 +14,12 @@
 - `expected.route`: the target queue under [docs/routing_policy.md](../../docs/routing_policy.md).
 - `expected.multiple_claims`: true when one document holds two claims.
 - `pii`: every personal value planted in the PDF, used to test redaction.
-- `tags`, `layout` and `hard` for slicing evaluation results.
+- `tags`, `layout`, `country` and `hard` for slicing evaluation results.
 
 ## Variation
 
 - Layouts: claim form (tables in shuffled order), letter, and printed email.
-- Labels, role wording, amount formats and date formats vary per case.
+- Labels, role wording, amount formats (€, EUR, euros) and date formats (including 03.03.2026) vary per case.
 - Normal cases cover all six categories and four queues (auto, standard, senior, fraud).
 - Hard cases: missing policy number, amount or date; ambiguous category (water or fire, theft or collision); two claims in one email; unusual date formats; and two long descriptions (about 2,400 and 3,300 words), one with the amount stated only inside the narrative.
 

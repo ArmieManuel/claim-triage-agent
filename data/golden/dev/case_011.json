@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "letter",
+  "country": "IT",
   "pdf_file": "case_011.pdf",
   "expected": {
     "fields": {
       "claim_number": "CLM-2026-54956",
-      "policy_number": "HL/898548/TH",
+      "policy_number": "AL/898548/TH",
       "date_of_loss": "2026-06-29",
-      "claimant_role": "policyholder",
-      "amount_claimed": 10915.28,
-      "loss_description": "My Skoda Octavia was stolen overnight from the street outside my home. Personal belongings, including a child seat, were inside the car. I still have both sets of keys apart from the stolen one.",
-      "location": "Greenchester",
+      "claimant_role": "representative",
+      "amount_claimed": 6446.74,
+      "loss_description": "Thieves broke into my house, took the keys and drove away in my BMW 3 Series. The car has not been found and the tracking service shows no signal. CCTV from a neighbour may show the vehicle being taken.",
+      "location": "Trieste",
       "policy_start_date": "2021-01-10",
       "police_report_number": null
     },
@@ -27,27 +28,31 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Mohammed Anderson"
+      "value": "Beatrice Gabba"
+    },
+    {
+      "kind": "name",
+      "value": "Rosaria Montecchi"
     },
     {
       "kind": "address",
-      "value": "Studio 37, Hollie Hills, Wilsonmouth, GL8 0RX"
+      "value": "Viale Gino, 7 Piano 4, 21037, Lavena Ponte Tresa (VA)"
     },
     {
       "kind": "phone",
-      "value": "(0306)9990953"
+      "value": "+39 0718953988"
     },
     {
       "kind": "email",
-      "value": "williamsben@example.com"
+      "value": "piersanticimarosa@example.net"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 85 53 69 T"
+      "kind": "national_id",
+      "value": "MSCGMR51R42M153H"
     },
     {
       "kind": "vehicle_registration",
-      "value": "BJ85 PIX"
+      "value": "JP853IX"
     }
   ]
 }

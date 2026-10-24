@@ -6,18 +6,19 @@
     "unusual_date"
   ],
   "layout": "letter",
+  "country": "IT",
   "pdf_file": "case_026.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-35921",
-      "policy_number": "POL-49768508",
+      "claim_number": "CLM-2026-61193",
+      "policy_number": "POL-36543551",
       "date_of_loss": "2026-06-17",
       "claimant_role": "policyholder",
-      "amount_claimed": 10969.64,
-      "loss_description": "While I was queueing at a roundabout, another car drove into the back of my Vauxhall Corsa. The front wheel and suspension arm are bent and the car cannot be driven. Photos of the damage were taken at the scene and are available.",
-      "location": "Kimberleyville",
+      "amount_claimed": 4738.35,
+      "loss_description": "While I was queueing at a roundabout, another car drove into the back of my Skoda Octavia. The rear bumper, boot lid and one light cluster are damaged. Photos of the damage were taken at the scene and are available.",
+      "location": "Bologna",
       "policy_start_date": "2022-05-28",
-      "police_report_number": "MP/86094/26"
+      "police_report_number": null
     },
     "category": "motor_collision",
     "acceptable_categories": [
@@ -29,27 +30,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Lynn Edwards"
+      "value": "Sig.ra Vittoria Calgari"
     },
     {
       "kind": "address",
-      "value": "0 Webb Port, Graymouth, WN23 0ZY"
+      "value": "Strada Ficino, 4 Piano 7, 90042, Borgetto (PA)"
     },
     {
       "kind": "phone",
-      "value": "(0116)4960622"
+      "value": "+39 014109926"
     },
     {
       "kind": "email",
-      "value": "pricejoel@example.net"
+      "value": "salvinidamiano@example.com"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 994401 T"
+      "kind": "national_id",
+      "value": "MRTGNL15E52I822O"
     },
     {
       "kind": "vehicle_registration",
-      "value": "LP41QZY"
+      "value": "QZ191YI"
     }
   ]
 }

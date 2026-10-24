@@ -4,18 +4,19 @@
   "hard": false,
   "tags": [],
   "layout": "email",
+  "country": "IT",
   "pdf_file": "case_017.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-70526",
-      "policy_number": "NBM-4074-3331",
+      "claim_number": "CLM-2026-51458",
+      "policy_number": "DG-8565-4074",
       "date_of_loss": "2026-05-04",
       "claimant_role": "policyholder",
-      "amount_claimed": 82198.52,
-      "loss_description": "I was reversing out of a parking space when a van pulled out and hit the side of my Ford Focus. The bonnet, front bumper and radiator need replacing. Photos of the damage were taken at the scene and are available.",
-      "location": "West Reeceborough",
+      "amount_claimed": 43880.24,
+      "loss_description": "I was reversing out of a parking space when a van pulled out and hit the side of my Volkswagen Golf. The bonnet, front bumper and radiator need replacing. Photos of the damage were taken at the scene and are available.",
+      "location": "Verona",
       "policy_start_date": "2022-07-24",
-      "police_report_number": "WY/53711/26"
+      "police_report_number": "IT/19295/26"
     },
     "category": "motor_collision",
     "acceptable_categories": [
@@ -27,27 +28,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Declan Saunders"
+      "value": "Priscilla Bondumier-Montecchi"
     },
     {
       "kind": "address",
-      "value": "208 Howard Ports, Port Iainhaven, KT95 0XS"
+      "value": "Viale Farina, 10, 60015, Falconara Marittima (AN)"
     },
     {
       "kind": "phone",
-      "value": "(028)9018252"
+      "value": "0759510862"
     },
     {
       "kind": "email",
-      "value": "ystevens@example.net"
+      "value": "zgaggini@example.com"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ807778T"
+      "kind": "national_id",
+      "value": "VNTLSS61M69F148L"
     },
     {
       "kind": "vehicle_registration",
-      "value": "HG85 WCZ"
+      "value": "HG858WC"
     }
   ]
 }

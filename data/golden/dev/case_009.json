@@ -4,18 +4,19 @@
   "hard": false,
   "tags": [],
   "layout": "letter",
+  "country": "AT",
   "pdf_file": "case_009.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-59369",
-      "policy_number": "HL/770802/MJ",
+      "claim_number": "CLM-2026-61467",
+      "policy_number": "AL/998067/KM",
       "date_of_loss": "2026-06-23",
       "claimant_role": "policyholder",
-      "amount_claimed": 27638.78,
-      "loss_description": "A driver ran a red light at a junction and struck the front of my Ford Focus. The front wheel and suspension arm are bent and the car cannot be driven. Photos of the damage were taken at the scene and are available.",
-      "location": "Guyville",
+      "amount_claimed": 16776.93,
+      "loss_description": "A driver ran a red light at a junction and struck the front of my Volkswagen Golf. The front wheel and suspension arm are bent and the car cannot be driven. Photos of the damage were taken at the scene and are available.",
+      "location": "Klagenfurt",
       "policy_start_date": "2026-06-10",
-      "police_report_number": "MP/24348/26"
+      "police_report_number": "AT/51332/26"
     },
     "category": "motor_collision",
     "acceptable_categories": [
@@ -27,27 +28,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Joanna King"
+      "value": "Ing. Boris Hahn"
     },
     {
       "kind": "address",
-      "value": "Studio 6, Hyde Harbor, West Abigailhaven, SK7 0UT"
+      "value": "Krausstraße 5, 5057 Weitra"
     },
     {
       "kind": "phone",
-      "value": "0191 498 0636"
+      "value": "02907 78636 665"
     },
     {
       "kind": "email",
-      "value": "dcooper@example.net"
+      "value": "neuholdlinnea@example.com"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ654307T"
+      "kind": "national_id",
+      "value": "1432250892"
     },
     {
       "kind": "vehicle_registration",
-      "value": "NI80 HHT"
+      "value": "VO-7 IHH"
     }
   ]
 }

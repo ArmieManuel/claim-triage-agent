@@ -6,16 +6,17 @@
     "multiple_claims"
   ],
   "layout": "email",
+  "country": "AT",
   "pdf_file": "case_018.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-59963",
-      "policy_number": "HL/414825/SN",
+      "claim_number": "CLM-2026-15348",
+      "policy_number": "AL/559074/PN",
       "date_of_loss": "2026-09-03",
       "claimant_role": "policyholder",
-      "amount_claimed": 8678.0,
-      "loss_description": "The water tank in the loft leaked and soaked the bedroom ceiling below. Skirting boards, a carpet and the lower kitchen units are water damaged. A plumber stopped the leak the same day and has invoiced for the call out.",
-      "location": "Clarkton",
+      "amount_claimed": 9273.0,
+      "loss_description": "Heavy rain overflowed a blocked gutter and water ran down the inside of the back wall. The wall needs drying out and replastering, and a sofa was soaked. I turned off the water at the stopcock and moved what I could.",
+      "location": "Bregenz",
       "policy_start_date": "2023-01-11",
       "police_report_number": null
     },
@@ -29,23 +30,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Dr Janice Williams"
+      "value": "Therese Pöschl"
     },
     {
       "kind": "address",
-      "value": "Studio 92, Williams Land, Baxterside, E70 2GU"
+      "value": "Katharina-Lehner-Straße 7/6, 5892 Mureck"
     },
     {
       "kind": "phone",
-      "value": "+44(0)292018962"
+      "value": "+43 5276 98317 022"
     },
     {
       "kind": "email",
-      "value": "mandyallen@example.net"
+      "value": "nikolaschmid@example.net"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ531135T"
+      "kind": "national_id",
+      "value": "9239081296"
     }
   ]
 }

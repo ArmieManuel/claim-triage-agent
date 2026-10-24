@@ -4,18 +4,19 @@
   "hard": false,
   "tags": [],
   "layout": "email",
+  "country": "DE",
   "pdf_file": "case_016.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-91026",
-      "policy_number": "POL-35501797",
+      "claim_number": "CLM-2026-23542",
+      "policy_number": "DG-3215-4113",
       "date_of_loss": "2026-08-13",
       "claimant_role": "policyholder",
-      "amount_claimed": 18444.84,
-      "loss_description": "A driver ran a red light at a junction and struck the front of my Toyota Yaris. The rear bumper, boot lid and one light cluster are damaged. Details were exchanged with the other driver at the scene.",
-      "location": "Hydebury",
+      "amount_claimed": 7592.84,
+      "loss_description": "A driver ran a red light at a junction and struck the front of my Renault Clio. The front wheel and suspension arm are bent and the car cannot be driven. Details were exchanged with the other driver at the scene.",
+      "location": "Leipzig",
       "policy_start_date": "2021-10-09",
-      "police_report_number": null
+      "police_report_number": "DE/75029/26"
     },
     "category": "motor_collision",
     "acceptable_categories": [
@@ -27,27 +28,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Tom Lowe-Morgan"
+      "value": "Ing. Luzie Heintze B.Sc."
     },
     {
       "kind": "address",
-      "value": "5 Gareth Hills, Ianstad, TR4 5PX"
+      "value": "Ines-Trapp-Ring 2, 85055 Dresden"
     },
     {
       "kind": "phone",
-      "value": "+44(0)20 74960862"
+      "value": "05898622767"
     },
     {
       "kind": "email",
-      "value": "carolinewilliams@example.org"
+      "value": "schenkalbina@example.com"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 752426 T"
+      "kind": "national_id",
+      "value": "12485055425"
     },
     {
       "kind": "vehicle_registration",
-      "value": "PI18AUN"
+      "value": "ES-U-375"
     }
   ]
 }

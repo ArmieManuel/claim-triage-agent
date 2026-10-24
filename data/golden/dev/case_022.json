@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "form",
+  "country": "DE",
   "pdf_file": "case_022.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2025-65037",
-      "policy_number": "POL-42893328",
+      "claim_number": "CLM-2025-54775",
+      "policy_number": "AL/829508/AH",
       "date_of_loss": "2025-07-10",
       "claimant_role": "policyholder",
-      "amount_claimed": 968.0,
-      "loss_description": "A power cut lasting two days spoiled the contents of our freezer. The screen and the hinge are broken and the laptop does not turn on. A local contractor has given a quote.",
-      "location": "West Alexandermouth",
+      "amount_claimed": 897.48,
+      "loss_description": "My bicycle was damaged when a gate fell on it in high wind. The screen and the hinge are broken and the laptop does not turn on. Photos are available on request.",
+      "location": "Hamburg",
       "policy_start_date": "2023-02-25",
       "police_report_number": null
     },
@@ -27,23 +28,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Dr Lesley Cook"
+      "value": "Gotthold Bloch"
     },
     {
       "kind": "address",
-      "value": "156 Denis Place, Bellshire, L29 4RG"
+      "value": "Henkring 1-4, 56358 Steinfurt"
     },
     {
       "kind": "phone",
-      "value": "(0116)4960271"
+      "value": "(02329) 646222"
     },
     {
       "kind": "email",
-      "value": "carl58@example.net"
+      "value": "nbolnbach@example.com"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 183451 T"
+      "kind": "national_id",
+      "value": "73589979232"
     }
   ]
 }

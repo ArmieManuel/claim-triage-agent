@@ -4,18 +4,19 @@
   "hard": false,
   "tags": [],
   "layout": "form",
+  "country": "IT",
   "pdf_file": "case_050.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2025-17762",
-      "policy_number": "HL/666585/XB",
+      "claim_number": "CLM-2025-97521",
+      "policy_number": "DG-1970-8877",
       "date_of_loss": "2025-06-01",
       "claimant_role": "policyholder",
-      "amount_claimed": 10297.52,
-      "loss_description": "I was reversing out of a parking space when a van pulled out and hit the side of my Vauxhall Corsa. The rear bumper, boot lid and one light cluster are damaged. The car was recovered to a local garage, which has quoted for the repair.",
-      "location": "East Emmaport",
+      "amount_claimed": 17014.0,
+      "loss_description": "I was reversing out of a parking space when a van pulled out and hit the side of my Fiat Panda. The rear bumper, boot lid and one light cluster are damaged. The car was recovered to a local garage, which has quoted for the repair.",
+      "location": "Bologna",
       "policy_start_date": "2023-09-02",
-      "police_report_number": "TV/49864/25"
+      "police_report_number": "IT/60522/25"
     },
     "category": "motor_collision",
     "acceptable_categories": [
@@ -27,27 +28,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Hazel Evans"
+      "value": "Giampaolo Pavarotti"
     },
     {
       "kind": "address",
-      "value": "Studio 08g, Julia Street, South Hilaryborough, E67 9JQ"
+      "value": "Strada Bianchi, 0, 05029, San Gemini (TR)"
     },
     {
       "kind": "phone",
-      "value": "(0121) 4960651"
+      "value": "3313316799"
     },
     {
       "kind": "email",
-      "value": "deniserussell@example.org"
+      "value": "leonardo65@example.net"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 00 05 47 T"
+      "kind": "national_id",
+      "value": "GRNMNC99C03A315T"
     },
     {
       "kind": "vehicle_registration",
-      "value": "LT18 VOQ"
+      "value": "AK735JY"
     }
   ]
 }

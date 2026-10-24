@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "form",
+  "country": "AT",
   "pdf_file": "case_042.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2025-88028",
-      "policy_number": "NBM-7620-5569",
+      "claim_number": "CLM-2025-64006",
+      "policy_number": "POL-89901133",
       "date_of_loss": "2025-10-13",
       "claimant_role": "policyholder",
-      "amount_claimed": 10641.54,
-      "loss_description": "My laptop was knocked off a table and the screen cracked. All frozen food had to be thrown away. Photos are available on request.",
-      "location": "Maryfurt",
+      "amount_claimed": 17552.06,
+      "loss_description": "My bicycle was damaged when a gate fell on it in high wind. All frozen food had to be thrown away. A local contractor has given a quote.",
+      "location": "Wels",
       "policy_start_date": "2022-11-11",
       "police_report_number": null
     },
@@ -27,23 +28,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Joshua Patel-Ali"
+      "value": "Justus Weidinger-Schiller"
     },
     {
       "kind": "address",
-      "value": "Studio 72K, Sylvia Roads, South Justinview, L26 2DU"
+      "value": "Probststraße 964, 8299 Vöcklabruck"
     },
     {
       "kind": "phone",
-      "value": "0121 4960521"
+      "value": "0512/62423262"
     },
     {
       "kind": "email",
-      "value": "tomharrison@example.org"
+      "value": "florianmaurer@example.com"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ369040T"
+      "kind": "national_id",
+      "value": "1252110315"
     }
   ]
 }

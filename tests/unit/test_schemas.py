@@ -36,9 +36,13 @@ def golden(expected, **overrides):
         "hard": False,
         "tags": [],
         "layout": "form",
+        "country": "DE",
         "pdf_file": "case_001.pdf",
         "expected": expected,
-        "pii": [PiiItem(kind="name", value="Ruth Baker")],
+        "pii": [
+            PiiItem(kind="name", value="Natalia Klemt"),
+            PiiItem(kind="national_id", value="12345678901"),
+        ],
     }
     values.update(overrides)
     return GoldenCase(**values)
@@ -105,6 +109,16 @@ def test_cases_needing_a_human_must_route_to_human_review(kwargs):
     values.update(kwargs)
     with pytest.raises(ValidationError):
         ExpectedOutput(**values)
+
+
+def test_golden_case_rejects_countries_outside_scope():
+    with pytest.raises(ValidationError):
+        golden(
+            ExpectedOutput(
+                fields=full_fields(), category=Category.OTHER, route=Queue.STANDARD_HANDLER
+            ),
+            country="GB",
+        )
 
 
 def test_golden_case_round_trips_through_json():

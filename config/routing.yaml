@@ -1,6 +1,6 @@
 # Routing policy. See docs/routing_policy.md for the rule order.
 # The golden dataset generator and src/triage/rules.py (Phase 2) both read this file.
-currency: GBP
+currency: EUR
 auto_max_amount: 2500
 senior_min_amount: 25000
 fraud_new_policy_days: 30

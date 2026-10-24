@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "email",
+  "country": "AT",
   "pdf_file": "case_036.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2025-83197",
-      "policy_number": "HL/901158/BF",
+      "claim_number": "CLM-2025-56631",
+      "policy_number": "DG-9082-8437",
       "date_of_loss": "2025-07-12",
       "claimant_role": "third_party",
-      "amount_claimed": 30294.82,
-      "loss_description": "Water from your policyholder's flat leaked into my flat below and damaged my belongings. I needed hospital treatment and have ongoing physiotherapy. Witnesses saw the incident and have given their details.",
-      "location": "South Shannonside",
+      "amount_claimed": 36907.87,
+      "loss_description": "A customer slipped on a wet floor in the shop owned by your policyholder. My property was damaged and I have repair quotes. Witnesses saw the incident and have given their details.",
+      "location": "Graz",
       "policy_start_date": "2025-06-27",
       "police_report_number": null
     },
@@ -27,27 +28,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Antony Morris-Rahman"
+      "value": "Joel Ortner"
     },
     {
       "kind": "name",
-      "value": "Dr Ricky Lawrence"
+      "value": "Louisa Seiler"
     },
     {
       "kind": "address",
-      "value": "196 Fox Shoal, Watersberg, IV40 0DY"
+      "value": "Max-Spiegl-Gasse 7/9, 8266 Wiener Neustadt"
     },
     {
       "kind": "phone",
-      "value": "+44(0)191 4960674"
+      "value": "0316/20198674"
     },
     {
       "kind": "email",
-      "value": "ellie32@example.net"
+      "value": "adelina29@example.com"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ786994T"
+      "kind": "national_id",
+      "value": "5865090802"
     }
   ]
 }

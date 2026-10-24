@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "letter",
+  "country": "IT",
   "pdf_file": "case_035.pdf",
   "expected": {
     "fields": {
       "claim_number": "CLM-2026-68300",
-      "policy_number": "NBM-9478-7655",
+      "policy_number": "DG-9478-7655",
       "date_of_loss": "2026-01-03",
       "claimant_role": "policyholder",
-      "amount_claimed": 2359.8,
-      "loss_description": "Heavy rain overflowed a blocked gutter and water ran down the inside of the back wall. The ceiling plaster has collapsed in one corner and the flooring is ruined. A plumber stopped the leak the same day and has invoiced for the call out.",
-      "location": "Owenburgh",
+      "amount_claimed": 542.44,
+      "loss_description": "The washing machine hose split while we were out and flooded the utility room. The ceiling plaster has collapsed in one corner and the flooring is ruined. A drying company has been booked and has provided an estimate.",
+      "location": "Bologna",
       "policy_start_date": "2023-05-27",
       "police_report_number": null
     },
@@ -27,23 +28,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Brandon Rowe-Hicks"
+      "value": "Liana Babati"
     },
     {
       "kind": "address",
-      "value": "22 Williams Manors, Lake Patricia, HP78 5GQ"
+      "value": "Stretto Trapanese, 30 Piano 6, 07047, Thiesi (SS)"
     },
     {
       "kind": "phone",
-      "value": "+44(0)191 496 0278"
+      "value": "0824578658"
     },
     {
       "kind": "email",
-      "value": "lynda86@example.net"
+      "value": "silvestrovalier@example.net"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 094743 T"
+      "kind": "national_id",
+      "value": "VZZPRI84R63A441Q"
     }
   ]
 }

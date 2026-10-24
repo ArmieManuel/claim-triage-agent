@@ -6,16 +6,17 @@
     "missing_field"
   ],
   "layout": "email",
+  "country": "AT",
   "pdf_file": "case_033.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2025-35166",
-      "policy_number": "POL-28199031",
+      "claim_number": "CLM-2025-55324",
+      "policy_number": "POL-35377547",
       "date_of_loss": null,
       "claimant_role": "policyholder",
-      "amount_claimed": 3603.86,
+      "amount_claimed": 4258.0,
       "loss_description": "I am not sure exactly when this happened as we were away, but I noticed it when we got back. Strong winds during a storm blew down the garden fence. Six fence panels and two posts need replacing. I have the receipts for the items involved.",
-      "location": "Mahmoodbury",
+      "location": "Salzburg",
       "policy_start_date": "2023-01-08",
       "police_report_number": null
     },
@@ -29,23 +30,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Amy Porter"
+      "value": "Melisa Mitterer"
     },
     {
       "kind": "address",
-      "value": "5 Philip Isle, Stokesshire, OX89 7XD"
+      "value": "Isabella-Tischler-Platz 25, 1156 Schwaz"
     },
     {
       "kind": "phone",
-      "value": "+44(0)28 9018255"
+      "value": "07689 77812 552"
     },
     {
       "kind": "email",
-      "value": "wendyhancock@example.org"
+      "value": "wberchtold@example.org"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 082943 T"
+      "kind": "national_id",
+      "value": "3086281109"
     }
   ]
 }

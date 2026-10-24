@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "letter",
+  "country": "AT",
   "pdf_file": "case_048.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-27562",
-      "policy_number": "POL-77186435",
+      "claim_number": "CLM-2026-11149",
+      "policy_number": "POL-27983693",
       "date_of_loss": "2026-09-05",
-      "claimant_role": "representative",
-      "amount_claimed": 94468.47,
+      "claimant_role": "policyholder",
+      "amount_claimed": 41550.23,
       "loss_description": "A pan of oil caught fire on the hob and the flames spread to the extractor hood. The garage roof and the contents stored inside were destroyed. The fire service attended and put the fire out.",
-      "location": "Lake Gillian",
+      "location": "Innsbruck",
       "policy_start_date": "2021-09-24",
       "police_report_number": null
     },
@@ -27,27 +28,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Dr Rebecca Williamson"
-    },
-    {
-      "kind": "name",
-      "value": "Lynda Williams"
+      "value": "Emanuela Sammer-Schwaighofer"
     },
     {
       "kind": "address",
-      "value": "7 Johnson Meadow, Leachville, M8 5XQ"
+      "value": "Altmannplatz 38, 8173 Oberndorf bei Salzburg"
     },
     {
       "kind": "phone",
-      "value": "0306 9990898"
+      "value": "04767 61148 658"
     },
     {
       "kind": "email",
-      "value": "jackford@example.net"
+      "value": "sophie98@example.org"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 20 71 45 T"
+      "kind": "national_id",
+      "value": "5014100224"
     }
   ]
 }

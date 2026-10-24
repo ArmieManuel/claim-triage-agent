@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "letter",
+  "country": "IT",
   "pdf_file": "case_044.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-31120",
-      "policy_number": "POL-57819623",
+      "claim_number": "CLM-2026-71710",
+      "policy_number": "POL-31627658",
       "date_of_loss": "2026-03-20",
       "claimant_role": "third_party",
-      "amount_claimed": 27607.82,
-      "loss_description": "Your policyholder's dog ran out of their garden and bit me on the leg. I suffered a fractured wrist and needed time off work. Witnesses saw the incident and have given their details.",
-      "location": "Hardingchester",
+      "amount_claimed": 56943.46,
+      "loss_description": "Water from your policyholder's flat leaked into my flat below and damaged my belongings. I suffered a fractured wrist and needed time off work. I hold your policyholder responsible and am claiming against their liability cover.",
+      "location": "Verona",
       "policy_start_date": "2021-09-16",
       "police_report_number": null
     },
@@ -27,27 +28,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Marie Smith"
+      "value": "Vanessa Rastelli"
     },
     {
       "kind": "name",
-      "value": "Mr Nicholas Singh"
+      "value": "Luisa Dallara"
     },
     {
       "kind": "address",
-      "value": "9 Stewart Crescent, South Jonathanville, N2 8QD"
+      "value": "Via Michele, 3, 63857, Amandola (FM)"
     },
     {
       "kind": "phone",
-      "value": "0121 4960462"
+      "value": "+39 0825111521"
     },
     {
       "kind": "email",
-      "value": "donnaduffy@example.com"
+      "value": "graziano62@example.org"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 898684 T"
+      "kind": "national_id",
+      "value": "VCLVNN53P49E999N"
     }
   ]
 }

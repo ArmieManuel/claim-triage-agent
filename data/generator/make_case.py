@@ -9,7 +9,10 @@ from faker import Faker
 from generator.content import (
     AMBIGUOUS_STORIES,
     CARS,
+    CITIES,
+    FAKER_LOCALES,
     INSURERS,
+    NATIONAL_IDS,
     NORMAL_DATE_STYLES,
     ROLE_WORDS,
     SECOND_CLAIM_STORY,
@@ -73,14 +76,19 @@ def policy_number(rng: random.Random) -> str:
         return f"POL-{rng.randint(10_000_000, 99_999_999)}"
     if style == 1:
         letters = "".join(rng.choice("ABCDEFGHJKLMNPRSTUVWXYZ") for _ in range(2))
-        return f"HL/{rng.randint(100_000, 999_999)}/{letters}"
-    return f"NBM-{rng.randint(1000, 9999)}-{rng.randint(1000, 9999)}"
+        return f"AL/{rng.randint(100_000, 999_999)}/{letters}"
+    return f"DG-{rng.randint(1000, 9999)}-{rng.randint(1000, 9999)}"
+
+
+def german_tax_id(rng: random.Random) -> str:
+    """11 digits, no leading zero. Format only: the real check digit is not computed."""
+    return str(rng.randint(1, 9)) + "".join(str(rng.randint(0, 9)) for _ in range(10))
 
 
 def make_case(spec: CaseSpec, policy: RoutingPolicy | None = None) -> GeneratedCase:
     policy = policy or load_policy()
     rng = random.Random(spec.seed)
-    fake = Faker("en_GB")
+    fake = Faker(FAKER_LOCALES[spec.country])
     fake.seed_instance(spec.seed)
 
     loss = FIRST_LOSS_DATE + timedelta(days=rng.randint(0, LOSS_DATE_RANGE_DAYS))
@@ -90,7 +98,7 @@ def make_case(spec: CaseSpec, policy: RoutingPolicy | None = None) -> GeneratedC
         start = loss - timedelta(days=rng.randint(200, 2000))
 
     police = None
-    police_ref = f"{rng.choice(('WY', 'GM', 'MP', 'TV'))}/{rng.randint(10000, 99999)}/{loss:%y}"
+    police_ref = f"{spec.country}/{rng.randint(10000, 99999)}/{loss:%y}"
     if (spec.category == Category.MOTOR_THEFT and spec.fraud_reason != "no_police_report") or (
         spec.category == Category.MOTOR_COLLISION and rng.random() < 0.4
     ):
@@ -100,15 +108,17 @@ def make_case(spec: CaseSpec, policy: RoutingPolicy | None = None) -> GeneratedC
     role = pick_role(spec, rng)
     claim_number = f"CLM-{loss.year}-{rng.randint(10000, 99999)}"
     pol_number = policy_number(rng)
-    location = fake.city()
+    location = rng.choice(CITIES[spec.country])
     car = rng.choice(CARS)
 
     writer = fake.name()
     other_name = fake.name() if role != ClaimantRole.POLICYHOLDER else None
-    address = fake.address().replace("\n", ", ")
+    address_lines = fake.address().split("\n")
+    address = ", ".join(address_lines)
     phone = fake.phone_number()
     email = fake.email(safe=True)
-    ni_number = fake.ssn()
+    national_id = german_tax_id(rng) if spec.country == "DE" else fake.ssn()
+    id_labels, id_name = NATIONAL_IDS[spec.country]
     registration = fake.license_plate() if spec.category in MOTOR else None
 
     if spec.variant in AMBIGUOUS_STORIES:
@@ -118,7 +128,7 @@ def make_case(spec: CaseSpec, policy: RoutingPolicy | None = None) -> GeneratedC
     if spec.long_words:
         description = lengthen(description, rng, spec.long_words, spec.category)
 
-    amount_text = format_amount(amount, rng)
+    amount_text = format_amount(amount, rng, policy.currency)
     if "amount_in_narrative" in spec.tags:
         description += f" Taking everything together, my total claim is {amount_text}."
         amount_text = None
@@ -155,9 +165,12 @@ def make_case(spec: CaseSpec, policy: RoutingPolicy | None = None) -> GeneratedC
         writer_name=writer,
         other_name=other_name,
         address=address,
+        address_lines=address_lines,
         phone=phone,
         email=email,
-        ni_number=ni_number,
+        national_id=national_id,
+        national_id_labels=id_labels,
+        national_id_name=id_name,
         vehicle_registration=registration,
         description=description,
         sent_date=format_date(sent, rng.choice(NORMAL_DATE_STYLES)),
@@ -183,7 +196,7 @@ def make_case(spec: CaseSpec, policy: RoutingPolicy | None = None) -> GeneratedC
         PiiItem(kind="address", value=address),
         PiiItem(kind="phone", value=phone),
         PiiItem(kind="email", value=email),
-        PiiItem(kind="ni_number", value=ni_number),
+        PiiItem(kind="national_id", value=national_id),
     ]
     if registration:
         pii.append(PiiItem(kind="vehicle_registration", value=registration))
@@ -194,6 +207,7 @@ def make_case(spec: CaseSpec, policy: RoutingPolicy | None = None) -> GeneratedC
         hard=spec.hard,
         tags=list(spec.tags),
         layout=spec.layout,
+        country=spec.country,
         pdf_file=f"{spec.case_id}.pdf",
         expected=ExpectedOutput(
             fields=fields,

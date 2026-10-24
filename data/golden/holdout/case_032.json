@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "letter",
+  "country": "IT",
   "pdf_file": "case_032.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2025-76355",
-      "policy_number": "POL-31875373",
+      "claim_number": "CLM-2025-99160",
+      "policy_number": "DG-9294-1532",
       "date_of_loss": "2025-07-17",
       "claimant_role": "policyholder",
-      "amount_claimed": 112268.35,
+      "amount_claimed": 87419.31,
       "loss_description": "A pipe under the bathroom floor burst and water came through the kitchen ceiling. Skirting boards, a carpet and the lower kitchen units are water damaged. A drying company has been booked and has provided an estimate.",
-      "location": "North Leanneborough",
+      "location": "Verona",
       "policy_start_date": "2024-09-15",
       "police_report_number": null
     },
@@ -27,23 +28,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Dr Nathan Davies"
+      "value": "Arnaldo Tirabassi"
     },
     {
       "kind": "address",
-      "value": "04 Richardson Crossroad, Port Louise, M50 2BR"
+      "value": "Canale Maria, 182 Piano 2, 25076, Odolo (BS)"
     },
     {
       "kind": "phone",
-      "value": "+44(0)113 4960519"
+      "value": "+39 0515002061"
     },
     {
       "kind": "email",
-      "value": "janefox@example.net"
+      "value": "piermajorana@example.net"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ749466T"
+      "kind": "national_id",
+      "value": "SNSGSV78T50I256Y"
     }
   ]
 }

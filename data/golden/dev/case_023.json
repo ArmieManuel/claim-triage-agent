@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "letter",
+  "country": "IT",
   "pdf_file": "case_023.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-96210",
-      "policy_number": "POL-90999404",
+      "claim_number": "CLM-2026-55392",
+      "policy_number": "DG-4017-4557",
       "date_of_loss": "2026-05-03",
       "claimant_role": "policyholder",
-      "amount_claimed": 1504.2,
-      "loss_description": "Heavy rain overflowed a blocked gutter and water ran down the inside of the back wall. Skirting boards, a carpet and the lower kitchen units are water damaged. I turned off the water at the stopcock and moved what I could.",
-      "location": "Lesleyshire",
+      "amount_claimed": 1273.33,
+      "loss_description": "The washing machine hose split while we were out and flooded the utility room. The ceiling plaster has collapsed in one corner and the flooring is ruined. I turned off the water at the stopcock and moved what I could.",
+      "location": "Padua",
       "policy_start_date": "2022-11-30",
       "police_report_number": null
     },
@@ -27,23 +28,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Reece Ward"
+      "value": "Morena Morpurgo-Smirnoff"
     },
     {
       "kind": "address",
-      "value": "69 Duncan Port, West Louise, E92 4YL"
+      "value": "Vicolo Gian, 6 Appartamento 34, 84056, Cardile (SA)"
     },
     {
       "kind": "phone",
-      "value": "+44151 496 0842"
+      "value": "+39 054394784"
     },
     {
       "kind": "email",
-      "value": "clarkesarah@example.org"
+      "value": "ginooliboni@example.org"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ216552T"
+      "kind": "national_id",
+      "value": "FNTBNT49H51L217Y"
     }
   ]
 }

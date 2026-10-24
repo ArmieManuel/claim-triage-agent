@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "email",
+  "country": "DE",
   "pdf_file": "case_049.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-90236",
-      "policy_number": "NBM-6958-2323",
+      "claim_number": "CLM-2026-69755",
+      "policy_number": "POL-79088693",
       "date_of_loss": "2026-07-24",
       "claimant_role": "policyholder",
-      "amount_claimed": 690.01,
-      "loss_description": "Strong winds during a storm blew down the garden fence. Six fence panels and two posts need replacing. A local contractor has given a quote.",
-      "location": "New Katherineview",
+      "amount_claimed": 1997.22,
+      "loss_description": "My laptop was knocked off a table and the screen cracked. The screen and the hinge are broken and the laptop does not turn on. I have the receipts for the items involved.",
+      "location": "Dresden",
       "policy_start_date": "2025-07-23",
       "police_report_number": null
     },
@@ -27,23 +28,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Geoffrey Miller"
+      "value": "Kamil Zimmer"
     },
     {
       "kind": "address",
-      "value": "03 Amelia Avenue, New Rebecca, WS8H 4UA"
+      "value": "Kriemhild-Pieper-Weg 88/11, 00385 Regen"
     },
     {
       "kind": "phone",
-      "value": "(01632) 960250"
+      "value": "(03470) 250212"
     },
     {
       "kind": "email",
-      "value": "geoffreycole@example.net"
+      "value": "textorhannelore@example.com"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 990621 T"
+      "kind": "national_id",
+      "value": "80300385838"
     }
   ]
 }

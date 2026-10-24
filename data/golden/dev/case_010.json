@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "email",
+  "country": "DE",
   "pdf_file": "case_010.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-48785",
-      "policy_number": "NBM-5745-7025",
+      "claim_number": "CLM-2026-93313",
+      "policy_number": "AL/111302/KM",
       "date_of_loss": "2026-06-09",
       "claimant_role": "policyholder",
-      "amount_claimed": 21312.0,
-      "loss_description": "The water tank in the loft leaked and soaked the bedroom ceiling below. The wall needs drying out and replastering, and a sofa was soaked. A drying company has been booked and has provided an estimate.",
-      "location": "Smithborough",
+      "amount_claimed": 11148.0,
+      "loss_description": "The water tank in the loft leaked and soaked the bedroom ceiling below. Skirting boards, a carpet and the lower kitchen units are water damaged. A drying company has been booked and has provided an estimate.",
+      "location": "Freiburg",
       "policy_start_date": "2023-04-28",
       "police_report_number": null
     },
@@ -27,23 +28,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Ellie Young"
+      "value": "Eleni Kuhl B.A."
     },
     {
       "kind": "address",
-      "value": "Flat 7, Allen Camp, Lake Johnhaven, W06 9UR"
+      "value": "Kochgasse 19-95, 08370 Starnberg"
     },
     {
       "kind": "phone",
-      "value": "0306 9990544"
+      "value": "+49 (0) 9765 440909"
     },
     {
       "kind": "email",
-      "value": "allensamuel@example.net"
+      "value": "domenicoeigenwillig@example.com"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 12 64 62 T"
+      "kind": "national_id",
+      "value": "18108370629"
     }
   ]
 }

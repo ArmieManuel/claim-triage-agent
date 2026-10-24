@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "email",
+  "country": "DE",
   "pdf_file": "case_043.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2025-98424",
-      "policy_number": "POL-38467036",
+      "claim_number": "CLM-2025-81596",
+      "policy_number": "POL-27092121",
       "date_of_loss": "2025-07-16",
       "claimant_role": "policyholder",
-      "amount_claimed": 787.12,
-      "loss_description": "A power cut lasting two days spoiled the contents of our freezer. All frozen food had to be thrown away. Photos are available on request.",
-      "location": "East Karlside",
+      "amount_claimed": 2378.0,
+      "loss_description": "My laptop was knocked off a table and the screen cracked. All frozen food had to be thrown away. A local contractor has given a quote.",
+      "location": "Leipzig",
       "policy_start_date": "2024-01-24",
       "police_report_number": null
     },
@@ -27,23 +28,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Hannah Kaur-Lee"
+      "value": "Darko Grein Groth"
     },
     {
       "kind": "address",
-      "value": "9 Briggs Parkways, Pooleton, EH5 9NY"
+      "value": "Martine-Steuer-Platz 9294, 90535 Roth"
     },
     {
       "kind": "phone",
-      "value": "(0116) 496 0828"
+      "value": "+49(0)9282 83346"
     },
     {
       "kind": "email",
-      "value": "louismorgan@example.com"
+      "value": "taescheemma@example.com"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 95 22 02 T"
+      "kind": "national_id",
+      "value": "58790535794"
     }
   ]
 }

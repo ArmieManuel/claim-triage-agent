@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "email",
+  "country": "AT",
   "pdf_file": "case_024.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2025-44975",
-      "policy_number": "POL-10173752",
+      "claim_number": "CLM-2025-63835",
+      "policy_number": "AL/399368/HA",
       "date_of_loss": "2025-09-25",
       "claimant_role": "policyholder",
-      "amount_claimed": 839.79,
-      "loss_description": "Strong winds during a storm blew down the garden fence. All frozen food had to be thrown away. A local contractor has given a quote.",
-      "location": "East Robert",
+      "amount_claimed": 683.45,
+      "loss_description": "Strong winds during a storm blew down the garden fence. The screen and the hinge are broken and the laptop does not turn on. I have the receipts for the items involved.",
+      "location": "Graz",
       "policy_start_date": "2024-05-07",
       "police_report_number": null
     },
@@ -27,23 +28,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Stephanie Lyons"
+      "value": "Constantin Bayer"
     },
     {
       "kind": "address",
-      "value": "Flat 04, Andrea Canyon, West Stewartbury, NG5N 3WD"
+      "value": "Hinterleitnerplatz 490, 9005 Ybbs an der Donau"
     },
     {
       "kind": "phone",
-      "value": "0289018753"
+      "value": "03485/50381975"
     },
     {
       "kind": "email",
-      "value": "baileycharles@example.net"
+      "value": "veraburger@example.org"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 41 00 91 T"
+      "kind": "national_id",
+      "value": "2246070980"
     }
   ]
 }

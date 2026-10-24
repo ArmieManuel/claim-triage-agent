@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "email",
+  "country": "IT",
   "pdf_file": "case_041.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-79684",
-      "policy_number": "HL/928489/UL",
+      "claim_number": "CLM-2026-45312",
+      "policy_number": "POL-81356478",
       "date_of_loss": "2026-08-02",
       "claimant_role": "policyholder",
-      "amount_claimed": 17560.0,
-      "loss_description": "A pan of oil caught fire on the hob and the flames spread to the extractor hood. The garage roof and the contents stored inside were destroyed. The fire service attended and put the fire out.",
-      "location": "Jasmineview",
+      "amount_claimed": 17654.15,
+      "loss_description": "A pan of oil caught fire on the hob and the flames spread to the extractor hood. The kitchen units and ceiling are smoke damaged and need replacing. Nobody was hurt and the fire was put out with an extinguisher.",
+      "location": "Bari",
       "policy_start_date": "2022-06-01",
       "police_report_number": null
     },
@@ -27,23 +28,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Brenda Sharpe"
+      "value": "Morena Molesini-Jacuzzi"
     },
     {
       "kind": "address",
-      "value": "4 Bethany Tunnel, Flynnberg, HD71 2GX"
+      "value": "Borgo Dossi, 833 Piano 5, 98151, Camaro (ME)"
     },
     {
       "kind": "phone",
-      "value": "+44116 496 0877"
+      "value": "+39 38022828713"
     },
     {
       "kind": "email",
-      "value": "cooperdonna@example.net"
+      "value": "giuliana95@example.com"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ957592T"
+      "kind": "national_id",
+      "value": "FLCDNI97A69C074F"
     }
   ]
 }

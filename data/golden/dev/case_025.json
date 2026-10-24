@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "email",
+  "country": "DE",
   "pdf_file": "case_025.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2025-56999",
-      "policy_number": "NBM-8725-4082",
+      "claim_number": "CLM-2025-91302",
+      "policy_number": "AL/297251/XS",
       "date_of_loss": "2025-08-16",
       "claimant_role": "third_party",
-      "amount_claimed": 55371.78,
-      "loss_description": "A customer slipped on a wet floor in the shop owned by your policyholder. I needed hospital treatment and have ongoing physiotherapy. A solicitor is advising me and medical reports are available.",
-      "location": "New Conor",
+      "amount_claimed": 11376.35,
+      "loss_description": "Water from your policyholder's flat leaked into my flat below and damaged my belongings. I needed hospital treatment and have ongoing physiotherapy. I hold your policyholder responsible and am claiming against their liability cover.",
+      "location": "Hamburg",
       "policy_start_date": "2021-10-21",
       "police_report_number": null
     },
@@ -27,27 +28,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Charlene Bibi"
+      "value": "Klaus-Dieter Hermighausen-Finke"
     },
     {
       "kind": "name",
-      "value": "Damian Kay"
+      "value": "Xenia Schüler"
     },
     {
       "kind": "address",
-      "value": "Studio 0, Jessica Corners, Rebeccahaven, NR7N 2LY"
+      "value": "Eberhardt-Matthäi-Straße 0, 18458 Karlsruhe"
     },
     {
       "kind": "phone",
-      "value": "+44(0)1614960377"
+      "value": "+49(0)2498 377401"
     },
     {
       "kind": "email",
-      "value": "robert13@example.com"
+      "value": "leanderlorch@example.com"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ785112T"
+      "kind": "national_id",
+      "value": "87006184588"
     }
   ]
 }

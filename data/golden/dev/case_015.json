@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "email",
+  "country": "AT",
   "pdf_file": "case_015.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2025-42400",
-      "policy_number": "POL-20528031",
+      "claim_number": "CLM-2025-95356",
+      "policy_number": "DG-5050-3129",
       "date_of_loss": "2025-09-05",
       "claimant_role": "policyholder",
-      "amount_claimed": 1680.36,
-      "loss_description": "A driver ran a red light at a junction and struck the front of my BMW 1 Series. The rear bumper, boot lid and one light cluster are damaged. The car was recovered to a local garage, which has quoted for the repair.",
-      "location": "Lake Ryan",
+      "amount_claimed": 2196.63,
+      "loss_description": "A driver ran a red light at a junction and struck the front of my Audi A4. The rear bumper, boot lid and one light cluster are damaged. The car was recovered to a local garage, which has quoted for the repair.",
+      "location": "Linz",
       "policy_start_date": "2021-01-27",
       "police_report_number": null
     },
@@ -27,27 +28,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Mr Elliott Holmes"
+      "value": "Nils Beck"
     },
     {
       "kind": "address",
-      "value": "6 Edwards Hollow, Justinfurt, CA0 3FW"
+      "value": "Henrik-Schuler-Straße 0, 5429 Kindberg"
     },
     {
       "kind": "phone",
-      "value": "0289018782"
+      "value": "+43 (0) 1 33289782"
     },
     {
       "kind": "email",
-      "value": "barbaralynch@example.org"
+      "value": "michaelarupp@example.org"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 830126 T"
+      "kind": "national_id",
+      "value": "1834090107"
     },
     {
       "kind": "vehicle_registration",
-      "value": "MR08LTC"
+      "value": "FE-66 MRL"
     }
   ]
 }

@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "email",
+  "country": "IT",
   "pdf_file": "case_038.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-53301",
-      "policy_number": "HL/355097/EU",
+      "claim_number": "CLM-2026-54878",
+      "policy_number": "DG-6412-6260",
       "date_of_loss": "2026-01-10",
       "claimant_role": "policyholder",
-      "amount_claimed": 1165.59,
-      "loss_description": "In heavy rain my Nissan Qashqai skidded on a bend and hit a stone wall. The rear bumper, boot lid and one light cluster are damaged. Details were exchanged with the other driver at the scene.",
-      "location": "Porterchester",
+      "amount_claimed": 2092.78,
+      "loss_description": "A driver ran a red light at a junction and struck the front of my BMW 3 Series. The front wheel and suspension arm are bent and the car cannot be driven. Details were exchanged with the other driver at the scene.",
+      "location": "Verona",
       "policy_start_date": "2021-02-08",
       "police_report_number": null
     },
@@ -27,27 +28,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Dr Leigh Butcher"
+      "value": "Lucia Righi"
     },
     {
       "kind": "address",
-      "value": "86 Luke Shores, New Nicholasshire, S59 5UE"
+      "value": "Via Viola, 24 Appartamento 9, 22072, Cermenate (CO)"
     },
     {
       "kind": "phone",
-      "value": "+44(0)114 4960907"
+      "value": "0934257116"
     },
     {
       "kind": "email",
-      "value": "bmason@example.net"
+      "value": "zaccardodonatello@example.com"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 58 53 08 T"
+      "kind": "national_id",
+      "value": "GRZMDA99P62B994C"
     },
     {
       "kind": "vehicle_registration",
-      "value": "EL66 WEU"
+      "value": "LW665EU"
     }
   ]
 }

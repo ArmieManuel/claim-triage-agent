@@ -6,16 +6,17 @@
     "ambiguous_category"
   ],
   "layout": "letter",
+  "country": "AT",
   "pdf_file": "case_030.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2025-79151",
-      "policy_number": "NBM-6597-4001",
+      "claim_number": "CLM-2025-10716",
+      "policy_number": "DG-3514-5571",
       "date_of_loss": "2025-12-12",
-      "claimant_role": "representative",
-      "amount_claimed": 12435.0,
+      "claimant_role": "policyholder",
+      "amount_claimed": 9084.35,
       "loss_description": "A pipe burst inside the kitchen wall overnight. The water ran down into the fuse board, which shorted and started an electrical fire. The fire damaged the kitchen ceiling and units, and the water ruined the flooring and the wall behind the cooker.",
-      "location": "Fostershire",
+      "location": "Villach",
       "policy_start_date": "2022-01-13",
       "police_report_number": null
     },
@@ -30,27 +31,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Francis Hargreaves"
-    },
-    {
-      "kind": "name",
-      "value": "Paul Todd"
+      "value": "Vera Schwarzl"
     },
     {
       "kind": "address",
-      "value": "Flat 67, Christine Mountains, Robinsonville, N0G 0QE"
+      "value": "Matheo-Hofstätter-Weg 2, 7725 Radstadt"
     },
     {
       "kind": "phone",
-      "value": "03069990721"
+      "value": "(06591) 95067 051"
     },
     {
       "kind": "email",
-      "value": "brandon04@example.org"
+      "value": "egangl@example.net"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ852152T"
+      "kind": "national_id",
+      "value": "9076170488"
     }
   ]
 }

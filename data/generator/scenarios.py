@@ -58,6 +58,7 @@ QUEUE_BY_NAME = {
     "fraud": Q.FRAUD_REVIEW,
 }
 LAYOUTS = ("form", "letter", "email")
+COUNTRIES = ("DE", "IT", "AT")
 
 
 @dataclass(frozen=True)
@@ -68,6 +69,7 @@ class CaseSpec:
     category: Category
     route: Queue
     layout: str
+    country: str = "DE"
     hard: bool = False
     tags: tuple[str, ...] = ()
     variant: str = "normal"
@@ -187,6 +189,12 @@ def build_specs() -> list[CaseSpec]:
     rng.shuffle(drafts)
     drafts.sort(key=lambda d: d[0] != "dev")  # stable: dev first, shuffled within each split
     return [
-        CaseSpec(case_id=f"case_{number:03d}", seed=number * 7919, split=split, **kwargs)
+        CaseSpec(
+            case_id=f"case_{number:03d}",
+            seed=number * 7919,
+            split=split,
+            country=COUNTRIES[(number - 1) % len(COUNTRIES)],
+            **kwargs,
+        )
         for number, (split, kwargs) in enumerate(drafts, start=1)
     ]

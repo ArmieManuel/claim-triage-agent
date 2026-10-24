@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "letter",
+  "country": "IT",
   "pdf_file": "case_002.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2025-87637",
-      "policy_number": "POL-26172602",
+      "claim_number": "CLM-2025-52370",
+      "policy_number": "AL/721103/GN",
       "date_of_loss": "2025-08-16",
       "claimant_role": "representative",
-      "amount_claimed": 37451.54,
-      "loss_description": "An electrical fault in the garage consumer unit started a fire. The kitchen units and ceiling are smoke damaged and need replacing. We are staying with family until the smell of smoke is cleared.",
-      "location": "New Carly",
+      "amount_claimed": 83302.0,
+      "loss_description": "A pan of oil caught fire on the hob and the flames spread to the extractor hood. The garage roof and the contents stored inside were destroyed. The fire service attended and put the fire out.",
+      "location": "Turin",
       "policy_start_date": "2022-01-14",
       "police_report_number": null
     },
@@ -27,27 +28,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Leonard Martin"
+      "value": "Giacinto Emo"
     },
     {
       "kind": "name",
-      "value": "Katherine Turnbull"
+      "value": "Luciano Missoni"
     },
     {
       "kind": "address",
-      "value": "Studio 11, Mitchell Avenue, Robinside, E8K 1NJ"
+      "value": "Vicolo Calvo, 140, 36075, Montecchio Maggiore (VI)"
     },
     {
       "kind": "phone",
-      "value": "0141 496 0563"
+      "value": "+39 0322436565"
     },
     {
       "kind": "email",
-      "value": "wdavies@example.net"
+      "value": "giampaolo33@example.com"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 533365 T"
+      "kind": "national_id",
+      "value": "STNCLD05L60A201E"
     }
   ]
 }

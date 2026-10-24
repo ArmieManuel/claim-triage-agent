@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "email",
+  "country": "DE",
   "pdf_file": "case_028.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2025-59427",
-      "policy_number": "HL/129354/LN",
+      "claim_number": "CLM-2025-36521",
+      "policy_number": "AL/880416/NL",
       "date_of_loss": "2025-07-26",
       "claimant_role": "third_party",
-      "amount_claimed": 20755.57,
-      "loss_description": "A roof tile fell from your policyholder's house and struck my parked car. My property was damaged and I have repair quotes. A solicitor is advising me and medical reports are available.",
-      "location": "Lake Andrewbury",
+      "amount_claimed": 15997.87,
+      "loss_description": "Your policyholder's dog ran out of their garden and bit me on the leg. I needed hospital treatment and have ongoing physiotherapy. I hold your policyholder responsible and am claiming against their liability cover.",
+      "location": "Bremen",
       "policy_start_date": "2021-05-27",
       "police_report_number": null
     },
@@ -27,27 +28,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Caroline Patel-Rose"
+      "value": "Mariusz Bachmann"
     },
     {
       "kind": "name",
-      "value": "Mrs Kate White"
+      "value": "Ing. René Gutknecht MBA."
     },
     {
       "kind": "address",
-      "value": "873 Roberts Drive, Smartstad, SR4 4XP"
+      "value": "Baumstraße 8/9, 98737 Königs Wusterhausen"
     },
     {
       "kind": "phone",
-      "value": "0117 4960401"
+      "value": "+49(0)5447485340"
     },
     {
       "kind": "email",
-      "value": "carl93@example.net"
+      "value": "kambsgerhard@example.net"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ001407T"
+      "kind": "national_id",
+      "value": "84781987378"
     }
   ]
 }

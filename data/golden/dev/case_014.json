@@ -6,18 +6,19 @@
     "missing_field"
   ],
   "layout": "letter",
+  "country": "IT",
   "pdf_file": "case_014.pdf",
   "expected": {
     "fields": {
       "claim_number": "CLM-2026-45583",
-      "policy_number": "NBM-3572-3219",
+      "policy_number": "DG-3572-3219",
       "date_of_loss": "2026-07-17",
       "claimant_role": "policyholder",
       "amount_claimed": null,
-      "loss_description": "In heavy rain my Ford Focus skidded on a bend and hit a stone wall. The rear bumper, boot lid and one light cluster are damaged. Details were exchanged with the other driver at the scene. I do not have a final figure for the repairs yet and will send quotes when I have them.",
-      "location": "Barrettshire",
+      "loss_description": "While I was queueing at a roundabout, another car drove into the back of my Audi A4. The rear bumper, boot lid and one light cluster are damaged. Details were exchanged with the other driver at the scene. I do not have a final figure for the repairs yet and will send quotes when I have them.",
+      "location": "Bologna",
       "policy_start_date": "2023-03-22",
-      "police_report_number": null
+      "police_report_number": "IT/34727/26"
     },
     "category": "motor_collision",
     "acceptable_categories": [
@@ -29,27 +30,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Jeremy Brown"
+      "value": "Elisa Marenzio"
     },
     {
       "kind": "address",
-      "value": "0 Young Brook, East Albertmouth, G54 6YB"
+      "value": "Canale Crispi, 10, 24039, Piazza Caduti (BG)"
     },
     {
       "kind": "phone",
-      "value": "+44808 157 0900"
+      "value": "3282925459"
     },
     {
       "kind": "email",
-      "value": "richardsongareth@example.net"
+      "value": "anichinicoriolano@example.net"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ546299T"
+      "kind": "national_id",
+      "value": "CLLLND47E54B807A"
     },
     {
       "kind": "vehicle_registration",
-      "value": "JW10 SLG"
+      "value": "JW310SL"
     }
   ]
 }

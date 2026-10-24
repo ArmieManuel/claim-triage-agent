@@ -6,11 +6,13 @@ Plain rules, applied in order. The first rule that matches decides the queue. Th
 |---|---|---|
 | 1 | A required field is missing, the document holds more than one claim, or the category is ambiguous or low confidence | `human_review` |
 | 2 | Loss happened within 30 days of the policy start date, or a motor theft has no police report number | `fraud_review` |
-| 3 | Amount claimed is above 25,000 GBP, or the category is `liability` | `senior_handler` |
-| 4 | Amount claimed is 2,500 GBP or less, and the category is not `motor_theft` or `liability` | `auto_process` |
+| 3 | Amount claimed is above 25,000 EUR, or the category is `liability` | `senior_handler` |
+| 4 | Amount claimed is 2,500 EUR or less, and the category is not `motor_theft` or `liability` | `auto_process` |
 | 5 | Everything else | `standard_handler` |
 
 Required fields: claim number, policy number, date of loss, claimant role, amount claimed, loss description and location. Policy start date and police report number are optional.
+
+Amounts are in the currency set in `config/routing.yaml` (EUR). The generator reads the same setting when it writes amounts into the PDFs.
 
 These rules are synthetic and exist to make routing testable. They are not taken from any real insurer.
 

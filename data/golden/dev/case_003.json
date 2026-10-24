@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "form",
+  "country": "AT",
   "pdf_file": "case_003.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-35036",
-      "policy_number": "POL-93310015",
+      "claim_number": "CLM-2026-77165",
+      "policy_number": "POL-19681911",
       "date_of_loss": "2026-01-22",
       "claimant_role": "policyholder",
-      "amount_claimed": 20784.0,
-      "loss_description": "A pan of oil caught fire on the hob and the flames spread to the extractor hood. The kitchen units and ceiling are smoke damaged and need replacing. We are staying with family until the smell of smoke is cleared.",
-      "location": "Robertshaven",
+      "amount_claimed": 18073.85,
+      "loss_description": "A candle left on a windowsill set fire to the curtains in the living room. The kitchen units and ceiling are smoke damaged and need replacing. The fire service attended and put the fire out.",
+      "location": "Innsbruck",
       "policy_start_date": "2021-01-16",
       "police_report_number": null
     },
@@ -27,23 +28,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Deborah Murray"
+      "value": "Denise Schuller"
     },
     {
       "kind": "address",
-      "value": "3 Evans Forest, West Cherylview, DN42 4YU"
+      "value": "Fridolin-Reinisch-Gasse 35, 6314 Mattighofen"
     },
     {
       "kind": "phone",
-      "value": "(0115) 496 0449"
+      "value": "+43 3528 34971 449"
     },
     {
       "kind": "email",
-      "value": "joshuaevans@example.net"
+      "value": "christianklammer@example.net"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 459893 T"
+      "kind": "national_id",
+      "value": "9452180111"
     }
   ]
 }

@@ -4,18 +4,19 @@
   "hard": false,
   "tags": [],
   "layout": "email",
+  "country": "AT",
   "pdf_file": "case_006.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-62332",
-      "policy_number": "POL-58305640",
+      "claim_number": "CLM-2026-51525",
+      "policy_number": "AL/371713/CM",
       "date_of_loss": "2026-08-13",
       "claimant_role": "policyholder",
-      "amount_claimed": 7873.0,
-      "loss_description": "I parked my Nissan Qashqai at the station car park in the morning and it was gone in the evening. Personal belongings, including a child seat, were inside the car. I still have both sets of keys apart from the stolen one.",
-      "location": "East Joan",
+      "amount_claimed": 15222.61,
+      "loss_description": "I parked my Renault Clio at the station car park in the morning and it was gone in the evening. Personal belongings, including a child seat, were inside the car. I still have both sets of keys apart from the stolen one.",
+      "location": "Klagenfurt",
       "policy_start_date": "2024-11-24",
-      "police_report_number": "GM/87311/26"
+      "police_report_number": "AT/34248/26"
     },
     "category": "motor_theft",
     "acceptable_categories": [
@@ -27,27 +28,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Jemma Harris"
+      "value": "David Pröll"
     },
     {
       "kind": "address",
-      "value": "44 Hodgson Park, Lake Iain, RG5 7LQ"
+      "value": "Kreuzergasse 4, 5854 Freistadt"
     },
     {
       "kind": "phone",
-      "value": "+4429 2018 0549"
+      "value": "03845/27455495"
     },
     {
       "kind": "email",
-      "value": "anna32@example.com"
+      "value": "linushummer@example.org"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 09 88 79 T"
+      "kind": "national_id",
+      "value": "9989190272"
     },
     {
       "kind": "vehicle_registration",
-      "value": "OV71 QVV"
+      "value": "WE-9907 V"
     }
   ]
 }

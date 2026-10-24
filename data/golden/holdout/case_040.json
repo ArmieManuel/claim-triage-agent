@@ -4,18 +4,19 @@
   "hard": false,
   "tags": [],
   "layout": "letter",
+  "country": "DE",
   "pdf_file": "case_040.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-51573",
-      "policy_number": "NBM-7933-9128",
+      "claim_number": "CLM-2026-38245",
+      "policy_number": "AL/543753/XY",
       "date_of_loss": "2026-07-05",
       "claimant_role": "policyholder",
-      "amount_claimed": 9706.1,
-      "loss_description": "I parked my BMW 1 Series at the station car park in the morning and it was gone in the evening. The car has not been recovered. I still have both sets of keys apart from the stolen one.",
-      "location": "Port Lukemouth",
+      "amount_claimed": 20019.77,
+      "loss_description": "My Audi A4 was stolen overnight from the street outside my home. The car has not been recovered. I reported the theft to the police the same day.",
+      "location": "Freiburg",
       "policy_start_date": "2026-06-30",
-      "police_report_number": "WY/70292/26"
+      "police_report_number": "DE/15505/26"
     },
     "category": "motor_theft",
     "acceptable_categories": [
@@ -27,27 +28,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Rosemary Forster"
+      "value": "Rigo Berger"
     },
     {
       "kind": "address",
-      "value": "Studio 67J, Holt Drives, Bellfurt, N2 8ND"
+      "value": "Handering 8-9, 52776 Kaiserslautern"
     },
     {
       "kind": "phone",
-      "value": "+44(0)117 4960212"
+      "value": "+49 (0) 5841 321269"
     },
     {
       "kind": "email",
-      "value": "churst@example.org"
+      "value": "baptist22@example.com"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 57 13 97 T"
+      "kind": "national_id",
+      "value": "62776052584"
     },
     {
       "kind": "vehicle_registration",
-      "value": "EN16 HXO"
+      "value": "ND-XO-424"
     }
   ]
 }

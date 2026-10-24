@@ -95,7 +95,7 @@ class PiiItem(BaseModel):
 
     model_config = ConfigDict(extra="forbid")
 
-    kind: Literal["name", "address", "phone", "email", "ni_number", "vehicle_registration"]
+    kind: Literal["name", "address", "phone", "email", "national_id", "vehicle_registration"]
     value: str
 
 
@@ -107,6 +107,7 @@ class GoldenCase(BaseModel):
     hard: bool
     tags: list[str]
     layout: Literal["form", "letter", "email"]
+    country: Literal["DE", "IT", "AT"]
     pdf_file: str
     expected: ExpectedOutput
     pii: list[PiiItem]

@@ -1,4 +1,5 @@
 import io
+import random
 import re
 from collections import Counter
 from datetime import date, timedelta
@@ -6,8 +7,8 @@ from datetime import date, timedelta
 import pdfplumber
 import pytest
 
-from generator.content import format_date
-from generator.make_case import make_case
+from generator.content import format_amount, format_date
+from generator.make_case import german_tax_id, make_case
 from generator.policy import load_policy
 from generator.scenarios import build_specs
 from triage.schemas import Category, Queue
@@ -130,6 +131,34 @@ def test_format_date_styles():
     assert format_date(d, "iso") == "2026-03-03"
     assert format_date(d, "ordinal_words") == "the 3rd day of March in the year 2026"
     assert format_date(d, "short_weekday") == "Tue 3rd Mar '26"
+    assert format_date(d, "dmy_dot") == "03.03.2026"
+
+
+def test_format_amount_uses_the_configured_currency():
+    rng = random.Random(1)
+    seen = {format_amount(1234.5, rng, "EUR") for _ in range(50)}
+    assert seen == {"€1,234.50", "EUR 1234.50", "1,234.50 euros"}
+
+
+def test_amounts_in_pdfs_are_in_euros(generated):
+    for item in generated.values():
+        text = pdf_text(item.pdf_bytes)
+        assert not {"£", "GBP", "pounds"} & set(re.findall(r"£|GBP|pounds", text))
+        if item.case.expected.fields.amount_claimed is not None:
+            assert re.search(r"€|EUR|euros", text), item.case.case_id
+
+
+def test_cases_come_from_germany_italy_and_austria(generated):
+    countries = Counter(item.case.country for item in generated.values())
+    assert set(countries) == {"DE", "IT", "AT"}
+    assert min(countries.values()) >= 10
+
+
+def test_german_tax_id_has_11_digits_without_leading_zero():
+    rng = random.Random(7)
+    for _ in range(100):
+        tax_id = german_tax_id(rng)
+        assert re.fullmatch(r"[1-9]\d{10}", tax_id)
 
 
 def test_ground_truth_routes_follow_the_routing_policy(generated):

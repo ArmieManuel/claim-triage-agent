@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "email",
+  "country": "DE",
   "pdf_file": "case_001.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-51260",
-      "policy_number": "HL/915200/YU",
+      "claim_number": "CLM-2026-17581",
+      "policy_number": "POL-52250777",
       "date_of_loss": "2026-04-24",
       "claimant_role": "policyholder",
-      "amount_claimed": 2356.0,
-      "loss_description": "While I was queueing at a roundabout, another car drove into the back of my Toyota Yaris. The front wheel and suspension arm are bent and the car cannot be driven. The car was recovered to a local garage, which has quoted for the repair.",
-      "location": "Andrewsstad",
+      "amount_claimed": 1218.78,
+      "loss_description": "While I was queueing at a roundabout, another car drove into the back of my BMW 3 Series. The bonnet, front bumper and radiator need replacing. Details were exchanged with the other driver at the scene.",
+      "location": "Bremen",
       "policy_start_date": "2022-12-29",
       "police_report_number": null
     },
@@ -27,27 +28,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Charlie Tomlinson"
+      "value": "Dr. Sylvie Kaul MBA."
     },
     {
       "kind": "address",
-      "value": "Studio 88V, Sheila Crossing, Mitchellhaven, TA1M 5XA"
+      "value": "Mechthild-Jopich-Straße 6816, 48058 Oranienburg"
     },
     {
       "kind": "phone",
-      "value": "+44(0)161 4960950"
+      "value": "(05042) 288667"
     },
     {
       "kind": "email",
-      "value": "barry28@example.net"
+      "value": "helmadussen-van@example.net"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 667217 T"
+      "kind": "national_id",
+      "value": "91658148058"
     },
     {
       "kind": "vehicle_registration",
-      "value": "FW24DON"
+      "value": "MZG-W-37"
     }
   ]
 }

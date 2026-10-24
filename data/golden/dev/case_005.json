@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "letter",
+  "country": "IT",
   "pdf_file": "case_005.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-84302",
-      "policy_number": "NBM-6927-4891",
+      "claim_number": "CLM-2026-87722",
+      "policy_number": "DG-6927-4891",
       "date_of_loss": "2026-03-25",
-      "claimant_role": "representative",
-      "amount_claimed": 17276.1,
-      "loss_description": "An electrical fault in the garage consumer unit started a fire. The kitchen units and ceiling are smoke damaged and need replacing. The fire service attended and put the fire out.",
-      "location": "Malcolmmouth",
+      "claimant_role": "policyholder",
+      "amount_claimed": 15201.71,
+      "loss_description": "A pan of oil caught fire on the hob and the flames spread to the extractor hood. The kitchen units and ceiling are smoke damaged and need replacing. We are staying with family until the smell of smoke is cleared.",
+      "location": "Genoa",
       "policy_start_date": "2026-03-13",
       "police_report_number": null
     },
@@ -27,27 +28,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Mrs Naomi Sullivan"
-    },
-    {
-      "kind": "name",
-      "value": "Ms Janice Williams"
+      "value": "Giorgia Ceci"
     },
     {
       "kind": "address",
-      "value": "238 Johnson Unions, Lake Marcuston, L19 7TR"
+      "value": "Vicolo Antonella, 83 Appartamento 9, 24016, San Pellegrino Terme (BG)"
     },
     {
       "kind": "phone",
-      "value": "+441214960227"
+      "value": "+39 37134033176"
     },
     {
       "kind": "email",
-      "value": "jonathan82@example.org"
+      "value": "emma22@example.com"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 83 04 16 T"
+      "kind": "national_id",
+      "value": "BTTNNE09D63F627J"
     }
   ]
 }

@@ -4,18 +4,19 @@
   "hard": false,
   "tags": [],
   "layout": "form",
+  "country": "IT",
   "pdf_file": "case_047.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-69758",
-      "policy_number": "NBM-1349-8751",
+      "claim_number": "CLM-2026-50172",
+      "policy_number": "DG-7080-8469",
       "date_of_loss": "2026-03-03",
       "claimant_role": "policyholder",
-      "amount_claimed": 21009.43,
-      "loss_description": "My Ford Focus was stolen overnight from the street outside my home. The car has not been found and the tracking service shows no signal. I still have both sets of keys apart from the stolen one.",
-      "location": "Robsonport",
+      "amount_claimed": 20321.27,
+      "loss_description": "My Toyota Yaris was stolen overnight from the street outside my home. The car has not been recovered. I still have both sets of keys apart from the stolen one.",
+      "location": "Bologna",
       "policy_start_date": "2021-06-22",
-      "police_report_number": "TV/50172/26"
+      "police_report_number": "IT/97578/26"
     },
     "category": "motor_theft",
     "acceptable_categories": [
@@ -27,27 +28,27 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Dr Julian Curtis"
+      "value": "Susanna Solari"
     },
     {
       "kind": "address",
-      "value": "Flat 3, McLean Ville, Brownborough, L3F 4JY"
+      "value": "Stretto Argentero, 60 Piano 0, 24014, Piazza Brembana (BG)"
     },
     {
       "kind": "phone",
-      "value": "+44(0)306 999 0010"
+      "value": "+39 057764390"
     },
     {
       "kind": "email",
-      "value": "aclark@example.net"
+      "value": "gcarriera@example.com"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ345311T"
+      "kind": "national_id",
+      "value": "GRGJCP95H67C502G"
     },
     {
       "kind": "vehicle_registration",
-      "value": "JV96MSX"
+      "value": "DL699JV"
     }
   ]
 }

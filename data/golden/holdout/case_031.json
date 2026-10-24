@@ -4,18 +4,19 @@
   "hard": false,
   "tags": [],
   "layout": "letter",
+  "country": "DE",
   "pdf_file": "case_031.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2025-38554",
-      "policy_number": "NBM-5054-5523",
+      "claim_number": "CLM-2025-44094",
+      "policy_number": "POL-95185616",
       "date_of_loss": "2025-12-29",
-      "claimant_role": "policyholder",
-      "amount_claimed": 5509.98,
+      "claimant_role": "representative",
+      "amount_claimed": 19240.82,
       "loss_description": "In heavy rain my Skoda Octavia skidded on a bend and hit a stone wall. Both nearside doors are dented and the wing mirror is broken. Photos of the damage were taken at the scene and are available.",
-      "location": "Stevensland",
+      "location": "Leipzig",
       "policy_start_date": "2024-03-29",
-      "police_report_number": "MP/21062/25"
+      "police_report_number": "DE/55881/25"
     },
     "category": "motor_collision",
     "acceptable_categories": [
@@ -27,27 +28,31 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Mary Wheeler"
+      "value": "Dr. Gilda Caspar"
+    },
+    {
+      "kind": "name",
+      "value": "Reiner Ernst B.Sc."
     },
     {
       "kind": "address",
-      "value": "Flat 39, Foster Valley, Hallborough, NN8X 2UQ"
+      "value": "Eleni-Rosemann-Ring 97-93, 27539 Sonneberg"
     },
     {
       "kind": "phone",
-      "value": "01184960962"
+      "value": "+49 (0) 2017 125952"
     },
     {
       "kind": "email",
-      "value": "alexanderrees@example.org"
+      "value": "skranz@example.org"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 59 52 76 T"
+      "kind": "national_id",
+      "value": "87388127539"
     },
     {
       "kind": "vehicle_registration",
-      "value": "FZ05ZHQ"
+      "value": "GTH-IP-6"
     }
   ]
 }

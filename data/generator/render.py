@@ -34,9 +34,12 @@ class Facts:
     writer_name: str
     other_name: str | None
     address: str
+    address_lines: list[str]
     phone: str
     email: str
-    ni_number: str
+    national_id: str
+    national_id_labels: tuple[str, ...]
+    national_id_name: str
     vehicle_registration: str | None
     description: str
     sent_date: str
@@ -97,7 +100,7 @@ def form_story(f: Facts, rng: random.Random) -> list:
         (label("address", rng), f.address),
         (label("phone", rng), f.phone),
         (label("email", rng), f.email),
-        (label("ni_number", rng), f.ni_number),
+        (rng.choice(f.national_id_labels), f.national_id),
     ]
     if f.vehicle_registration:
         person_rows.append((label("vehicle_registration", rng), f.vehicle_registration))
@@ -136,12 +139,12 @@ def fact_sentences(f: Facts) -> list[str]:
         sentences.append(f"The police reference is {f.police_report}.")
     if f.vehicle_registration:
         sentences.append(f"The vehicle registration is {f.vehicle_registration}.")
-    sentences.append(f"For identification, the National Insurance number is {f.ni_number}.")
+    sentences.append(f"For identification, the {f.national_id_name} is {f.national_id}.")
     return sentences
 
 
 def letter_story(f: Facts, rng: random.Random) -> list:
-    story = [para(line) for line in [f.writer_name, *f.address.split(", "), f.phone, f.email]]
+    story = [para(line) for line in [f.writer_name, *f.address_lines, f.phone, f.email]]
     story += [Spacer(1, 6 * mm), para(f.sent_date), Spacer(1, 4 * mm)]
     story += [para("Claims Department"), para(f.insurer), Spacer(1, 6 * mm)]
     subject = f"Re: claim {f.claim_number}"

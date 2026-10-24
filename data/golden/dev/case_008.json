@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "form",
+  "country": "IT",
   "pdf_file": "case_008.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-52600",
-      "policy_number": "POL-22281762",
+      "claim_number": "CLM-2026-63637",
+      "policy_number": "AL/657332/DD",
       "date_of_loss": "2026-06-02",
       "claimant_role": "policyholder",
-      "amount_claimed": 4741.0,
-      "loss_description": "Heavy rain overflowed a blocked gutter and water ran down the inside of the back wall. The ceiling plaster has collapsed in one corner and the flooring is ruined. A drying company has been booked and has provided an estimate.",
-      "location": "Jenkinsside",
+      "amount_claimed": 23606.44,
+      "loss_description": "A pipe under the bathroom floor burst and water came through the kitchen ceiling. Skirting boards, a carpet and the lower kitchen units are water damaged. A drying company has been booked and has provided an estimate.",
+      "location": "Padua",
       "policy_start_date": "2023-06-17",
       "police_report_number": null
     },
@@ -27,23 +28,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Dennis Jones"
+      "value": "Sig.ra Rosa Versace"
     },
     {
       "kind": "address",
-      "value": "Flat 1, Harris Mission, East Staceyfort, DY49 2RS"
+      "value": "Strada Vito, 50 Appartamento 7, 26013, Sabbioni (CR)"
     },
     {
       "kind": "phone",
-      "value": "(0117) 4960073"
+      "value": "0861349626"
     },
     {
       "kind": "email",
-      "value": "tonycole@example.org"
+      "value": "scalfarogioachino@example.net"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 918055 T"
+      "kind": "national_id",
+      "value": "GRGVNS45B24G266H"
     }
   ]
 }

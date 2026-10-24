@@ -4,6 +4,7 @@
   "hard": false,
   "tags": [],
   "layout": "letter",
+  "country": "DE",
   "pdf_file": "case_037.pdf",
   "expected": {
     "fields": {
@@ -11,9 +12,9 @@
       "policy_number": "POL-18611248",
       "date_of_loss": "2026-08-07",
       "claimant_role": "policyholder",
-      "amount_claimed": 39689.2,
-      "loss_description": "A pipe under the bathroom floor burst and water came through the kitchen ceiling. Skirting boards, a carpet and the lower kitchen units are water damaged. A plumber stopped the leak the same day and has invoiced for the call out.",
-      "location": "New Terence",
+      "amount_claimed": 7383.45,
+      "loss_description": "The washing machine hose split while we were out and flooded the utility room. The wall needs drying out and replastering, and a sofa was soaked. I turned off the water at the stopcock and moved what I could.",
+      "location": "Leipzig",
       "policy_start_date": "2026-07-29",
       "police_report_number": null
     },
@@ -27,23 +28,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Lorraine Russell"
+      "value": "James Drubin B.A."
     },
     {
       "kind": "address",
-      "value": "3 Emily Dale, New Katherine, B46 8JX"
+      "value": "Carlo-Gutknecht-Gasse 3-4, 04681 Pirmasens"
     },
     {
       "kind": "phone",
-      "value": "(029) 2018095"
+      "value": "(00950) 17724"
     },
     {
       "kind": "email",
-      "value": "blakejade@example.org"
+      "value": "benderjanine@example.net"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ008128T"
+      "kind": "national_id",
+      "value": "72388304681"
     }
   ]
 }

@@ -12,6 +12,7 @@ ROUTING_CONFIG = Path(__file__).resolve().parents[2] / "config" / "routing.yaml"
 
 @dataclass(frozen=True)
 class RoutingPolicy:
+    currency: str
     auto_max_amount: float
     senior_min_amount: float
     fraud_new_policy_days: int
@@ -22,6 +23,7 @@ class RoutingPolicy:
 def load_policy(path: Path = ROUTING_CONFIG) -> RoutingPolicy:
     raw = yaml.safe_load(path.read_text(encoding="utf-8"))
     return RoutingPolicy(
+        currency=raw["currency"],
         auto_max_amount=float(raw["auto_max_amount"]),
         senior_min_amount=float(raw["senior_min_amount"]),
         fraud_new_policy_days=int(raw["fraud_new_policy_days"]),

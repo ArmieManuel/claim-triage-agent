@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "email",
+  "country": "IT",
   "pdf_file": "case_020.pdf",
   "expected": {
     "fields": {
       "claim_number": "CLM-2025-61131",
-      "policy_number": "NBM-9929-9357",
+      "policy_number": "DG-9929-9357",
       "date_of_loss": "2025-08-26",
       "claimant_role": "policyholder",
-      "amount_claimed": 18787.71,
-      "loss_description": "The water tank in the loft leaked and soaked the bedroom ceiling below. The wall needs drying out and replastering, and a sofa was soaked. I turned off the water at the stopcock and moved what I could.",
-      "location": "New Sandra",
+      "amount_claimed": 13115.26,
+      "loss_description": "Heavy rain overflowed a blocked gutter and water ran down the inside of the back wall. The wall needs drying out and replastering, and a sofa was soaked. A plumber stopped the leak the same day and has invoiced for the call out.",
+      "location": "Padua",
       "policy_start_date": "2021-12-14",
       "police_report_number": null
     },
@@ -27,23 +28,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Roger Jones"
+      "value": "Rodolfo Strangio"
     },
     {
       "kind": "address",
-      "value": "Studio 8, Cole Rest, West Edward, BH5 5AL"
+      "value": "Vicolo Verdone, 26 Piano 2, 46023, Bondeno Di Gonzaga (MN)"
     },
     {
       "kind": "phone",
-      "value": "+44(0)117 4960856"
+      "value": "38375043861"
     },
     {
       "kind": "email",
-      "value": "nwebb@example.org"
+      "value": "ritagozzi@example.org"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ 23 94 67 T"
+      "kind": "national_id",
+      "value": "FRZRSN37L21L150C"
     }
   ]
 }

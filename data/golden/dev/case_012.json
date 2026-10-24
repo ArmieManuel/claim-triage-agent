@@ -4,16 +4,17 @@
   "hard": false,
   "tags": [],
   "layout": "email",
+  "country": "AT",
   "pdf_file": "case_012.pdf",
   "expected": {
     "fields": {
-      "claim_number": "CLM-2026-51095",
-      "policy_number": "HL/416357/UE",
+      "claim_number": "CLM-2026-45835",
+      "policy_number": "POL-52081599",
       "date_of_loss": "2026-07-14",
       "claimant_role": "policyholder",
-      "amount_claimed": 1667.0,
-      "loss_description": "The water tank in the loft leaked and soaked the bedroom ceiling below. Skirting boards, a carpet and the lower kitchen units are water damaged. A drying company has been booked and has provided an estimate.",
-      "location": "Lake Jaynefort",
+      "amount_claimed": 1289.0,
+      "loss_description": "Heavy rain overflowed a blocked gutter and water ran down the inside of the back wall. Skirting boards, a carpet and the lower kitchen units are water damaged. A drying company has been booked and has provided an estimate.",
+      "location": "Bregenz",
       "policy_start_date": "2025-08-08",
       "police_report_number": null
     },
@@ -27,23 +28,23 @@
   "pii": [
     {
       "kind": "name",
-      "value": "Josephine Davidson-Hamilton"
+      "value": "Niko Reichl"
     },
     {
       "kind": "address",
-      "value": "56 Fletcher Greens, North Ashleighshire, SE7 5FH"
+      "value": "Ava-Bürger-Ring 8/2, 5566 Hall in Tirol"
     },
     {
       "kind": "phone",
-      "value": "(0161) 496 0954"
+      "value": "02209/47252379"
     },
     {
       "kind": "email",
-      "value": "utaylor@example.com"
+      "value": "domenica70@example.net"
     },
     {
-      "kind": "ni_number",
-      "value": "ZZ989584T"
+      "kind": "national_id",
+      "value": "9794060996"
     }
   ]
 }
