@@ -1,0 +1,86 @@
+import json
+from datetime import date
+
+import pytest
+
+from triage.llm import FakeProvider
+from triage.nodes.classify import ClassificationOutput, classify
+from triage.nodes.summarize import SummaryOutput, summarize
+from triage.schemas import Category, ClaimFields, Queue
+
+DOC = "Claim CLM-2026-35152. A pipe burst in Hamburg on 2026-05-09. Amount claimed EUR 3627.55."
+FIELDS = ClaimFields(
+    claim_number="CLM-2026-35152",
+    date_of_loss=date(2026, 5, 9),
+    amount_claimed=3627.55,
+    location="Hamburg",
+)
+
+
+def answer(**values) -> str:
+    return json.dumps(values)
+
+
+# classify
+
+
+def test_classify_parses_category_and_confidence():
+    fake = FakeProvider([answer(category="property_water", confidence=0.93, reason="Burst pipe.")])
+    result = classify(DOC, fake)
+    assert result.category == Category.PROPERTY_WATER
+    assert result.confidence == 0.93
+    assert result.error is None
+    assert result.prompt_version == "classify-v1"
+    assert fake.calls[0]["schema"] == ClassificationOutput.model_json_schema()
+    assert DOC in fake.calls[0]["prompt"]
+
+
+@pytest.mark.parametrize(
+    "bad",
+    [
+        "nonsense",
+        answer(category="boat_sinking", confidence=0.9, reason="x"),
+        answer(category="other", confidence=1.7, reason="x"),
+    ],
+)
+def test_classify_falls_back_to_zero_confidence_on_bad_answers(bad):
+    result = classify(DOC, FakeProvider([bad]))
+    assert result.category == Category.OTHER
+    assert result.confidence == 0.0
+    assert result.error
+
+
+# summarize
+
+
+GOOD_SUMMARY = (
+    "A pipe burst in Hamburg on 2026-05-09. The claimant asks for EUR 3,627.55. "
+    "Claim CLM-2026-35152 was routed to the standard handler."
+)
+
+
+def test_summarize_returns_the_summary_and_sends_context():
+    fake = FakeProvider([answer(summary=GOOD_SUMMARY)])
+    result = summarize(DOC, FIELDS, Category.PROPERTY_WATER, Queue.STANDARD_HANDLER, fake)
+    assert result.summary == GOOD_SUMMARY
+    assert result.sentence_count == 3
+    assert result.ungrounded_numbers == []
+    assert result.prompt_version == "summarize-v1"
+    prompt = fake.calls[0]["prompt"]
+    assert DOC in prompt
+    assert "standard_handler" in prompt
+    assert "CLM-2026-35152" in prompt
+    assert fake.calls[0]["schema"] == SummaryOutput.model_json_schema()
+
+
+def test_summarize_flags_numbers_that_are_not_in_the_source():
+    invented = GOOD_SUMMARY + " A second payment of EUR 9,999 was already made."
+    fake = FakeProvider([answer(summary=invented)])
+    result = summarize(DOC, FIELDS, Category.PROPERTY_WATER, Queue.STANDARD_HANDLER, fake)
+    assert result.ungrounded_numbers == ["9999"]
+
+
+def test_summarize_reports_bad_answers():
+    result = summarize(DOC, FIELDS, Category.OTHER, Queue.HUMAN_REVIEW, FakeProvider(["{}"]))
+    assert result.summary == ""
+    assert result.error

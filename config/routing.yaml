@@ -6,3 +6,5 @@ senior_min_amount: 25000
 fraud_new_policy_days: 30
 always_senior_categories: [liability]
 never_auto_categories: [motor_theft, liability]
+# Classification confidence below this sends the claim to human review.
+min_confidence: 0.7

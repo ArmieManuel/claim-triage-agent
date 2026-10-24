@@ -4,7 +4,7 @@ Plain rules, applied in order. The first rule that matches decides the queue. Th
 
 | Order | Rule | Queue |
 |---|---|---|
-| 1 | A required field is missing, the document holds more than one claim, or the category is ambiguous or low confidence | `human_review` |
+| 1 | Extraction still fails validation after 2 retries, a required field is missing, the document holds more than one claim, or classification confidence is below 0.7 | `human_review` |
 | 2 | Loss happened within 30 days of the policy start date, or a motor theft has no police report number | `fraud_review` |
 | 3 | Amount claimed is above 25,000 EUR, or the category is `liability` | `senior_handler` |
 | 4 | Amount claimed is 2,500 EUR or less, and the category is not `motor_theft` or `liability` | `auto_process` |
@@ -15,6 +15,8 @@ Required fields: claim number, policy number, date of loss, claimant role, amoun
 Amounts are in the currency set in `config/routing.yaml` (EUR). The generator reads the same setting when it writes amounts into the PDFs.
 
 These rules are synthetic and exist to make routing testable. They are not taken from any real insurer.
+
+The rules are implemented in [src/triage/rules.py](../src/triage/rules.py). Each decision carries a list of reasons, so a handler can see why a claim landed in a queue.
 
 ## How the golden dataset uses this
 
