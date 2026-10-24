@@ -115,9 +115,9 @@ Check each box only when the acceptance criteria are met and tests pass.
 - Acceptance: tests confirm every PDF has a matching expected JSON that validates against the schema.
 
 ### Phase 2: Core nodes with TDD (3 to 4 days)
-- [ ] LLM provider interface plus an Ollama client, with a fake provider for unit tests.
-- [ ] `ingest`, `redact_pii`, `extract`, `validate`, `classify`, `route`, `summarize`, each with unit tests written first.
-- [ ] `rules.py` routing logic fully unit tested without any model.
+- [x] LLM provider interface plus an Ollama client, with a fake provider for unit tests.
+- [x] `ingest`, `redact_pii`, `extract`, `validate`, `classify`, `route`, `summarize`, each with unit tests written first.
+- [x] `rules.py` routing logic fully unit tested without any model.
 - Acceptance: unit tests pass with the fake provider and no network.
 
 ### Phase 3: LangGraph workflow (2 days)
