@@ -57,6 +57,23 @@ REQUIRED_FIELDS = (
 )
 
 
+class ExtractionOutput(BaseModel):
+    """What the model must answer. Loose types on purpose: the validate node checks them in code."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    claim_number: str | None
+    policy_number: str | None
+    date_of_loss: str | None = Field(description="YYYY-MM-DD")
+    claimant_role: ClaimantRole | None
+    amount_claimed: float | str | None = Field(description="Number in euros, e.g. 4250.5")
+    loss_description: str | None
+    location: str | None
+    policy_start_date: str | None = Field(description="YYYY-MM-DD")
+    police_report_number: str | None
+    multiple_claims: bool
+
+
 def missing_required_fields(fields: ClaimFields) -> list[str]:
     return [name for name in REQUIRED_FIELDS if getattr(fields, name) is None]
 
