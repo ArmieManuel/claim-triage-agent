@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling==1.32.4"]
+build-backend = "hatchling.build"
+
+[project]
+name = "claim-triage-agent"
+version = "0.1.0"
+description = "AI agent that extracts, classifies, routes and summarizes synthetic insurance claim PDFs, with measured quality."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "langgraph==1.2.14",
+    "pydantic==2.14.0",
+    "pydantic-settings==2.15.0",
+    "pdfplumber==0.11.10",
+    "reportlab==5.0.1",
+    "faker==40.41.0",
+    "fastapi==0.143.0",
+    "uvicorn==0.54.0",
+    "python-multipart==0.0.32",
+    "httpx==0.28.1",
+    "pandas==3.0.6",
+    "pyyaml==6.0.3",
+    "ollama==0.6.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.1.1",
+    "ruff==0.16.10",
+    "pre-commit==4.6.2",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/triage"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+    "integration: tests that run the full graph with the fake provider",
+    "local_model: tests that need a running Ollama server (skipped in CI)",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
+
+[tool.ruff.format]
+quote-style = "double"

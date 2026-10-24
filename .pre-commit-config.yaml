@@ -1,0 +1,16 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.16.10
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+      - id: ruff-format
+  - repo: local
+    hooks:
+      # Hard rule 6 in PLAN.md: no em dashes anywhere in the repo.
+      - id: no-em-dash
+        name: no em dashes
+        language: pygrep
+        entry: "—"
+        types: [text]
+        exclude: ^\.pre-commit-config\.yaml$
