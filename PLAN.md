@@ -150,7 +150,7 @@ Check each box only when the acceptance criteria are met and tests pass.
 - [x] Dockerfile for the API and a `docker-compose.yml` that starts the API and Ollama together.
 - [ ] Stretch, for the "microservices" keyword: split into two services (API and extraction worker) communicating over HTTP, with a short note in `docs/architecture.md` explaining the trade-off. (Not built on purpose; the trade-off and the split point are documented in `docs/architecture.md`.)
 - [x] GitHub Actions: lint, unit tests, integration tests with the fake provider, and an evaluation run on a small subset using a tiny model or recorded responses so CI stays fast and free.
-- Acceptance: a pull request triggers the workflow and a failing test blocks the merge.
+- Acceptance: a pull request triggers the workflow and a failing test blocks the merge. (Done: pull request #1 added a deliberately failing test; CI run 40396931534 failed the test job, branch protection on `main` requires all four checks, GitHub reported the merge as BLOCKED, and the pull request was closed without merging.)
 
 ### Phase 8: Privacy and governance docs (1 day)
 - [x] `docs/privacy_and_governance.md`: what counts as PII here, how it is redacted, retention (nothing stored by default), what GDPR obligations would apply to a real deployment, and why the deployment must use a model provider with a no-training-on-customer-data agreement. Label this as design documentation, not legal advice.
@@ -162,9 +162,9 @@ Check each box only when the acceptance criteria are met and tests pass.
 - Acceptance: the same evaluation run works against the cloud deployment and the report is saved.
 
 ### Phase 10: README and demo (1 to 2 days)
-- [ ] README structure: the problem, architecture diagram, results table (from the latest report), how to run it in three commands, design decisions and limits, what I would do next.
-- [ ] A short screen recording or GIF of one claim going through the system.
-- [ ] Pin the repository on GitHub with a clear description and topics.
+- [x] README structure: the problem, architecture diagram, results table (from the latest report), how to run it in three commands, design decisions and limits, what I would do next.
+- [x] A short screen recording or GIF of one claim going through the system.
+- [ ] Pin the repository on GitHub with a clear description and topics. (Repository is public with a description and ten topics; pinning on the profile is a manual step for the owner.)
 - Acceptance: a stranger can clone, run the demo and reproduce the evaluation numbers.
 
 ## 7. Quality targets
