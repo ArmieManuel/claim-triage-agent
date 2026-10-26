@@ -141,9 +141,9 @@ Check each box only when the acceptance criteria are met and tests pass.
 - Acceptance: the OpenAPI docs page shows the schemas, and the API tests pass.
 
 ### Phase 6: Observability (1 day)
-- [ ] Structured JSON logs with request id, node name, latency, tokens and outcome.
-- [ ] A simple metrics endpoint or log summary showing latency and error rates.
-- [ ] Never log raw PII. Add a test that checks logs contain placeholders, not the original values.
+- [x] Structured JSON logs with request id, node name, latency, tokens and outcome.
+- [x] A simple metrics endpoint or log summary showing latency and error rates.
+- [x] Never log raw PII. Add a test that checks logs contain placeholders, not the original values.
 - Acceptance: one request produces a readable trace across all nodes.
 
 ### Phase 7: Containers and CI (1 to 2 days)

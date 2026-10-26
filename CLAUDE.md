@@ -40,6 +40,9 @@ Read [PLAN.md](PLAN.md) before working. Work phase by phase and tick a box only 
 ```
 Then http://127.0.0.1:8000/ (upload page) or /docs. The API key lives in .env (TRIAGE_API_KEYS,
 never committed; .env.example shows the format). Never print the key in chat or logs.
+Logs are JSON lines on stdout (triage logger); filter one request with
+`findstr <request_id>`. GET /v1/metrics (with key) shows counts, error rate and latency.
+Never log document text, field values that may hold PII, or restored summaries.
 
 ## Evaluation workflow
 
