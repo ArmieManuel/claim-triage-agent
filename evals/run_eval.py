@@ -24,7 +24,8 @@ from evals.metrics import check_thresholds, score_case, summarize_metrics
 from triage.config import REPO_ROOT, Settings
 from triage.golden import GOLDEN_DIR, load_golden_cases
 from triage.graph import run_triage
-from triage.llm import LLMProvider, OllamaProvider, make_provider
+from triage.llm import LLMProvider, make_provider
+from triage.llm.replay import RecordingProvider
 from triage.nodes.ingest import ingest
 from triage.pii import redact
 from triage.schemas import GoldenCase
@@ -152,6 +153,9 @@ def main(argv: list[str] | None = None, provider: LLMProvider | None = None) -> 
     parser.add_argument("--label", default="", help="short tag added to the report folder name")
     parser.add_argument("--out", type=Path, default=DEFAULT_REPORTS)
     parser.add_argument("--thresholds", type=Path, default=DEFAULT_THRESHOLDS)
+    parser.add_argument(
+        "--record", type=Path, help="save every model answer to this cassette for later replay"
+    )
     args = parser.parse_args(argv)
 
     cases = load_golden_cases(split=None if args.split == "all" else args.split)
@@ -164,7 +168,13 @@ def main(argv: list[str] | None = None, provider: LLMProvider | None = None) -> 
 
     settings = Settings()
     provider = provider or make_provider(settings)
+    model_name = getattr(provider, "model", type(provider).__name__)
+    if args.record:
+        provider = RecordingProvider(provider)
     df = evaluate(cases, provider, verbose=True)
+    if args.record:
+        provider.save(args.record)
+        print(f"Recorded {len(provider.recorded)} model answers to {args.record}")
     metrics = summarize_metrics(df)
     versions = Counter(df["prompt_versions"]).most_common(1)[0][0] if len(df) else "{}"
     meta = {
@@ -172,9 +182,7 @@ def main(argv: list[str] | None = None, provider: LLMProvider | None = None) -> 
         "split": split,
         "label": re.sub(r"[^\w-]", "-", args.label),
         "n_cases": len(cases),
-        "model": provider.model
-        if isinstance(provider, OllamaProvider)
-        else type(provider).__name__,
+        "model": model_name,
         "prompt_versions": json.loads(versions),
         "git_commit": _git("rev-parse", "--short", "HEAD"),
         "git_dirty": bool(_git("status", "--porcelain")),

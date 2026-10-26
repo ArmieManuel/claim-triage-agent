@@ -12,6 +12,10 @@ __all__ = ["FakeProvider", "LLMProvider", "LLMResponse", "OllamaProvider", "make
 def make_provider(settings: Settings) -> LLMProvider:
     if settings.llm_provider == "fake":
         return FakeProvider()
+    if settings.llm_provider == "replay":
+        from triage.llm.replay import ReplayProvider
+
+        return ReplayProvider(settings.cassette_path)
     if settings.llm_provider == "azure":
         return AzureOpenAIProvider()
     return OllamaProvider(

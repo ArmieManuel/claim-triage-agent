@@ -14,7 +14,9 @@ class Settings(BaseSettings):
         env_prefix="TRIAGE_", env_file=REPO_ROOT / ".env", extra="ignore"
     )
 
-    llm_provider: Literal["ollama", "fake", "azure"] = "ollama"
+    llm_provider: Literal["ollama", "fake", "azure", "replay"] = "ollama"
+    # Recorded model answers used when llm_provider is "replay" (CI evaluation).
+    cassette_path: Path = REPO_ROOT / "evals" / "cassettes" / "ci_subset.json"
     ollama_host: str = "http://localhost:11434"
     ollama_model: str = "gemma4:e2b"
     ollama_num_ctx: int = 8192

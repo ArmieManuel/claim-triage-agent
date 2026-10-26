@@ -52,5 +52,8 @@ select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
 # ruff format enforces line length for code; long template sentences may run over.
 ignore = ["E501"]
 
+[tool.ruff.lint.isort]
+known-first-party = ["triage", "generator", "evals", "tests"]
+
 [tool.ruff.format]
 quote-style = "double"

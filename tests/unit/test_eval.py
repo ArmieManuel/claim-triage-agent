@@ -3,6 +3,7 @@ from datetime import date
 
 import pandas as pd
 import pytest
+
 from evals.metrics import (
     check_thresholds,
     field_correct,
@@ -11,7 +12,6 @@ from evals.metrics import (
 )
 from evals.regression import compare
 from evals.run_eval import evaluate, main
-
 from triage.golden import load_golden_cases
 from triage.llm import FakeProvider
 from triage.schemas import ClaimantRole
