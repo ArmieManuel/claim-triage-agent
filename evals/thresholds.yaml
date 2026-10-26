@@ -1,0 +1,15 @@
+# Quality gates. run_eval exits with code 1 when any gate fails.
+# Set on 2026-10-26 from the first full dev run (reports/20261026-134704_dev_baseline),
+# with room for noise: one case out of 30 moves a rate by 0.033.
+# Baseline: routing 0.967, classification 1.0, fields 0.996, PII recall 1.0, p95 36 s.
+min:
+  routing_accuracy: 0.90
+  routing_accuracy_normal: 0.93
+  classification_accuracy: 0.90
+  field_accuracy_mean: 0.95
+  pii_recall: 0.95
+max:
+  n_errors: 0
+  retry_rate: 0.20
+  summary_warning_rate: 0.10
+  latency_p95_s: 60
