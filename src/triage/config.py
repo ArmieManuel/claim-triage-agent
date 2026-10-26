@@ -1,4 +1,5 @@
-"""Runtime settings. Override any value with an environment variable, e.g. TRIAGE_OLLAMA_MODEL."""
+"""Runtime settings. Override any value with an environment variable, e.g. TRIAGE_OLLAMA_MODEL,
+or put it in a local .env file (see .env.example; .env is never committed)."""
 
 from pathlib import Path
 from typing import Literal
@@ -9,7 +10,9 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_prefix="TRIAGE_")
+    model_config = SettingsConfigDict(
+        env_prefix="TRIAGE_", env_file=REPO_ROOT / ".env", extra="ignore"
+    )
 
     llm_provider: Literal["ollama", "fake", "azure"] = "ollama"
     ollama_host: str = "http://localhost:11434"
@@ -18,3 +21,6 @@ class Settings(BaseSettings):
     temperature: float = 0.0
     request_timeout_s: float = 300.0
     routing_config: Path = REPO_ROOT / "config" / "routing.yaml"
+    # API: keys allowed to call /v1 (JSON list in TRIAGE_API_KEYS); none means no access.
+    api_keys: list[str] = []
+    max_upload_mb: float = 10.0

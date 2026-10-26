@@ -1,0 +1,79 @@
+"""FastAPI application.
+
+Run locally:  .venv\\Scripts\\python -m uvicorn triage.api.app:app
+Then open http://127.0.0.1:8000/ (upload page) or http://127.0.0.1:8000/docs (API docs).
+"""
+
+from collections.abc import Callable
+from pathlib import Path
+from typing import Literal
+
+import httpx
+from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
+from pydantic import BaseModel
+
+from triage import __version__
+from triage.api.errors import install_error_handlers
+from triage.api.v1 import make_router
+from triage.config import Settings
+from triage.llm import LLMProvider, make_provider
+from triage.rules import RoutingPolicy, load_routing_policy
+
+DEMO_PAGE = (Path(__file__).parent / "demo.html").read_text(encoding="utf-8")
+
+
+class HealthResponse(BaseModel):
+    status: Literal["ok", "degraded"]
+    version: str
+    model: str
+    model_available: bool
+
+
+def ollama_reachable(settings: Settings) -> bool:
+    try:
+        return httpx.get(f"{settings.ollama_host}/api/version", timeout=2).is_success
+    except Exception:
+        return False
+
+
+def create_app(
+    settings: Settings | None = None,
+    provider: LLMProvider | None = None,
+    model_check: Callable[[], bool] | None = None,
+    policy: RoutingPolicy | None = None,
+) -> FastAPI:
+    settings = settings or Settings()
+    provider = provider or make_provider(settings)
+    policy = policy or load_routing_policy(settings.routing_config)
+    model_check = model_check or (lambda: ollama_reachable(settings))
+
+    app = FastAPI(
+        title="Claim Triage Agent",
+        version=__version__,
+        description=(
+            "Extracts, classifies, routes and summarizes synthetic insurance claim PDFs with a "
+            "local model. Portfolio project: synthetic data only, never real claims."
+        ),
+    )
+    install_error_handlers(app)
+    app.include_router(make_router(settings, provider, policy))
+
+    @app.get("/health", response_model=HealthResponse, tags=["health"])
+    def health() -> HealthResponse:
+        up = model_check()
+        return HealthResponse(
+            status="ok" if up else "degraded",
+            version=__version__,
+            model=settings.ollama_model,
+            model_available=up,
+        )
+
+    @app.get("/", response_class=HTMLResponse, include_in_schema=False)
+    def demo_page() -> str:
+        return DEMO_PAGE
+
+    return app
+
+
+app = create_app()
