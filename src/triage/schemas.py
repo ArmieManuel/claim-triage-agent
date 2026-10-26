@@ -107,6 +107,36 @@ class ExpectedOutput(BaseModel):
         return self
 
 
+class NodeTrace(BaseModel):
+    """One step of one request: what ran, how long it took, what it cost."""
+
+    node: str
+    latency_s: float
+    prompt_tokens: int = 0
+    output_tokens: int = 0
+    outcome: str
+
+
+class TriageResult(BaseModel):
+    """What the agent returns for one claim PDF."""
+
+    request_id: str
+    status: Literal["completed", "rejected"]
+    queue: Queue | None = None
+    reasons: list[str] = Field(default_factory=list)
+    category: Category | None = None
+    confidence: float | None = None
+    fields: ClaimFields | None = None
+    multiple_claims: bool = False
+    missing_fields: list[str] = Field(default_factory=list)
+    summary: str | None = None
+    warnings: list[str] = Field(default_factory=list)
+    extraction_attempts: int = 0
+    rejection_reason: str | None = None
+    prompt_versions: dict[str, str] = Field(default_factory=dict)
+    trace: list[NodeTrace] = Field(default_factory=list)
+
+
 class PiiItem(BaseModel):
     """One piece of personal data planted in a synthetic document, used to test redaction."""
 
