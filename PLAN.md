@@ -121,8 +121,8 @@ Check each box only when the acceptance criteria are met and tests pass.
 - Acceptance: unit tests pass with the fake provider and no network.
 
 ### Phase 3: LangGraph workflow (2 days)
-- [ ] Assemble the graph with the validate retry loop and the human_review fallback.
-- [ ] Integration test per path: happy path, retry then success, retry then fallback, low confidence fallback, unreadable PDF.
+- [x] Assemble the graph with the validate retry loop and the human_review fallback.
+- [x] Integration test per path: happy path, retry then success, retry then fallback, low confidence fallback, unreadable PDF.
 - Acceptance: all paths covered by integration tests using the fake provider, plus a manual run on real local-model output.
 
 ### Phase 4: Evaluation harness (3 days)

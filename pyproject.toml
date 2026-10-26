@@ -36,7 +36,7 @@ packages = ["src/triage", "data/generator"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-ra --strict-markers"
+addopts = "-ra --strict-markers -m 'not local_model'"
 markers = [
     "integration: tests that run the full graph with the fake provider",
     "local_model: tests that need a running Ollama server (skipped in CI)",

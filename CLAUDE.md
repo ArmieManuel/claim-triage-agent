@@ -29,6 +29,11 @@ Read [PLAN.md](PLAN.md) before working. Work phase by phase and tick a box only 
 .venv\Scripts\pre-commit run --all-files
 .venv\Scripts\python -m generator.build_golden   (regenerate data/golden, then commit it)
 .venv\Scripts\python scripts\try_one_claim.py case_013   (manual run with the real model; Ollama must be running)
+.venv\Scripts\python -m triage.cli path\to\claim.pdf [--json]   (triage any PDF)
+.venv\Scripts\python -m pytest -m local_model   (optional end-to-end test with the real model)
 ```
+
+Known from manual runs (not measured yet): the model reports high confidence on ambiguous
+claims (case_030), so ambiguity is not caught by the confidence rule. Address in Phase 4 with measurement.
 
 Routing thresholds live in `config/routing.yaml`; the rule order is in `docs/routing_policy.md`.
