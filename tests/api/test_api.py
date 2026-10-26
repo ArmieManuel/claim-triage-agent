@@ -148,6 +148,27 @@ def test_model_offline_gives_503():
     assert response.json()["error"] == "model_unavailable"
 
 
+# metrics
+
+
+def test_metrics_need_a_key():
+    assert client().get("/v1/metrics").status_code == 401
+
+
+def test_metrics_count_requests_queues_and_failures():
+    c = client()
+    upload(c)
+    upload(c, key="wrong")
+    upload(c, data=b"not a pdf")
+    snap = c.get("/v1/metrics", headers={"X-API-Key": KEY}).json()
+    triage = snap["triage"]
+    assert triage["completed"] == 1
+    assert triage["by_queue"] == {"standard_handler": 1}
+    assert triage["errors_by_code"] == {"unsupported_media_type": 1}
+    assert snap["http_by_status"]["401"] == 1
+    assert triage["latency_p50_s"] is not None
+
+
 # docs and versioning
 
 

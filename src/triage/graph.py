@@ -22,6 +22,7 @@ from triage.nodes.extract import extract
 from triage.nodes.ingest import UnreadableDocumentError, ingest
 from triage.nodes.summarize import summarize
 from triage.nodes.validate import ValidationResult, validate
+from triage.observability import log
 from triage.pii import redact, restore
 from triage.rules import RoutingDecision, RoutingPolicy, load_routing_policy, route
 from triage.schemas import Category, ExtractionOutput, NodeTrace, Queue, TriageResult
@@ -52,17 +53,26 @@ class TriageState(TypedDict, total=False):
 
 
 def _step(
-    node: str, started: float, outcome: str, response: LLMResponse | None = None
+    state: TriageState,
+    node: str,
+    started: float,
+    outcome: str,
+    response: LLMResponse | None = None,
+    **log_fields: Any,
 ) -> list[NodeTrace]:
-    return [
-        NodeTrace(
-            node=node,
-            latency_s=round(time.perf_counter() - started, 4),
-            prompt_tokens=response.prompt_tokens if response else 0,
-            output_tokens=response.output_tokens if response else 0,
-            outcome=outcome,
-        )
-    ]
+    """Record one node in the trace and log it. log_fields must never hold personal data."""
+    step = NodeTrace(
+        node=node,
+        latency_s=round(time.perf_counter() - started, 4),
+        prompt_tokens=response.prompt_tokens if response else 0,
+        output_tokens=response.output_tokens if response else 0,
+        outcome=outcome,
+    )
+    log.info(
+        "node_completed",
+        extra={"request_id": state["request_id"], **step.model_dump(), **log_fields},
+    )
+    return [step]
 
 
 def build_graph(provider: LLMProvider, policy: RoutingPolicy, today: date | None = None):
@@ -73,12 +83,12 @@ def build_graph(provider: LLMProvider, policy: RoutingPolicy, today: date | None
         except UnreadableDocumentError as error:
             return {
                 "rejection_reason": error.reason,
-                "trace": _step("ingest", started, f"rejected: {error.reason}"),
+                "trace": _step(state, "ingest", started, f"rejected: {error.reason}"),
             }
         return {
             "text": result.text,
             "rejection_reason": None,
-            "trace": _step("ingest", started, f"{result.page_count} pages"),
+            "trace": _step(state, "ingest", started, f"{result.page_count} pages"),
         }
 
     def redact_node(state: TriageState) -> dict[str, Any]:
@@ -87,7 +97,13 @@ def build_graph(provider: LLMProvider, policy: RoutingPolicy, today: date | None
         return {
             "redacted_text": redaction.text,
             "pii_mapping": redaction.mapping,
-            "trace": _step("redact_pii", started, f"{len(redaction.mapping)} values redacted"),
+            "trace": _step(
+                state,
+                "redact_pii",
+                started,
+                f"{len(redaction.mapping)} values redacted",
+                placeholders=sorted(redaction.mapping),  # names like [NAME_1], never the values
+            ),
         }
 
     def extract_node(state: TriageState) -> dict[str, Any]:
@@ -105,7 +121,7 @@ def build_graph(provider: LLMProvider, policy: RoutingPolicy, today: date | None
         update["extraction_error"] = attempt.error
         outcome = "invalid answer" if attempt.output is None else "parsed"
         update["trace"] = _step(
-            "extract", started, f"attempt {attempts}: {outcome}", attempt.response
+            state, "extract", started, f"attempt {attempts}: {outcome}", attempt.response
         )
         return update
 
@@ -120,7 +136,7 @@ def build_graph(provider: LLMProvider, policy: RoutingPolicy, today: date | None
         return {
             "validation": validation,
             "errors": errors,
-            "trace": _step("validate", started, outcome),
+            "trace": _step(state, "validate", started, outcome),
         }
 
     def after_validate(state: TriageState) -> Literal["ok", "retry", "give_up"]:
@@ -135,7 +151,7 @@ def build_graph(provider: LLMProvider, policy: RoutingPolicy, today: date | None
         )
         return {
             "decision": RoutingDecision(Queue.HUMAN_REVIEW, [reason]),
-            "trace": _step("human_review", started, Queue.HUMAN_REVIEW.value),
+            "trace": _step(state, "human_review", started, Queue.HUMAN_REVIEW.value),
         }
 
     def classify_node(state: TriageState) -> dict[str, Any]:
@@ -148,7 +164,7 @@ def build_graph(provider: LLMProvider, policy: RoutingPolicy, today: date | None
             "category": result.category,
             "confidence": result.confidence,
             "prompt_versions": {**state["prompt_versions"], "classify": result.prompt_version},
-            "trace": _step("classify", started, outcome, result.response),
+            "trace": _step(state, "classify", started, outcome, result.response),
         }
 
     def route_node(state: TriageState) -> dict[str, Any]:
@@ -162,7 +178,10 @@ def build_graph(provider: LLMProvider, policy: RoutingPolicy, today: date | None
             missing=validation.missing,
             policy=policy,
         )
-        return {"decision": decision, "trace": _step("route", started, decision.queue.value)}
+        return {
+            "decision": decision,
+            "trace": _step(state, "route", started, decision.queue.value, reasons=decision.reasons),
+        }
 
     def summarize_node(state: TriageState) -> dict[str, Any]:
         started = time.perf_counter()
@@ -184,7 +203,15 @@ def build_graph(provider: LLMProvider, policy: RoutingPolicy, today: date | None
             "summary": result.summary,
             "warnings": warnings,
             "prompt_versions": {**state["prompt_versions"], "summarize": result.prompt_version},
-            "trace": _step("summarize", started, "warnings" if warnings else "ok", result.response),
+            "trace": _step(
+                state,
+                "summarize",
+                started,
+                "warnings" if warnings else "ok",
+                result.response,
+                summary_redacted=result.summary,  # placeholders only; restored after logging
+                warnings=warnings,
+            ),
         }
 
     graph = StateGraph(TriageState)
@@ -225,10 +252,32 @@ def run_triage(
     today: date | None = None,
 ) -> TriageResult:
     request_id = request_id or str(uuid.uuid4())
+    log.info("triage_started", extra={"request_id": request_id, "pdf_bytes": len(pdf_bytes)})
     app = build_graph(provider, policy or load_routing_policy(), today=today)
     state: TriageState = app.invoke(
         {"request_id": request_id, "pdf_bytes": pdf_bytes, "trace": [], "prompt_versions": {}}
     )
+    result = _result(request_id, state)
+    log.info(
+        "triage_completed",
+        extra={
+            "request_id": request_id,
+            "status": result.status,
+            "queue": result.queue.value if result.queue else None,
+            "category": result.category.value if result.category else None,
+            "confidence": result.confidence,
+            "extraction_attempts": result.extraction_attempts,
+            "rejection_reason": result.rejection_reason,
+            "warnings": len(result.warnings),
+            "total_latency_s": round(sum(s.latency_s for s in result.trace), 3),
+            "total_tokens": sum(s.prompt_tokens + s.output_tokens for s in result.trace),
+            "prompt_versions": result.prompt_versions,
+        },
+    )
+    return result
+
+
+def _result(request_id: str, state: TriageState) -> TriageResult:
     if state.get("rejection_reason"):
         return TriageResult(
             request_id=request_id,

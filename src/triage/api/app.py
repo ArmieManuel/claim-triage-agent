@@ -4,12 +4,13 @@ Run locally:  .venv\\Scripts\\python -m uvicorn triage.api.app:app
 Then open http://127.0.0.1:8000/ (upload page) or http://127.0.0.1:8000/docs (API docs).
 """
 
+import time
 from collections.abc import Callable
 from pathlib import Path
 from typing import Literal
 
 import httpx
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 
@@ -18,6 +19,7 @@ from triage.api.errors import install_error_handlers
 from triage.api.v1 import make_router
 from triage.config import Settings
 from triage.llm import LLMProvider, make_provider
+from triage.observability import Metrics, configure_logging, log
 from triage.rules import RoutingPolicy, load_routing_policy
 
 DEMO_PAGE = (Path(__file__).parent / "demo.html").read_text(encoding="utf-8")
@@ -57,7 +59,28 @@ def create_app(
         ),
     )
     install_error_handlers(app)
-    app.include_router(make_router(settings, provider, policy))
+    configure_logging()
+    metrics = Metrics()
+    app.state.metrics = metrics
+    app.include_router(make_router(settings, provider, policy, metrics))
+
+    @app.middleware("http")
+    async def observe(request: Request, call_next):
+        started = time.perf_counter()
+        response = await call_next(request)
+        latency = time.perf_counter() - started
+        metrics.record_http(request.url.path, response.status_code, latency)
+        log.info(
+            "http_request",
+            extra={
+                "request_id": response.headers.get("X-Request-ID"),
+                "method": request.method,
+                "path": request.url.path,
+                "status": response.status_code,
+                "latency_s": round(latency, 4),
+            },
+        )
+        return response
 
     @app.get("/health", response_model=HealthResponse, tags=["health"])
     def health() -> HealthResponse:

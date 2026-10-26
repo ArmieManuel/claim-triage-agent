@@ -1,7 +1,8 @@
 """Version 1 routes. A /v2 router can be added next to this one without changing /v1."""
 
+import time
 import uuid
-from typing import Annotated
+from typing import Annotated, Any
 
 import httpx
 import ollama
@@ -12,20 +13,33 @@ from triage.api.security import require_api_key
 from triage.config import Settings
 from triage.graph import run_triage
 from triage.llm import LLMProvider
+from triage.observability import Metrics
 from triage.rules import RoutingPolicy
 from triage.schemas import TriageResult
 
 MODEL_ERRORS = (ConnectionError, httpx.TransportError, ollama.ResponseError)
 
 
-def make_router(settings: Settings, provider: LLMProvider, policy: RoutingPolicy) -> APIRouter:
+def make_router(
+    settings: Settings, provider: LLMProvider, policy: RoutingPolicy, metrics: Metrics
+) -> APIRouter:
     router = APIRouter(prefix="/v1", tags=["v1"])
+    auth = [Depends(require_api_key(settings))]
+
+    @router.get(
+        "/metrics",
+        dependencies=auth,
+        responses={401: ERROR_RESPONSES[401]},
+        summary="Request counts, error rate and latency since the server started",
+    )
+    def get_metrics() -> dict[str, Any]:
+        return metrics.snapshot()
 
     @router.post(
         "/triage",
         response_model=TriageResult,
         responses=ERROR_RESPONSES,
-        dependencies=[Depends(require_api_key(settings))],
+        dependencies=auth,
         summary="Triage one claim PDF",
         description=(
             "Upload a text-based claim PDF. Returns the extracted fields, category, queue with "
@@ -39,6 +53,17 @@ def make_router(settings: Settings, provider: LLMProvider, policy: RoutingPolicy
         x_request_id: Annotated[str | None, Header()] = None,
     ) -> TriageResult:
         request_id = x_request_id or str(uuid.uuid4())
+        started = time.perf_counter()
+        try:
+            result = _triage(file, request_id)
+        except ApiError as error:
+            metrics.record_triage_error(error.body.error)
+            raise
+        metrics.record_triage(result, time.perf_counter() - started)
+        response.headers["X-Request-ID"] = request_id
+        return result
+
+    def _triage(file: UploadFile, request_id: str) -> TriageResult:
         limit = int(settings.max_upload_mb * 1024 * 1024)
         data = file.file.read(limit + 1)
         if len(data) > limit:
@@ -63,7 +88,6 @@ def make_router(settings: Settings, provider: LLMProvider, policy: RoutingPolicy
                 f"the PDF could not be read: {result.rejection_reason}",
                 request_id,
             )
-        response.headers["X-Request-ID"] = request_id
         return result
 
     return router
