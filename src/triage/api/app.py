@@ -1,28 +1,27 @@
 """FastAPI application.
 
 Run locally:  .venv\\Scripts\\python -m uvicorn triage.api.app:app
-Then open http://127.0.0.1:8000/ (upload page) or http://127.0.0.1:8000/docs (API docs).
+Then open http://127.0.0.1:8000/ (demo page, no key needed from this machine) or
+http://127.0.0.1:8000/docs (API docs; /v1 routes need the X-API-Key header).
 """
 
 import time
 from collections.abc import Callable
-from pathlib import Path
 from typing import Literal
 
 import httpx
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 
 from triage import __version__
+from triage.api.demo import make_demo_router
 from triage.api.errors import install_error_handlers
+from triage.api.service import TriageService
 from triage.api.v1 import make_router
 from triage.config import Settings
 from triage.llm import LLMProvider, make_provider
 from triage.observability import Metrics, configure_logging, log
 from triage.rules import RoutingPolicy, load_routing_policy
-
-DEMO_PAGE = (Path(__file__).parent / "demo.html").read_text(encoding="utf-8")
 
 
 class HealthResponse(BaseModel):
@@ -62,7 +61,9 @@ def create_app(
     configure_logging()
     metrics = Metrics()
     app.state.metrics = metrics
-    app.include_router(make_router(settings, provider, policy, metrics))
+    service = TriageService(settings, provider, policy, metrics)
+    app.include_router(make_router(service))
+    app.include_router(make_demo_router(service))
 
     @app.middleware("http")
     async def observe(request: Request, call_next):
@@ -91,10 +92,6 @@ def create_app(
             model=settings.ollama_model,
             model_available=up,
         )
-
-    @app.get("/", response_class=HTMLResponse, include_in_schema=False)
-    def demo_page() -> str:
-        return DEMO_PAGE
 
     return app
 

@@ -24,3 +24,8 @@ class Settings(BaseSettings):
     # API: keys allowed to call /v1 (JSON list in TRIAGE_API_KEYS); none means no access.
     api_keys: list[str] = []
     max_upload_mb: float = 10.0
+    # Demo page at / with a keyless /demo route. The browser never holds an API key, so the
+    # route answers only requests from this machine unless demo_local_only is turned off
+    # (docker-compose does that and publishes the port on 127.0.0.1 only).
+    demo_enabled: bool = True
+    demo_local_only: bool = True

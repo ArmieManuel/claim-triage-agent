@@ -187,4 +187,4 @@ def test_docs_page_and_demo_page_are_served():
     demo = c.get("/")
     assert demo.status_code == 200
     assert "<form" in demo.text
-    assert "/v1/triage" in demo.text
+    assert "/demo/triage" in demo.text  # the page never calls the keyed /v1 route
