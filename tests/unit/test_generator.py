@@ -8,7 +8,7 @@ import pdfplumber
 import pytest
 
 from generator.content import format_amount, format_date
-from generator.make_case import german_tax_id, make_case
+from generator.make_case import austrian_sv_number, codice_fiscale, german_tax_id, make_case
 from generator.policy import load_policy
 from generator.scenarios import build_specs
 from triage.schemas import Category, Queue
@@ -152,6 +152,25 @@ def test_cases_come_from_germany_italy_and_austria(generated):
     countries = Counter(item.case.country for item in generated.values())
     assert set(countries) == {"DE", "IT", "AT"}
     assert min(countries.values()) >= 10
+
+
+def test_italian_and_austrian_ids_have_the_right_shape():
+    rng = random.Random(3)
+    for _ in range(100):
+        assert re.fullmatch(r"[A-Z]{6}\d{2}[A-EHLMPRST]\d{2}[A-Z]\d{3}[A-Z]", codice_fiscale(rng))
+        assert re.fullmatch(
+            r"\d{4}(0[1-9]|[12]\d|3[01])(0[1-9]|1[0-2])\d{2}", austrian_sv_number(rng)
+        )
+
+
+def test_national_ids_do_not_depend_on_faker_dates():
+    """Faker builds IT and AT ids from birth dates converted with the local time zone, which
+    made CI (UTC) disagree with a UTC+3 laptop. Our own generators use only the seed."""
+    expected = {"IT": codice_fiscale, "AT": austrian_sv_number}
+    for spec in [s for s in SPECS if s.country in expected]:
+        case = make_case(spec).case
+        (national_id,) = [p.value for p in case.pii if p.kind == "national_id"]
+        assert national_id == expected[spec.country](random.Random(spec.seed + 1))
 
 
 def test_german_tax_id_has_11_digits_without_leading_zero():

@@ -21,7 +21,7 @@ def main() -> None:
         folder = GOLDEN_DIR / spec.split
         (folder / generated.case.pdf_file).write_bytes(generated.pdf_bytes)
         (folder / f"{spec.case_id}.json").write_text(
-            generated.case.model_dump_json(indent=2) + "\n", encoding="utf-8"
+            generated.case.model_dump_json(indent=2) + "\n", encoding="utf-8", newline="\n"
         )
     print(f"Wrote {len(build_specs())} cases to {GOLDEN_DIR}")
 

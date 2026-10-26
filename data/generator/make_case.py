@@ -85,6 +85,27 @@ def german_tax_id(rng: random.Random) -> str:
     return str(rng.randint(1, 9)) + "".join(str(rng.randint(0, 9)) for _ in range(10))
 
 
+def codice_fiscale(rng: random.Random) -> str:
+    """Italian fiscal code shape: 6 letters, year, month letter, day, place code, check letter.
+    Format only: the letters are not derived from a name and the check letter is not computed."""
+    letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    pick = lambda n: "".join(rng.choice(letters) for _ in range(n))  # noqa: E731
+    day = rng.randint(1, 28) + (40 if rng.random() < 0.5 else 0)
+    return (
+        f"{pick(6)}{rng.randint(0, 99):02d}{rng.choice('ABCDEHLMPRST')}{day:02d}"
+        f"{pick(1)}{rng.randint(100, 999)}{pick(1)}"
+    )
+
+
+def austrian_sv_number(rng: random.Random) -> str:
+    """Austrian social insurance number shape: serial, check digit, birth date DDMMYY.
+    Format only: the check digit is not computed."""
+    return (
+        f"{rng.randint(100, 999)}{rng.randint(0, 9)}"
+        f"{rng.randint(1, 28):02d}{rng.randint(1, 12):02d}{rng.randint(0, 99):02d}"
+    )
+
+
 def make_case(spec: CaseSpec, policy: RoutingPolicy | None = None) -> GeneratedCase:
     policy = policy or load_policy()
     rng = random.Random(spec.seed)
@@ -117,7 +138,16 @@ def make_case(spec: CaseSpec, policy: RoutingPolicy | None = None) -> GeneratedC
     address = ", ".join(address_lines)
     phone = fake.phone_number()
     email = fake.email(safe=True)
-    national_id = german_tax_id(rng) if spec.country == "DE" else fake.ssn()
+    if spec.country == "DE":
+        national_id = german_tax_id(rng)
+    else:
+        # Faker's it_IT and de_AT ssn embed a birth date converted with the local time zone,
+        # so the same seed gave different ids on a UTC+3 laptop and on UTC CI. The call stays
+        # so Faker's random sequence, and every later fake value, is unchanged; the value is
+        # replaced by our own seed-only generator.
+        fake.ssn()
+        id_rng = random.Random(spec.seed + 1)
+        national_id = (codice_fiscale if spec.country == "IT" else austrian_sv_number)(id_rng)
     id_labels, id_name = NATIONAL_IDS[spec.country]
     registration = fake.license_plate() if spec.category in MOTOR else None
 
