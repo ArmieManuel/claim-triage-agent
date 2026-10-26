@@ -141,11 +141,9 @@ def make_case(spec: CaseSpec, policy: RoutingPolicy | None = None) -> GeneratedC
     if spec.country == "DE":
         national_id = german_tax_id(rng)
     else:
-        # Faker's it_IT and de_AT ssn embed a birth date converted with the local time zone,
-        # so the same seed gave different ids on a UTC+3 laptop and on UTC CI. The call stays
-        # so Faker's random sequence, and every later fake value, is unchanged; the value is
-        # replaced by our own seed-only generator.
-        fake.ssn()
+        # Not Faker's it_IT or de_AT ssn: they embed a birth date converted with the local time
+        # zone, so a UTC+3 laptop and UTC CI produced different ids (and used a different number
+        # of random draws, shifting later values). Our generators use only the seed.
         id_rng = random.Random(spec.seed + 1)
         national_id = (codice_fiscale if spec.country == "IT" else austrian_sv_number)(id_rng)
     id_labels, id_name = NATIONAL_IDS[spec.country]
