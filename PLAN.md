@@ -153,8 +153,8 @@ Check each box only when the acceptance criteria are met and tests pass.
 - Acceptance: a pull request triggers the workflow and a failing test blocks the merge.
 
 ### Phase 8: Privacy and governance docs (1 day)
-- [ ] `docs/privacy_and_governance.md`: what counts as PII here, how it is redacted, retention (nothing stored by default), what GDPR obligations would apply to a real deployment, and why the deployment must use a model provider with a no-training-on-customer-data agreement. Label this as design documentation, not legal advice.
-- [ ] `docs/model_card.md`: model used, intended use, known limits, evaluation results, failure modes.
+- [x] `docs/privacy_and_governance.md`: what counts as PII here, how it is redacted, retention (nothing stored by default), what GDPR obligations would apply to a real deployment, and why the deployment must use a model provider with a no-training-on-customer-data agreement. Label this as design documentation, not legal advice.
+- [x] `docs/model_card.md`: model used, intended use, known limits, evaluation results, failure modes.
 - Acceptance: both documents reference real behavior in the code and real numbers from `reports/`.
 
 ### Phase 9: Optional cloud deployment (2 days)

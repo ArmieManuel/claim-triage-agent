@@ -1,6 +1,8 @@
 # Model card
 
-Status: Phase 4 complete. Evaluation sections are filled in only from real runs saved under `reports/`.
+Status: complete through Phase 8. Evaluation sections are filled in only from real runs saved under `reports/`. Privacy, retention and GDPR notes: [privacy_and_governance.md](privacy_and_governance.md). System design: [architecture.md](architecture.md).
+
+CI does not run this model. It replays answers recorded from it on ten dev cases (`evals/cassettes/ci_subset.json`, recording run `reports/20261026-184903_custom_ci-cassette`: routing, classification and field accuracy all 1.0), so every push runs the full graph and the quality gates without a model.
 
 ## Model
 
