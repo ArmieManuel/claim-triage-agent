@@ -134,10 +134,10 @@ Check each box only when the acceptance criteria are met and tests pass.
 - Acceptance: a deliberate prompt change that hurts quality is caught by the regression check (demonstrate this once and save the evidence in `reports/`).
 
 ### Phase 5: API service (2 days)
-- [ ] FastAPI app with `POST /v1/triage` (upload a PDF, returns the result and a request id), `GET /health`, API key authentication, Pydantic request and response models, and clear error codes.
-- [ ] Versioned routes so `/v2` can be added without breaking `/v1`.
-- [ ] Request size limits and file type validation.
-- [ ] API tests with the test client.
+- [x] FastAPI app with `POST /v1/triage` (upload a PDF, returns the result and a request id), `GET /health`, API key authentication, Pydantic request and response models, and clear error codes.
+- [x] Versioned routes so `/v2` can be added without breaking `/v1`.
+- [x] Request size limits and file type validation.
+- [x] API tests with the test client.
 - Acceptance: the OpenAPI docs page shows the schemas, and the API tests pass.
 
 ### Phase 6: Observability (1 day)

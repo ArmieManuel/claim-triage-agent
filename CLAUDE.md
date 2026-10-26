@@ -33,6 +33,14 @@ Read [PLAN.md](PLAN.md) before working. Work phase by phase and tick a box only 
 .venv\Scripts\python -m pytest -m local_model   (optional end-to-end test with the real model)
 ```
 
+## API
+
+```
+.venv\Scripts\python -m uvicorn triage.api.app:app --port 8000
+```
+Then http://127.0.0.1:8000/ (upload page) or /docs. The API key lives in .env (TRIAGE_API_KEYS,
+never committed; .env.example shows the format). Never print the key in chat or logs.
+
 ## Evaluation workflow
 
 ```
