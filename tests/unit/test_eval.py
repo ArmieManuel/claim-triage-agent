@@ -152,6 +152,9 @@ def test_evaluate_scores_each_case():
     assert df["queue_correct"].all()
     assert df["field_claim_number"].all()
     assert (df["pii_recall"] == 1.0).all()
+    first = df.iloc[0]
+    assert first["pred_claim_number"] == first["exp_claim_number"] == "CLM-2026-35152"
+    assert first["pred_police_report_number"] is None
 
 
 def test_main_writes_a_report_and_applies_gates(tmp_path):

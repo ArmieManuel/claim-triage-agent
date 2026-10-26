@@ -19,6 +19,9 @@ htmlcov/
 .env
 *.local.yaml
 
+# Generated locally (graph picture from LangGraph's draw_mermaid_png)
+graph.png
+
 # OS
 Thumbs.db
 .DS_Store

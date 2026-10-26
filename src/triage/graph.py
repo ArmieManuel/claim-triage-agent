@@ -256,7 +256,7 @@ def run_triage(
         multiple_claims=validation.multiple_claims if validation else False,
         missing_fields=validation.missing if validation else [],
         summary=restore(state["summary"], mapping) if state.get("summary") else None,
-        warnings=state.get("warnings", []),
+        warnings=(validation.corrections if validation else []) + state.get("warnings", []),
         extraction_attempts=state["attempts"],
         prompt_versions=state["prompt_versions"],
         trace=state["trace"],

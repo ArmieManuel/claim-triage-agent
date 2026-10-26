@@ -53,6 +53,7 @@ class ValidationResult:
     errors: list[str] = field(default_factory=list)
     missing: list[str] = field(default_factory=list)
     multiple_claims: bool = False
+    corrections: list[str] = field(default_factory=list)  # fixed in code, no retry needed
 
     @property
     def ok(self) -> bool:
@@ -164,6 +165,15 @@ def validate(
             errors.append(f"{name} '{raw[name]}' does not appear in the document")
             raw[name] = None
 
+    corrections: list[str] = []
+    police = raw["police_report_number"]
+    for other in ("claim_number", "policy_number"):
+        if police and raw[other] and _squash(police) == _squash(raw[other]):
+            corrections.append(
+                f"police_report_number '{police}' equals the {other}, treated as not stated"
+            )
+            raw["police_report_number"] = police = None
+
     fields = ClaimFields(
         claim_number=raw["claim_number"],
         policy_number=raw["policy_number"],
@@ -180,4 +190,5 @@ def validate(
         errors=errors,
         missing=missing_required_fields(fields) if not errors else [],
         multiple_claims=bool(output.multiple_claims),
+        corrections=corrections,
     )

@@ -20,6 +20,13 @@ SCORED_FIELDS = (
 )
 
 
+def _plain(value: Any) -> Any:
+    """A value as it should appear in cases.csv: dates as ISO text, enums as their value."""
+    if hasattr(value, "isoformat"):
+        return value.isoformat()
+    return getattr(value, "value", value)
+
+
 def _norm(value: Any) -> Any:
     if isinstance(value, str):
         return "".join(value.split()).lower()
@@ -77,6 +84,8 @@ def score_case(
         row[f"field_{name}"] = fields is not None and field_correct(
             name, predicted, getattr(expected.fields, name)
         )
+        row[f"pred_{name}"] = _plain(predicted)
+        row[f"exp_{name}"] = _plain(getattr(expected.fields, name))
     return row
 
 

@@ -44,7 +44,7 @@ def test_extract_parses_the_model_answer_and_sends_the_schema():
     attempt = extract(DOC, fake)
     assert attempt.error is None
     assert attempt.output == output()
-    assert attempt.prompt_version == "extract-v2"
+    assert attempt.prompt_version == "extract-v3"
     call = fake.calls[0]
     assert DOC in call["prompt"]
     assert call["schema"] == ExtractionOutput.model_json_schema()
@@ -164,6 +164,21 @@ def test_a_date_not_written_in_the_document_is_sent_back_with_a_day_first_hint()
     (error,) = [e for e in result.errors if "date_of_loss" in e]
     assert "does not appear in the document" in error
     assert "day first" in error
+
+
+@pytest.mark.parametrize("copied", ["CLM-2026-35152", "pol-78952443", "POL - 78952443"])
+def test_a_police_number_copied_from_the_claim_or_policy_number_is_dropped(copied):
+    """Dev run v2: case_003 and case_005 got a police number although none is stated."""
+    result = validate(output(police_report_number=copied), DOC, today=TODAY)
+    assert result.ok
+    assert result.fields.police_report_number is None
+    assert any("police_report_number" in note for note in result.corrections)
+
+
+def test_a_real_police_number_is_kept():
+    result = validate(output(police_report_number="DE/48213/26"), DOC, today=TODAY)
+    assert result.fields.police_report_number == "DE/48213/26"
+    assert result.corrections == []
 
 
 def test_values_are_matched_against_the_document_ignoring_line_breaks():

@@ -1,4 +1,4 @@
-version: extract-v2
+version: extract-v3
 system: |
   You extract data from one insurance claim document and answer with JSON only.
   Rules:
@@ -12,6 +12,7 @@ system: |
   - loss_description is one or two sentences, in the document's own words, about what happened.
   - multiple_claims is true only if the document asks about more than one separate claim, for example two different claim reference numbers.
   - Text like [NAME_1] or [ADDRESS_2] is redacted personal data. Keep it unchanged and never try to guess what it hides.
+  - police_report_number only if the document mentions the police or a crime reference. A claim number or policy number is never a police report number. Otherwise null.
 user: |
   Claim document:
   <<<
