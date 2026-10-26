@@ -13,7 +13,14 @@ def scripted(system, prompt, schema):
         data = json.loads(CASE.expected.fields.model_dump_json())
         return json.dumps({**data, "multiple_claims": False})
     if "confidence" in props:
-        return json.dumps({"category": "other", "confidence": 0.9, "reason": "Fits."})
+        return json.dumps(
+            {
+                "category": "other",
+                "alternative_category": None,
+                "confidence": 0.9,
+                "reason": "Fits.",
+            }
+        )
     return json.dumps({"summary": "One. Two. Three."})
 
 

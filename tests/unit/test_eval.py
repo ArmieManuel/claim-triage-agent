@@ -135,7 +135,14 @@ def perfect_model(system, prompt, schema):
         data = json.loads(case.expected.fields.model_dump_json())
         return json.dumps({**data, "multiple_claims": case.expected.multiple_claims})
     if "confidence" in props:
-        return json.dumps({"category": case.expected.category, "confidence": 0.9, "reason": "x"})
+        return json.dumps(
+            {
+                "category": case.expected.category,
+                "alternative_category": None,
+                "confidence": 0.9,
+                "reason": "x",
+            }
+        )
     return json.dumps({"summary": "One. Two. Three."})
 
 

@@ -33,6 +33,18 @@ ISO = re.compile(r"^(\d{4})[-/](\d{1,2})[-/](\d{1,2})$")
 DAY_FIRST = re.compile(r"^(\d{1,2})[./](\d{1,2})[./](\d{2}|\d{4})$")
 # Fields whose value must be copied from the document, never invented.
 GROUNDED = ("claim_number", "policy_number", "location", "police_report_number")
+_MONTH = r"(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?"
+DATE_PATTERNS = (
+    re.compile(r"(?<![\w/.-])\d{4}[-/]\d{1,2}[-/]\d{1,2}(?![\d/-])"),
+    re.compile(r"(?<![\w/.-])\d{1,2}[./]\d{1,2}[./](?:\d{4}|\d{2})(?![\d/])"),
+    re.compile(
+        rf"\b\d{{1,2}}(?:st|nd|rd|th)?\s+(?:day\s+of\s+)?{_MONTH}(?:\s+in\s+the\s+year)?,?\s+"
+        r"(?:'\d{2}|\d{4})\b",
+        re.IGNORECASE,
+    ),
+    re.compile(rf"\b{_MONTH}\s+\d{{1,2}}(?:st|nd|rd|th)?,?\s+\d{{4}}\b", re.IGNORECASE),
+)
+DAY_FIRST_HINT = "Numeric dates in these documents are day first: 11/06/2025 is 11 June 2025"
 
 
 @dataclass
@@ -76,6 +88,17 @@ def parse_date(text: str) -> date | None:
     return None
 
 
+def dates_in(text: str) -> set[date]:
+    """Every date written in the document, read day first when numeric."""
+    found = set()
+    for pattern in DATE_PATTERNS:
+        for match in pattern.finditer(text):
+            parsed = parse_date(" ".join(match.group(0).split()))
+            if parsed:
+                found.add(parsed)
+    return found
+
+
 def parse_amount(value: float | str | None) -> float | None:
     if value is None or isinstance(value, bool):
         return None
@@ -117,6 +140,15 @@ def validate(
         loss = None
     if loss and start and start > loss:
         errors.append(f"policy_start_date {start} is after date_of_loss {loss}")
+        start = None
+    written = dates_in(document)
+    if loss and loss not in written:
+        errors.append(f"date_of_loss {loss} does not appear in the document. {DAY_FIRST_HINT}")
+        loss = None
+    if start and start not in written:
+        errors.append(
+            f"policy_start_date {start} does not appear in the document. {DAY_FIRST_HINT}"
+        )
         start = None
 
     amount = parse_amount(raw["amount_claimed"]) if raw["amount_claimed"] is not None else None

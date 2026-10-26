@@ -7,14 +7,15 @@ from triage.golden import GOLDEN_DIR, load_golden_cases
 from triage.llm import FakeProvider
 from triage.nodes.extract import extract
 from triage.nodes.ingest import ingest
-from triage.nodes.validate import parse_amount, parse_date, validate
+from triage.nodes.validate import dates_in, parse_amount, parse_date, validate
 from triage.pii import redact
 from triage.schemas import ClaimantRole, ExtractionOutput
 
 TODAY = date(2026, 10, 24)
 DOC = (
     "Claim number CLM-2026-35152\nPolicy no. POL-78952443\nIncident location Hamburg\n"
-    "Police reference DE/48213/26\nA pipe burst."
+    "Date of incident 09/05/2026\nCover start 06.03.2024\n"
+    "Police reference DE/48213/26\nA pipe burst.\nForm completed on 12 May 2026."
 )
 
 
@@ -43,7 +44,7 @@ def test_extract_parses_the_model_answer_and_sends_the_schema():
     attempt = extract(DOC, fake)
     assert attempt.error is None
     assert attempt.output == output()
-    assert attempt.prompt_version == "extract-v1"
+    assert attempt.prompt_version == "extract-v2"
     call = fake.calls[0]
     assert DOC in call["prompt"]
     assert call["schema"] == ExtractionOutput.model_json_schema()
@@ -86,6 +87,27 @@ def test_parse_date_accepts_common_formats(text):
 @pytest.mark.parametrize("text", ["", "last week", "32/01/2026", "2026-13-01"])
 def test_parse_date_rejects_non_dates(text):
     assert parse_date(text) is None
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("Date of incident 11/06/2025.", date(2025, 6, 11)),
+        ("since 27.09.2020 and", date(2020, 9, 27)),
+        ("Sent: 2026-04-27", date(2026, 4, 27)),
+        ("happened on 24 April 2026 in Bremen", date(2026, 4, 24)),
+        ("since December 29, 2022.", date(2022, 12, 29)),
+        ("on the 3rd day of March in the year 2026 in", date(2026, 3, 3)),
+        ("on Tue 3rd Mar '26 in", date(2026, 3, 3)),
+        ("on 16 August\n2025 in Turin", date(2025, 8, 16)),
+    ],
+)
+def test_dates_in_finds_dates_written_in_the_document(text, expected):
+    assert expected in dates_in(text)
+
+
+def test_dates_in_ignores_claim_and_policy_numbers():
+    assert dates_in("Claim CLM-2026-35152, policy DG-6412-6260, police DE/48213/26") == set()
 
 
 @pytest.mark.parametrize(
@@ -133,6 +155,15 @@ def test_validate_reports_fixable_problems(overrides, problem):
     result = validate(output(**overrides), DOC, today=TODAY)
     assert not result.ok
     assert any(problem in error for error in result.errors)
+
+
+def test_a_date_not_written_in_the_document_is_sent_back_with_a_day_first_hint():
+    """Baseline case_007: 11/06/2025 was read month first as 2025-11-06."""
+    result = validate(output(date_of_loss="2026-09-05"), DOC, today=TODAY)
+    assert not result.ok
+    (error,) = [e for e in result.errors if "date_of_loss" in e]
+    assert "does not appear in the document" in error
+    assert "day first" in error
 
 
 def test_values_are_matched_against_the_document_ignoring_line_breaks():

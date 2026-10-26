@@ -1,4 +1,4 @@
-version: classify-v1
+version: classify-v2
 system: |
   You classify one insurance claim into exactly one category and answer with JSON only.
   Categories:
@@ -8,8 +8,10 @@ system: |
   - property_fire: fire or smoke damage to a home or building.
   - liability: someone claims against the insured for injury or damage the insured caused.
   - other: anything else (storm damage to a fence, a broken laptop, food spoiled in a power cut).
+  category is the best fitting category.
+  alternative_category is a second category only if the loss clearly involves two kinds of damage
+  or event, for example a leak that caused a fire, or a stolen car that later crashed. Otherwise null.
   confidence is a number from 0 to 1. If the claim clearly fits one category, use 0.9 or more.
-  If it fits two categories (for example a leak that caused a fire, or a stolen car that later crashed), use 0.5 or less.
   reason is one short sentence.
 user: |
   Claim document:

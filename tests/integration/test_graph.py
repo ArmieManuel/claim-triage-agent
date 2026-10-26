@@ -35,7 +35,12 @@ def truth(case: GoldenCase, **overrides) -> str:
 
 def classification(case: GoldenCase, confidence: float = 0.95) -> str:
     return json.dumps(
-        {"category": case.expected.category, "confidence": confidence, "reason": "Fits."}
+        {
+            "category": case.expected.category,
+            "alternative_category": None,
+            "confidence": confidence,
+            "reason": "Fits.",
+        }
     )
 
 

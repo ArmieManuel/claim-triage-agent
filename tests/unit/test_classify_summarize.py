@@ -4,7 +4,7 @@ from datetime import date
 import pytest
 
 from triage.llm import FakeProvider
-from triage.nodes.classify import ClassificationOutput, classify
+from triage.nodes.classify import AMBIGUOUS_CONFIDENCE, ClassificationOutput, classify
 from triage.nodes.summarize import SummaryOutput, summarize
 from triage.schemas import Category, ClaimFields, Queue
 
@@ -24,15 +24,45 @@ def answer(**values) -> str:
 # classify
 
 
+def classification(**values) -> str:
+    return answer(**{"alternative_category": None, "reason": "Fits.", **values})
+
+
 def test_classify_parses_category_and_confidence():
-    fake = FakeProvider([answer(category="property_water", confidence=0.93, reason="Burst pipe.")])
+    fake = FakeProvider([classification(category="property_water", confidence=0.93)])
     result = classify(DOC, fake)
     assert result.category == Category.PROPERTY_WATER
     assert result.confidence == 0.93
+    assert result.alternative_category is None
     assert result.error is None
-    assert result.prompt_version == "classify-v1"
+    assert result.prompt_version == "classify-v2"
     assert fake.calls[0]["schema"] == ClassificationOutput.model_json_schema()
     assert DOC in fake.calls[0]["prompt"]
+
+
+def test_a_second_fitting_category_caps_confidence():
+    """The model's own confidence is unreliable on ambiguous claims (case_030 in the baseline),
+    so naming a second category caps confidence below the human review threshold."""
+    fake = FakeProvider(
+        [
+            classification(
+                category="property_fire", alternative_category="property_water", confidence=0.95
+            )
+        ]
+    )
+    result = classify(DOC, fake)
+    assert result.category == Category.PROPERTY_FIRE
+    assert result.alternative_category == Category.PROPERTY_WATER
+    assert result.confidence == AMBIGUOUS_CONFIDENCE < 0.7
+
+
+def test_an_alternative_equal_to_the_category_is_ignored():
+    fake = FakeProvider(
+        [classification(category="other", alternative_category="other", confidence=0.9)]
+    )
+    result = classify(DOC, fake)
+    assert result.confidence == 0.9
+    assert result.alternative_category is None
 
 
 @pytest.mark.parametrize(
