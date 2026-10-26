@@ -33,7 +33,14 @@ Read [PLAN.md](PLAN.md) before working. Work phase by phase and tick a box only 
 .venv\Scripts\python -m pytest -m local_model   (optional end-to-end test with the real model)
 ```
 
-Known from manual runs (not measured yet): the model reports high confidence on ambiguous
-claims (case_030), so ambiguity is not caught by the confidence rule. Address in Phase 4 with measurement.
+## Evaluation workflow
+
+```
+.venv\Scripts\python -m evals.run_eval --split dev --label <name>   (about 15 min on this laptop)
+.venv\Scripts\python -m evals.regression                              (compare with the previous dev run)
+```
+
+Tune on dev only. Holdout ran once for the Phase 4 milestone; run it again only at the next milestone.
+Bump the version line in a prompt file whenever its text changes. Current results: docs/model_card.md.
 
 Routing thresholds live in `config/routing.yaml`; the rule order is in `docs/routing_policy.md`.

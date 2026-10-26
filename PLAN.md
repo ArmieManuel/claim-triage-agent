@@ -126,11 +126,11 @@ Check each box only when the acceptance criteria are met and tests pass.
 - Acceptance: all paths covered by integration tests using the fake provider, plus a manual run on real local-model output.
 
 ### Phase 4: Evaluation harness (3 days)
-- [ ] `run_eval.py` runs the graph over the golden set and writes a timestamped report to `reports/` (CSV plus a short markdown summary), using pandas.
-- [ ] Metrics: field-level extraction accuracy (per field), classification accuracy and macro F1, routing accuracy, human_review rate, latency p50 and p95, token counts as the cost proxy, retry rate.
-- [ ] `thresholds.yaml` holds minimum quality gates. Evaluation exits with a failure if a metric drops below its threshold.
-- [ ] Prompt versioning: prompts live in files with a version string, and each report records the prompt versions used.
-- [ ] Regression check: a script compares the latest report to the previous one and flags any metric that got worse.
+- [x] `run_eval.py` runs the graph over the golden set and writes a timestamped report to `reports/` (CSV plus a short markdown summary), using pandas.
+- [x] Metrics: field-level extraction accuracy (per field), classification accuracy and macro F1, routing accuracy, human_review rate, latency p50 and p95, token counts as the cost proxy, retry rate.
+- [x] `thresholds.yaml` holds minimum quality gates. Evaluation exits with a failure if a metric drops below its threshold.
+- [x] Prompt versioning: prompts live in files with a version string, and each report records the prompt versions used.
+- [x] Regression check: a script compares the latest report to the previous one and flags any metric that got worse.
 - Acceptance: a deliberate prompt change that hurts quality is caught by the regression check (demonstrate this once and save the evidence in `reports/`).
 
 ### Phase 5: API service (2 days)
