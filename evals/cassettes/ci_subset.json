@@ -1,0 +1,212 @@
+{
+ "06d1e331f02a58f2843a2a9a5d80cbaf306c0668a6a44673818a5f2cc3fb7b71": {
+  "content": "{\n  \"category\": \"property_water\",\n  \"alternative_category\": null,\n  \"confidence\": 0.95,\n  \"reason\": \"The claim involves water damage caused by a rain overflow and a blocked gutter.\"\n}",
+  "latency_s": 6.681,
+  "model": "gemma4:e2b",
+  "output_tokens": 55,
+  "prompt_tokens": 483
+ },
+ "0814be947794997a1c0cf192edc32c4436c23123fd4b4eff479e5a133be71234": {
+  "content": "{\n  \"claim_number\": \"CLM-2026-15348\",\n  \"policy_number\": \"AL/559074/PN\",\n  \"date_of_loss\": \"2026-09-03\",\n  \"claimant_role\": \"policyholder\",\n  \"amount_claimed\": 9273.00,\n  \"loss_description\": \"Heavy rain overflowed a blocked gutter and water ran down the inside of the back wall. The wall needs drying out and replastering, and a sofa was soaked.\",\n  \"location\": \"Bregenz\",\n  \"policy_start_date\": \"2023-01-11\",\n  \"police_report_number\": null,\n  \"multiple_claims\": true\n}",
+  "latency_s": 12.186,
+  "model": "gemma4:e2b",
+  "output_tokens": 185,
+  "prompt_tokens": 666
+ },
+ "11a16830cabcbd81d68527c82d9493836b0c6ef96bdfbdc4bfd9bafea45f2551": {
+  "content": "{\n  \"claim_number\": \"CLM-2026-45835\",\n  \"policy_number\": \"POL-52081599\",\n  \"date_of_loss\": \"2026-07-14\",\n  \"claimant_role\": \"policyholder\",\n  \"amount_claimed\": 1289.0,\n  \"loss_description\": \"Heavy rain overflowed a blocked gutter and water ran down the inside of the back wall. Skirting boards, a carpet and the lower kitchen units are water damaged.\",\n  \"location\": \"Bregenz\",\n  \"policy_start_date\": \"2025-08-08\",\n  \"police_report_number\": null,\n  \"multiple_claims\": false\n}",
+  "latency_s": 13.306,
+  "model": "gemma4:e2b",
+  "output_tokens": 185,
+  "prompt_tokens": 602
+ },
+ "11df6dc860d4cd5b343c109ef2c0f2ef87c01eab838cc95420b6edcedf3a0ba7": {
+  "content": "{\n  \"category\": \"other\",\n  \"alternative_category\": null,\n  \"confidence\": 0.85,\n  \"reason\": \"The claim involves damage to a bicycle and fence, which falls under miscellaneous property damage.\"\n}",
+  "latency_s": 7.386,
+  "model": "gemma4:e2b",
+  "output_tokens": 55,
+  "prompt_tokens": 454
+ },
+ "14b5117daa8266c02b5b1b31dea9690acb458e29d55c758336b8395e6f80e342": {
+  "content": "{\n  \"claim_number\": \"CLM-2026-61193\",\n  \"policy_number\": \"POL-36543551\",\n  \"date_of_loss\": \"2026-06-17\",\n  \"claimant_role\": \"policyholder\",\n  \"amount_claimed\": 4738.35,\n  \"loss_description\": \"While I was queueing at a roundabout, another car drove into the back of my Skoda Octavia. The rear bumper, boot lid and one light cluster are damaged.\",\n  \"location\": \"Bologna\",\n  \"policy_start_date\": \"2022-05-28\",\n  \"police_report_number\": null,\n  \"multiple_claims\": false\n}",
+  "latency_s": 11.612,
+  "model": "gemma4:e2b",
+  "output_tokens": 185,
+  "prompt_tokens": 623
+ },
+ "157534f27102888a7e73ea0ea90cadd0d8ae33c077b038d9f277f068167ef84e": {
+  "content": "{\n  \"category\": \"property_fire\",\n  \"alternative_category\": null,\n  \"confidence\": 0.95,\n  \"reason\": \"The claim explicitly describes a pan catching fire and spreading to the extractor hood, causing destruction.\"\n}",
+  "latency_s": 7.132,
+  "model": "gemma4:e2b",
+  "output_tokens": 58,
+  "prompt_tokens": 487
+ },
+ "1e710b3008fdb1d351012daedf2c743f90277fc0b0291e3d730b055a6ab89778": {
+  "content": "{\n  \"claim_number\": \"CLM-2026-17581\",\n  \"policy_number\": \"POL-52250777\",\n  \"date_of_loss\": \"2026-04-24\",\n  \"claimant_role\": \"policyholder\",\n  \"amount_claimed\": 1218.78,\n  \"loss_description\": \"While I was queueing at a roundabout, another car drove into the back of my BMW 3 Series. The bonnet, front bumper and radiator need replacing.\",\n  \"location\": \"Bremen\",\n  \"policy_start_date\": \"2022-12-29\",\n  \"police_report_number\": null,\n  \"multiple_claims\": false\n}",
+  "latency_s": 14.018,
+  "model": "gemma4:e2b",
+  "output_tokens": 182,
+  "prompt_tokens": 608
+ },
+ "1fc8149bbb59840f12a8ddad21d6da021baf0d641da86ebdb1a7e025f472ca55": {
+  "content": "{\n  \"summary\": \"Claim number CLM-2026-45835 was filed by the policyholder on 2026-07-14 in Bregenz. The loss involved heavy rain causing a blocked gutter to overflow, with water running down the inside of the back wall. Damage was sustained to skirting boards, a carpet, and lower kitchen units. The total amount claimed for this claim is €1,289. The claim was routed to the auto_process queue.\"\n}",
+  "latency_s": 10.695,
+  "model": "gemma4:e2b",
+  "output_tokens": 111,
+  "prompt_tokens": 541
+ },
+ "23a7ca521cb6725ad65cec4f8a94bf74b0a1b2de416df8e994ee20c400d2ec38": {
+  "content": "{\n  \"summary\": \"Claim number CLM-2026-15348 was filed by the policyholder on 2026-09-10. The incident occurred on 2026-09-03 in Bregenz due to heavy rain overflowing a blocked gutter, causing water damage to a back wall and soaking a sofa. The claimant is seeking an amount of EUR 9273.00 for the damages. This claim has been routed to human_review.\"\n}",
+  "latency_s": 9.433,
+  "model": "gemma4:e2b",
+  "output_tokens": 113,
+  "prompt_tokens": 606
+ },
+ "342228caf439293fa80bf05687f6ba4f81ba2f3f35dea1e4c5a774bdac79b132": {
+  "content": "{\n  \"category\": \"property_water\",\n  \"alternative_category\": \"motor_theft\",\n  \"confidence\": 0.95,\n  \"reason\": \"The primary claim involves water damage from a blocked gutter overflow.\"\n}",
+  "latency_s": 6.91,
+  "model": "gemma4:e2b",
+  "output_tokens": 56,
+  "prompt_tokens": 547
+ },
+ "44a279255f449be4d3de75543d51b6d45f018a92838a219d2be088c84653a3a0": {
+  "content": "{\n  \"category\": \"motor_collision\",\n  \"alternative_category\": null,\n  \"confidence\": 0.95,\n  \"reason\": \"The claim involves damage to a vehicle resulting from being hit by another car.\"\n}",
+  "latency_s": 6.0,
+  "model": "gemma4:e2b",
+  "output_tokens": 55,
+  "prompt_tokens": 504
+ },
+ "4a40d21f65be5d5c953c64bd770d493ee0e56899d769e2e76d3b8440490d3351": {
+  "content": "{\n  \"claim_number\": \"CLM-2025-48870\",\n  \"policy_number\": null,\n  \"date_of_loss\": \"2025-06-11\",\n  \"claimant_role\": \"policyholder\",\n  \"amount_claimed\": 5714,\n  \"loss_description\": \"A pipe under the bathroom floor burst and water came through the kitchen ceiling. The wall needs drying out and replastering, and a sofa was soaked.\",\n  \"location\": \"Leipzig\",\n  \"policy_start_date\": \"2020-09-27\",\n  \"police_report_number\": null,\n  \"multiple_claims\": false\n}",
+  "latency_s": 12.977,
+  "model": "gemma4:e2b",
+  "output_tokens": 170,
+  "prompt_tokens": 576
+ },
+ "5cec0289a125feb49480f8619ab104112e8071a42b91ec6ae3b6a7e06f27bef8": {
+  "content": "{\n  \"category\": \"property_water\",\n  \"alternative_category\": null,\n  \"confidence\": 0.95,\n  \"reason\": \"The claim involves water damage from a burst pipe.\"\n}",
+  "latency_s": 6.814,
+  "model": "gemma4:e2b",
+  "output_tokens": 50,
+  "prompt_tokens": 457
+ },
+ "67a479f822e06500019070a442524d36e8b8acd72ab48339434e8b534c200039": {
+  "content": "{\n  \"category\": \"motor_theft\",\n  \"alternative_category\": null,\n  \"confidence\": 0.95,\n  \"reason\": \"The claim explicitly states that the vehicle was stolen.\"\n}",
+  "latency_s": 5.985,
+  "model": "gemma4:e2b",
+  "output_tokens": 51,
+  "prompt_tokens": 495
+ },
+ "7454db93d50e15f0af748b3f6106d020030ad1caadb75eed12990765e08dc870": {
+  "content": "{\n  \"claim_number\": \"CLM-2025-52370\",\n  \"policy_number\": \"AL/721103/GN\",\n  \"date_of_loss\": \"2025-08-16\",\n  \"claimant_role\": \"representative\",\n  \"amount_claimed\": 83302.00,\n  \"loss_description\": \"A pan of oil caught fire on the hob and the flames spread to the extractor hood. The garage roof and the contents stored inside were destroyed.\",\n  \"location\": \"Turin\",\n  \"policy_start_date\": \"2022-01-14\",\n  \"police_report_number\": null,\n  \"multiple_claims\": false\n}",
+  "latency_s": 13.359,
+  "model": "gemma4:e2b",
+  "output_tokens": 181,
+  "prompt_tokens": 606
+ },
+ "76d85c7642b022bd85e53423959c02935015f1d650869270e1902fc749f5027e": {
+  "content": "{\n  \"claim_number\": \"CLM-2025-10716\",\n  \"policy_number\": \"DG-3514-5571\",\n  \"date_of_loss\": \"2025-12-12\",\n  \"claimant_role\": \"policyholder\",\n  \"amount_claimed\": 9084.35,\n  \"loss_description\": \"A pipe burst inside the kitchen wall overnight. The water ran down into the fuse board, which shorted and started an electrical fire. The fire damaged the kitchen ceiling and units, and the water ruined the flooring and the wall behind the cooker.\",\n  \"location\": \"Villach\",\n  \"policy_start_date\": \"2022-01-13\",\n  \"police_report_number\": null,\n  \"multiple_claims\": false\n}",
+  "latency_s": 12.375,
+  "model": "gemma4:e2b",
+  "output_tokens": 202,
+  "prompt_tokens": 613
+ },
+ "809e084653791a10a0f85171db73f933a95baeb45371203cec732c3870201387": {
+  "content": "{\n  \"summary\": \"Claim number CLM-2026-87722 was filed by the policyholder on 29/03/2026. The incident occurred on 25.03.2026 in Genoa, where a pan of oil caught fire and spread to the extractor hood. The damage resulted in smoke damage to the kitchen units and ceiling, which require replacement. The total amount claimed for this loss is 15,201.71 euros. This claim was routed to the fraud_review queue.\"\n}",
+  "latency_s": 10.793,
+  "model": "gemma4:e2b",
+  "output_tokens": 124,
+  "prompt_tokens": 544
+ },
+ "810bf8055c02c3147c792622739cc709a541798c879240248a86653beba4dd33": {
+  "content": "{\n  \"claim_number\": \"CLM-2026-87722\",\n  \"policy_number\": \"DG-6927-4891\",\n  \"date_of_loss\": \"2026-03-25\",\n  \"claimant_role\": \"policyholder\",\n  \"amount_claimed\": 15201.71,\n  \"loss_description\": \"A pan of oil caught fire on the hob and the flames spread to the extractor hood. The kitchen units and ceiling are smoke damaged and need replacing.\",\n  \"location\": \"Genoa\",\n  \"policy_start_date\": \"2026-03-13\",\n  \"police_report_number\": null,\n  \"multiple_claims\": false\n}",
+  "latency_s": 12.908,
+  "model": "gemma4:e2b",
+  "output_tokens": 185,
+  "prompt_tokens": 605
+ },
+ "825c4f73efce8da25599e17a7ec006a75b68c9bb2017dbae52e98731a2265c9a": {
+  "content": "{\n  \"category\": \"motor_collision\",\n  \"alternative_category\": null,\n  \"confidence\": 0.95,\n  \"reason\": \"The claim involves a vehicle being hit in a traffic incident.\"\n}",
+  "latency_s": 6.302,
+  "model": "gemma4:e2b",
+  "output_tokens": 52,
+  "prompt_tokens": 489
+ },
+ "88e7c58629671255c9e45b2275ed5a5d87e74bc4e7eada5bdd285d7c4cbb10b6": {
+  "content": "{\n  \"claim_number\": \"CLM-2026-35152\",\n  \"policy_number\": \"POL-78952443\",\n  \"date_of_loss\": \"2026-05-09\",\n  \"claimant_role\": \"policyholder\",\n  \"amount_claimed\": 3627.55,\n  \"loss_description\": \"My bicycle was damaged when a gate fell on it in high wind. Six fence panels and two posts need replacing.\",\n  \"location\": \"Hamburg\",\n  \"policy_start_date\": \"2024-03-06\",\n  \"police_report_number\": null,\n  \"multiple_claims\": false\n}",
+  "latency_s": 13.429,
+  "model": "gemma4:e2b",
+  "output_tokens": 174,
+  "prompt_tokens": 573
+ },
+ "912f83e05b377ef64e428800ac68d1f7d4566575188a5c39dafaf35e31cebfe3": {
+  "content": "{\n  \"claim_number\": \"CLM-2025-44144\",\n  \"policy_number\": \"AL/626713/RY\",\n  \"date_of_loss\": \"2025-11-14\",\n  \"claimant_role\": \"policyholder\",\n  \"amount_claimed\": 2714.00,\n  \"loss_description\": \"My Renault Clio was stolen overnight from the street outside my home. Personal belongings, including a child seat, were inside the car.\",\n  \"location\": \"Hamburg\",\n  \"policy_start_date\": \"2020-07-30\",\n  \"police_report_number\": \"DE/15335/25\",\n  \"multiple_claims\": false\n}",
+  "latency_s": 12.098,
+  "model": "gemma4:e2b",
+  "output_tokens": 187,
+  "prompt_tokens": 614
+ },
+ "945c140c54bb9e20be39c08047a1209326ecfe6f7f79ebfff018e2b594412694": {
+  "content": "{\n  \"summary\": \"Claim number CLM-2026-61193 was filed by the policyholder on 2026-06-25. The incident occurred on 2026-06-17 in Bologna when another car hit the back of the Skoda Octavia while the policyholder was queuing at a roundabout. The damage reported includes the rear bumper, boot lid, and one light cluster. The total amount claimed for this loss is 4738.35 euros. This claim was routed to the standard_handler queue.\"\n}",
+  "latency_s": 9.808,
+  "model": "gemma4:e2b",
+  "output_tokens": 127,
+  "prompt_tokens": 564
+ },
+ "9f4a8f203ff18d27033337a3d0297001b4b88c2be8d599ad205dab285b4f1738": {
+  "content": "{\n  \"summary\": \"The claim, CLM-2025-10716, was filed by the policyholder for policy DG-3514-5571. On December 12, 2025, a pipe burst inside the kitchen wall, leading to water entering the fuse board and causing an electrical fire. The fire damaged the kitchen ceiling and units, while water ruined the flooring and the wall behind the cooker. The total amount claimed is 9,084.35 euros. This claim has been routed to human_review.\"\n}",
+  "latency_s": 9.558,
+  "model": "gemma4:e2b",
+  "output_tokens": 127,
+  "prompt_tokens": 569
+ },
+ "b2b0b92e953183d00b243e4165ef28c6a77784084d7c553d0a6df66e0f70521c": {
+  "content": "{\n  \"summary\": \"Claim number CLM-2025-44144 was filed by the policyholder on 2025-11-20. The loss involved the theft of a Renault Clio from the street outside the home in Hamburg on 2025-11-14. The claimant is seeking an amount of €2,714.00 for the stolen vehicle and personal belongings, including a child seat. The claim has been routed to the standard_handler queue. The police report number is DE/15335/25.\"\n}",
+  "latency_s": 10.435,
+  "model": "gemma4:e2b",
+  "output_tokens": 131,
+  "prompt_tokens": 566
+ },
+ "b358b98f9bd997659d2b139414832bc196a7ce2385a3fd832f4f377734126080": {
+  "content": "{\n  \"summary\": \"The claim number is CLM-2026-17581. The incident occurred on 2026-04-24 in Bremen when another car hit the back of the policyholder's BMW 3 Series while they were queueing at a roundabout. The claimant is seeking an amount of 1,218.78 euros for repairs to the bonnet, front bumper, and radiator. This claim was routed to the auto_process queue.\"\n}",
+  "latency_s": 10.437,
+  "model": "gemma4:e2b",
+  "output_tokens": 110,
+  "prompt_tokens": 546
+ },
+ "c76a9c8b673cc75b878453b50af2cd0b62f59ac44d9aea7e427dbf4b7f55af4f": {
+  "content": "{\n  \"category\": \"property_fire\",\n  \"alternative_category\": null,\n  \"confidence\": 0.95,\n  \"reason\": \"The claim describes a pan catching fire and spreading smoke damage to kitchen units and the ceiling.\"\n}",
+  "latency_s": 7.905,
+  "model": "gemma4:e2b",
+  "output_tokens": 58,
+  "prompt_tokens": 486
+ },
+ "dea094d0b9b696ae488e0c7b8c4272a12fe11700185d2fb8e3cd40c830b53fd8": {
+  "content": "{\n  \"summary\": \"Claim number CLM-2025-48870 was filed by the policyholder on 2025-06-11 in Leipzig. The claimant reported that a pipe under the bathroom floor burst, causing water to enter the kitchen ceiling. The damage included the need for wall drying and replastering, as well as a soaked sofa. The total amount claimed for this loss is €5,714.00. This claim was routed to the human_review queue.\"\n}",
+  "latency_s": 10.023,
+  "model": "gemma4:e2b",
+  "output_tokens": 115,
+  "prompt_tokens": 493
+ },
+ "eeee007584182b0acc5a39862ac68fc5b97b6ab215960ad20a163b253f54f5d4": {
+  "content": "{\n  \"summary\": \"The claim number is CLM-2026-35152, filed by the policyholder on 2026-05-09. The incident occurred in Hamburg when a gate fell on a bicycle in high wind. The claimant is seeking an amount of EUR 3627.55 for the replacement of six fence panels and two posts. This claim was routed to the standard_handler queue.\"\n}",
+  "latency_s": 9.124,
+  "model": "gemma4:e2b",
+  "output_tokens": 100,
+  "prompt_tokens": 499
+ },
+ "f8406ea68460e53657e81d33cec5897cde35313517ad5803b3f1f54ced017ba0": {
+  "content": "{\n  \"category\": \"property_fire\",\n  \"alternative_category\": \"property_water\",\n  \"confidence\": 0.95,\n  \"reason\": \"The claim involves both water damage and a resulting fire damage.\"\n}",
+  "latency_s": 6.166,
+  "model": "gemma4:e2b",
+  "output_tokens": 55,
+  "prompt_tokens": 494
+ },
+ "fb4925af9d0c4310312f091606da9d8f1798813abc0e22a839d29314184946ff": {
+  "content": "{\n  \"summary\": \"Claim number CLM-2025-52370 was filed for a property fire that occurred on August 16, 2025, in Turin. The loss involved a pan of oil catching fire on the hob, which spread to the extractor hood, destroying the garage roof and its contents. The total amount claimed for this incident is 83,302.00 euros. This claim has been routed to the senior_handler queue.\"\n}",
+  "latency_s": 5.343,
+  "model": "gemma4:e2b",
+  "output_tokens": 108,
+  "prompt_tokens": 540
+ }
+}

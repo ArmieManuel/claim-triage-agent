@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "timestamp": "20261026-184903",
+    "split": "custom",
+    "label": "ci-cassette",
+    "n_cases": 10,
+    "model": "gemma4:e2b",
+    "prompt_versions": {
+      "extract": "extract-v3",
+      "classify": "classify-v2",
+      "summarize": "summarize-v1"
+    },
+    "git_commit": "63e576f",
+    "git_dirty": true,
+    "thresholds": "C:\\Users\\sebas\\Insurance claim agent\\evals\\thresholds.yaml"
+  },
+  "metrics": {
+    "n_cases": 10,
+    "n_errors": 0,
+    "routing_accuracy": 1.0,
+    "routing_accuracy_normal": 1.0,
+    "routing_accuracy_hard": 1.0,
+    "classification_accuracy": 1.0,
+    "classification_macro_f1": 1.0,
+    "field_accuracy_claim_number": 1.0,
+    "field_accuracy_policy_number": 1.0,
+    "field_accuracy_date_of_loss": 1.0,
+    "field_accuracy_claimant_role": 1.0,
+    "field_accuracy_amount_claimed": 1.0,
+    "field_accuracy_location": 1.0,
+    "field_accuracy_policy_start_date": 1.0,
+    "field_accuracy_police_report_number": 1.0,
+    "field_accuracy_mean": 1.0,
+    "human_review_rate": 0.3,
+    "expected_human_review_rate": 0.3,
+    "retry_rate": 0.0,
+    "latency_p50_s": 29.21,
+    "latency_p95_s": 31.29,
+    "latency_mean_s": 29.16,
+    "tokens_prompt_mean": 1645.0,
+    "tokens_output_mean": 354.7,
+    "tokens_total": 19997,
+    "pii_recall": 1.0,
+    "summary_warning_rate": 0.0
+  },
+  "gates": {
+    "failures": []
+  }
+}
