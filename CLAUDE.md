@@ -44,6 +44,17 @@ Logs are JSON lines on stdout (triage logger); filter one request with
 `findstr <request_id>`. GET /v1/metrics (with key) shows counts, error rate and latency.
 Never log document text, field values that may hold PII, or restored summaries.
 
+## Docker and CI
+
+```
+docker compose up --build          (API + Ollama + one-time model pull; http://127.0.0.1:8000/)
+docker build -t claim-triage-agent .
+```
+CI (.github/workflows/ci.yml): lint, pytest, an evaluation of ten dev cases replayed from
+evals/cassettes/ci_subset.json (TRIAGE_LLM_PROVIDER=replay), and a Docker build.
+After changing a prompt, the redaction or a schema, re-record the cassette with the real model:
+`python -m evals.run_eval --cases <the ten CI_CASES in ci.yml> --label ci-cassette --record evals\cassettes\ci_subset.json`
+
 ## Evaluation workflow
 
 ```

@@ -1,0 +1,46 @@
+# Starts Ollama, pulls the model once, then starts the API.
+#   docker compose up --build
+# Open http://127.0.0.1:8000/ (demo page) or http://127.0.0.1:8000/docs (API docs).
+# The first start downloads the model (about 4.6 GB) into the ollama-models volume.
+#
+# Already running Ollama on the host? Skip the bundled one:
+#   TRIAGE_OLLAMA_HOST=http://host.docker.internal:11434 docker compose up --build --no-deps api
+services:
+  ollama:
+    image: ollama/ollama:0.40.9
+    volumes:
+      - ollama-models:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  model-pull:
+    image: ollama/ollama:0.40.9
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+    entrypoint: ["ollama", "pull", "gemma4:e2b"]
+    restart: "no"
+
+  api:
+    build: .
+    depends_on:
+      model-pull:
+        condition: service_completed_successfully
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      TRIAGE_OLLAMA_HOST: ${TRIAGE_OLLAMA_HOST:-http://ollama:11434}
+      # Requests reach the container from the Docker network, not loopback, so the demo's
+      # local-only check is off here; the port below is published on 127.0.0.1 only instead.
+      TRIAGE_DEMO_LOCAL_ONLY: "false"
+    ports:
+      - "127.0.0.1:8000:8000"
+
+volumes:
+  ollama-models:

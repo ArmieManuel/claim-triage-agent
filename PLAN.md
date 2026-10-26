@@ -147,9 +147,9 @@ Check each box only when the acceptance criteria are met and tests pass.
 - Acceptance: one request produces a readable trace across all nodes.
 
 ### Phase 7: Containers and CI (1 to 2 days)
-- [ ] Dockerfile for the API and a `docker-compose.yml` that starts the API and Ollama together.
-- [ ] Stretch, for the "microservices" keyword: split into two services (API and extraction worker) communicating over HTTP, with a short note in `docs/architecture.md` explaining the trade-off.
-- [ ] GitHub Actions: lint, unit tests, integration tests with the fake provider, and an evaluation run on a small subset using a tiny model or recorded responses so CI stays fast and free.
+- [x] Dockerfile for the API and a `docker-compose.yml` that starts the API and Ollama together.
+- [ ] Stretch, for the "microservices" keyword: split into two services (API and extraction worker) communicating over HTTP, with a short note in `docs/architecture.md` explaining the trade-off. (Not built on purpose; the trade-off and the split point are documented in `docs/architecture.md`.)
+- [x] GitHub Actions: lint, unit tests, integration tests with the fake provider, and an evaluation run on a small subset using a tiny model or recorded responses so CI stays fast and free.
 - Acceptance: a pull request triggers the workflow and a failing test blocks the merge.
 
 ### Phase 8: Privacy and governance docs (1 day)

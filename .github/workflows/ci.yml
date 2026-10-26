@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: "3.13"
+  # The ten dev cases recorded in evals/cassettes/ci_subset.json
+  CI_CASES: case_001 case_002 case_005 case_007 case_012 case_013 case_018 case_019 case_026 case_030
+
+jobs:
+  lint:
+    name: Lint (ruff, format, no em dashes)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: pip install pre-commit==4.6.2
+      - run: pre-commit run --all-files --show-diff-on-failure
+
+  test:
+    name: Unit, integration and API tests (fake model)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: requirements.lock
+      - run: pip install --constraint requirements.lock -e ".[dev]"
+      - run: pytest
+
+  eval:
+    name: Evaluation on recorded model answers
+    needs: test
+    runs-on: ubuntu-latest
+    env:
+      TRIAGE_LLM_PROVIDER: replay
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: requirements.lock
+      - run: pip install --constraint requirements.lock -e ".[dev]"
+      - name: Run the graph on 10 dev cases and apply the quality gates
+        run: python -m evals.run_eval --cases $CI_CASES --label ci --out ci-reports
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ci-eval-report
+          path: ci-reports
+
+  docker:
+    name: Docker image builds
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build --tag claim-triage-agent:ci .
